@@ -7,7 +7,8 @@
     "products": "Products",
     "about": "About",
     "strategy": "Strategy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "approach": "DACA Program"
   },
   "hero": {
     "headline": "NEW COLLECTION",
@@ -65,5 +66,23 @@
     "email": "Email",
     "message": "Message",
     "send": "Send"
+  },
+  "approach": {
+    "meta": {
+      "title": "DACA — Data Analyst Career Accelerator",
+      "description": "11-week simulation-based data analytics program. SQL, Python, AI, dashboards. HAKA quality mark. From zero to job-ready."
+    },
+    "tabs": {
+      "learners": "For Learners",
+      "learnersDesc": "I want to join",
+      "employers": "For Employers",
+      "employersDesc": "Upskill my team",
+      "methodology": "Methodology",
+      "methodologyDesc": "How it works"
+    },
+    "zoom": {
+      "overview": "Overview",
+      "details": "Full Details"
+    }
   }
 }

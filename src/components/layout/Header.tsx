@@ -5,11 +5,13 @@ import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Logo } from '@/components/ui/Logo';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function Header() {
   const t = useTranslations('nav');
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -17,7 +19,22 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isMobileMenuOpen]);
+
   const isHome = pathname === '/';
+  
+  const navLinks = [
+    { href: '/tooted' as const, label: t('products') },
+    { href: '/meist' as const, label: t('about') },
+    { href: '/strateegia' as const, label: t('strategy') },
+    { href: '/kontakt' as const, label: t('contact') },
+  ];
 
   return (
     <header
@@ -33,14 +50,9 @@ export function Header() {
           <Logo variant="lockup" className="h-6 w-auto text-offwhite hover:opacity-90 transition-opacity" />
         </Link>
 
-        {/* Navigation */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          {[
-            { href: '/tooted' as const, label: t('products') },
-            { href: '/meist' as const, label: t('about') },
-            { href: '/strateegia' as const, label: t('strategy') },
-            { href: '/kontakt' as const, label: t('contact') },
-          ].map(({ href, label }) => (
+          {navLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -55,7 +67,62 @@ export function Header() {
           ))}
           <LanguageSwitcher />
         </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="md:hidden flex flex-col items-center justify-center w-8 h-8 z-[60]"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle mobile menu"
+        >
+          <span className={`block w-6 h-[2px] bg-offwhite transition-transform duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-[6px]' : '-translate-y-1'}`} />
+          <span className={`block w-6 h-[2px] bg-offwhite transition-opacity duration-300 my-1 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+          <span className={`block w-6 h-[2px] bg-offwhite transition-transform duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-[6px]' : 'translate-y-1'}`} />
+        </button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-charcoal flex flex-col items-center justify-center min-h-screen px-6 pt-20 pb-10"
+          >
+            <div className="flex flex-col items-center space-y-12 w-full max-w-sm">
+              <div className="flex flex-col items-center space-y-8 w-full">
+                {navLinks.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-2xl font-bold uppercase tracking-widest transition-colors duration-300 ${
+                      pathname === href
+                        ? 'text-burnt-orange'
+                        : 'text-offwhite hover:text-burnt-orange'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="w-16 h-[1px] bg-offwhite/20" />
+              
+              <div className="flex flex-col items-center space-y-6">
+                <span className="text-xs font-mono text-charcoal/40 uppercase tracking-widest text-offwhite/50">Language / Keel / Язык</span>
+                <LanguageSwitcher />
+              </div>
+            </div>
+            
+            {/* Background decorative element */}
+            <div className="absolute bottom-10 opacity-5 pointer-events-none">
+              <Logo variant="monogram" className="w-[300px] h-auto text-offwhite" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

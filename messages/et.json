@@ -7,7 +7,8 @@
     "products": "Tooted",
     "about": "Meist",
     "strategy": "Strateegia",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "approach": "DACA Programm"
   },
   "hero": {
     "headline": "UUS KOLLEKTSIOON",
@@ -65,5 +66,23 @@
     "email": "E-post",
     "message": "Sõnum",
     "send": "Saada"
+  },
+  "approach": {
+    "meta": {
+      "title": "DACA — Andmeanalüütiku Karjäärikiirendi",
+      "description": "11-nädalane simulatsioonipõhine andmeanalüütika programm. SQL, Python, AI, dashboard'id. HAKA kvaliteedimärk."
+    },
+    "tabs": {
+      "learners": "Õppijale",
+      "learnersDesc": "Soovin liituda",
+      "employers": "Tööandjale",
+      "employersDesc": "Koolitada meeskonda",
+      "methodology": "Metoodika",
+      "methodologyDesc": "Kuidas see töötab"
+    },
+    "zoom": {
+      "overview": "Ülevaade",
+      "details": "Täisdetailid"
+    }
   }
 }
