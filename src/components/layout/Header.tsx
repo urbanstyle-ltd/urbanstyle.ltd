@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/routing';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { Logo } from '@/components/ui/Logo';
 
 export function Header() {
   const t = useTranslations('nav');
@@ -28,8 +29,8 @@ export function Header() {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-16 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-offwhite tracking-wider">
-          UrbanStyle
+        <Link href="/" className="flex items-center" aria-label="UrbanStyle Home">
+          <Logo variant="lockup" className="h-6 w-auto text-offwhite hover:opacity-90 transition-opacity" />
         </Link>
 
         {/* Navigation */}

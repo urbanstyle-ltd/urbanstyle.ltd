@@ -1,6 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import type { Locale } from '@/i18n/config';
+import { Logo } from '@/components/ui/Logo';
 
 const programLinks: Record<Locale, string> = {
   et: 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi',
@@ -18,9 +19,11 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-16 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
-          <div>
-            <h3 className="text-xl font-bold tracking-wider mb-4">UrbanStyle</h3>
-            <p className="text-offwhite/50 text-sm">
+          <div className="flex flex-col items-start">
+            <Link href="/" aria-label="UrbanStyle Home" className="mb-4">
+               <Logo variant="wordmark" className="h-8 w-auto text-offwhite opacity-90 hover:opacity-100 transition-opacity" />
+            </Link>
+            <p className="text-offwhite/50 text-sm mt-2">
               Tallinn &middot; Est. 2020
             </p>
           </div>

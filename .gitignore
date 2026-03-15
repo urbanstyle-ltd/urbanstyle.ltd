@@ -51,3 +51,6 @@ next-env.d.ts
 /public/images/personas
 /public/images/hero
 /public/images/brand
+
+# generated documentation brand logos
+/docs/brand/*.png

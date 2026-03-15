@@ -1,0 +1,15 @@
+<svg viewBox="0 0 350 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text 
+    x="0" 
+    y="50%" 
+    dy="0.05em"
+    dominant-baseline="central" 
+    fill="#F5F0EB"
+    font-family="'PP Neue Montreal', 'Inter', system-ui, sans-serif"
+    font-weight="700"
+    font-size="72px"
+    letter-spacing="-0.05em"
+  >
+    UrbanStyle
+  </text>
+</svg>

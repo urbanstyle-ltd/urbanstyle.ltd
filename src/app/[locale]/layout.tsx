@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
+import { JsonLd } from '@/components/ui/JsonLd';
 import '../globals.css';
 
 const inter = Inter({
@@ -74,6 +75,7 @@ export default async function LocaleLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </NextIntlClientProvider>
+        <JsonLd />
       </body>
     </html>
   );

@@ -11,7 +11,10 @@
   },
   "hero": {
     "headline": "NEW COLLECTION",
-    "cta": "Discover"
+    "subheadline": "Designed in Estonia, built to last. Discover the latest collection bridging street culture crispness and Scandinavian minimalism.",
+    "cta": "Shop Now",
+    "secondaryCta": "Read Our Story",
+    "liveData": "Live system active"
   },
   "brand": {
     "statement": "Tallinn street culture, refined through Scandinavian clarity."
@@ -47,11 +50,13 @@
   },
   "strategy": {
     "title": "Strategy",
-    "headline": "Data Analytics as Strategic Direction",
+    "eyebrow": "Systems",
+    "headline": "Data Behind the Design",
+    "teaserDesc": "How data analytics and transparent systems made us one of Estonia's most successful streetwear brands. Discover our engine.",
     "dataTransformation": "Digital Transformation",
     "aiRole": "AI in Our Processes",
     "results": "Results",
-    "joinCta": "Learn More",
+    "joinCta": "Look Under the Hood",
     "programLink": "Explore the Program"
   },
   "contact": {

@@ -11,7 +11,10 @@
   },
   "hero": {
     "headline": "UUS KOLLEKTSIOON",
-    "cta": "Avasta"
+    "subheadline": "Disainitud Eestis, ehitatud kestma. Avasta viimane kollektsioon, mis toob kokku tänavamoe karguse ja skandinaavia minimalismi.",
+    "cta": "Poodi",
+    "secondaryCta": "Loe meie lugu",
+    "liveData": "Live system active"
   },
   "brand": {
     "statement": "Tallinna tänavakultuur, viimistletud skandinaavia selgusega."
@@ -47,11 +50,13 @@
   },
   "strategy": {
     "title": "Strateegia",
-    "headline": "Andmeanalüüs kui strateegiline suund",
+    "eyebrow": "Süsteemid",
+    "headline": "Andmed Disaini Taga",
+    "teaserDesc": "Kuidas andmeanalüüs ja läbipaistvad süsteemid tegid meist Eesti ühe edukaima tänava- ja elustiilibrändi. Avasta meie mootor.",
     "dataTransformation": "Digitaalne transformatsioon",
     "aiRole": "AI roll meie protsessides",
     "results": "Tulemused",
-    "joinCta": "Saa teada rohkem",
+    "joinCta": "Vaata Kapoti Alla",
     "programLink": "Tutvu programmiga"
   },
   "contact": {
