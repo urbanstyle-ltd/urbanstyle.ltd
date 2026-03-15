@@ -1,0 +1,27 @@
+# UrbanStyle OÜ
+> Premium Estonian urban streetwear brand, founded 2020 in Tallinn.
+> Tallinn street culture refined through Scandinavian clarity.
+
+## About
+UrbanStyle is a premium accessible Estonian urban streetwear brand based in Tallinn, Estonia.
+Founded in 2020, the brand operates stores in Tallinn (Rotermann Quarter), Tartu, and Pärnu.
+The brand offers ~350 products including denim jackets, hoodies, graphic tees, joggers, and accessories.
+
+## Team
+- Kristi Tamm, CEO
+- Toomas Kask, IT Director
+- Anna Mets, Marketing Lead
+- Marko Saar, Product Manager
+- Liis Koppel, Operations Manager
+
+## Strategy
+UrbanStyle is undergoing a data-driven digital transformation, integrating data analytics and AI
+across all business functions including demand forecasting, customer segmentation, supply chain
+optimization, and content creation.
+
+## Links
+- Website: https://urbanstyle.ltd
+- Products: https://urbanstyle.ltd/tooted
+- About: https://urbanstyle.ltd/meist
+- Strategy: https://urbanstyle.ltd/strateegia
+- Contact: https://urbanstyle.ltd/kontakt

@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "title": "UrbanStyle — Tallinna Linnakultuur",
+    "description": "Premium Eesti urban streetwear. Tallinna tänavakultuur skandinaavia selgusega."
+  },
+  "nav": {
+    "products": "Tooted",
+    "about": "Meist",
+    "strategy": "Strateegia",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "headline": "UUS KOLLEKTSIOON",
+    "cta": "Avasta"
+  },
+  "brand": {
+    "statement": "Tallinna tänavakultuur, viimistletud skandinaavia selgusega."
+  },
+  "footer": {
+    "newsletter": "Liitu uudiskirjaga",
+    "emailPlaceholder": "sinu@email.ee",
+    "subscribe": "Liitu",
+    "simulation": "Tegemist on koolitusprogrammi simulatsiooniga.",
+    "moreInfo": "Rohkem infot",
+    "copyright": "© {year} UrbanStyle OÜ. Tallinn, Eesti.",
+    "products": "Tooted",
+    "company": "Ettevõte",
+    "about": "Meist",
+    "strategy": "Strateegia",
+    "contact": "Kontakt",
+    "legal": "Õiguslik info",
+    "privacy": "Privaatsus",
+    "terms": "Tingimused",
+    "program": "Programm"
+  },
+  "products": {
+    "title": "Meie Tooted",
+    "filter": "Filtreeri",
+    "all": "Kõik",
+    "featured": "Populaarsed Tooted"
+  },
+  "about": {
+    "title": "Meist",
+    "team": "Meie Meeskond",
+    "story": "Meie Lugu",
+    "values": "Väärtused"
+  },
+  "strategy": {
+    "title": "Strateegia",
+    "headline": "Andmeanalüüs kui strateegiline suund",
+    "dataTransformation": "Digitaalne transformatsioon",
+    "aiRole": "AI roll meie protsessides",
+    "results": "Tulemused",
+    "joinCta": "Saa teada rohkem",
+    "programLink": "Tutvu programmiga"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "name": "Nimi",
+    "email": "E-post",
+    "message": "Sõnum",
+    "send": "Saada"
+  }
+}

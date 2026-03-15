@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* UrbanStyle Brand Design Tokens */
+@theme {
+  --color-charcoal: #2C2C2C;
+  --color-offwhite: #F5F0EB;
+  --color-limestone: #D4CDC4;
+  --color-burnt-orange: #C4622D;
+  --color-sage: #7A8B6F;
+  --color-slate-blue: #4A6274;
+  --color-dusty-rose: #C4A08A;
+
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-mono), 'JetBrains Mono', monospace;
+}
+
+/* Base styles */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-offwhite);
+  color: var(--color-charcoal);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--color-burnt-orange);
+  color: var(--color-offwhite);
+}

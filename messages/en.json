@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "title": "UrbanStyle — Tallinn Street Culture",
+    "description": "Premium Estonian urban streetwear. Tallinn street culture refined through Scandinavian clarity."
+  },
+  "nav": {
+    "products": "Products",
+    "about": "About",
+    "strategy": "Strategy",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "NEW COLLECTION",
+    "cta": "Discover"
+  },
+  "brand": {
+    "statement": "Tallinn street culture, refined through Scandinavian clarity."
+  },
+  "footer": {
+    "newsletter": "Join our newsletter",
+    "emailPlaceholder": "your@email.com",
+    "subscribe": "Subscribe",
+    "simulation": "This is a training program simulation.",
+    "moreInfo": "More info",
+    "copyright": "© {year} UrbanStyle OÜ. Tallinn, Estonia.",
+    "products": "Products",
+    "company": "Company",
+    "about": "About",
+    "strategy": "Strategy",
+    "contact": "Contact",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "program": "Program"
+  },
+  "products": {
+    "title": "Our Products",
+    "filter": "Filter",
+    "all": "All",
+    "featured": "Featured Products"
+  },
+  "about": {
+    "title": "About Us",
+    "team": "Our Team",
+    "story": "Our Story",
+    "values": "Values"
+  },
+  "strategy": {
+    "title": "Strategy",
+    "headline": "Data Analytics as Strategic Direction",
+    "dataTransformation": "Digital Transformation",
+    "aiRole": "AI in Our Processes",
+    "results": "Results",
+    "joinCta": "Learn More",
+    "programLink": "Explore the Program"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  }
+}
