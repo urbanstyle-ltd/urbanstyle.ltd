@@ -1,7 +1,30 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import type { Locale } from '@/i18n/config';
+
+const stores = [
+  {
+    city: 'Tallinn',
+    label: { et: 'Peakontor & Flagship', en: 'HQ & Flagship', ru: 'Штаб-квартира & Флагман' },
+    address: 'Tormilinna 4',
+    zip: '10145 Tallinn',
+  },
+  {
+    city: 'Tartu',
+    label: { et: 'Tartu pood', en: 'Tartu Store', ru: 'Магазин в Тарту' },
+    address: 'Jaamapõllu 12',
+    zip: '51008 Tartu',
+  },
+  {
+    city: 'Pärnu',
+    label: { et: 'Pärnu pood', en: 'Pärnu Store', ru: 'Магазин в Пярну' },
+    address: 'Päikesekalda 7',
+    zip: '80032 Pärnu',
+  },
+];
 
 export default function ContactPage() {
   const t = useTranslations('contact');
+  const locale = useLocale() as Locale;
 
   return (
     <div className="pt-24 pb-16 px-6 md:px-16">
@@ -42,24 +65,18 @@ export default function ContactPage() {
             </button>
           </form>
 
-          {/* Company info */}
+          {/* Store locations */}
           <div className="space-y-8">
             <div>
-              <h3 className="font-bold text-lg mb-2">UrbanStyle O\u00dc</h3>
-              <p className="text-charcoal/60">Reg. 16XXXXXX</p>
+              <h3 className="font-bold text-lg mb-2">UrbanStyle</h3>
+              <p className="text-charcoal/60 text-sm">Est. 2020 &middot; Tallinn</p>
             </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">Tallinn</h3>
-              <p className="text-charcoal/60">Rotermanni kvartal<br />Tallinn 10111, Estonia</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">Tartu</h3>
-              <p className="text-charcoal/60">K\u00fc\u00fcni 5<br />Tartu 51003, Estonia</p>
-            </div>
-            <div>
-              <h3 className="font-bold text-lg mb-2">P\u00e4rnu</h3>
-              <p className="text-charcoal/60">R\u00fc\u00fctli 40<br />P\u00e4rnu 80011, Estonia</p>
-            </div>
+            {stores.map((store) => (
+              <div key={store.city}>
+                <h3 className="font-bold text-lg mb-2">{store.label[locale]}</h3>
+                <p className="text-charcoal/60">{store.address}<br />{store.zip}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

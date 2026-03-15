@@ -1,7 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { products, getProductImageUrl } from '@/data/products';
+import type { Locale } from '@/i18n/config';
 
 export default function ProductsPage() {
   const t = useTranslations('products');
+  const locale = useLocale() as Locale;
 
   return (
     <div className="pt-24 pb-16 px-6 md:px-16">
@@ -24,13 +27,18 @@ export default function ProductsPage() {
 
         {/* Product grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {Array.from({ length: 9 }, (_, i) => (
-            <div key={i} className="group cursor-pointer">
+          {products.map((product) => (
+            <div key={product.id} className="group cursor-pointer">
               <div className="aspect-[3/4] bg-limestone/30 rounded-lg overflow-hidden mb-4 shadow-[0_2px_16px_rgba(0,0,0,0.06)]">
-                <div className="w-full h-full bg-limestone/50 group-hover:scale-[1.02] transition-transform duration-300" />
+                <img
+                  src={getProductImageUrl(product.heroImage, 'md')}
+                  alt={product.name[locale]}
+                  className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
-              <h3 className="font-medium text-lg">Product Name</h3>
-              <p className="font-mono text-sm text-charcoal/60 mt-1">&euro;89.00</p>
+              <h3 className="font-medium text-lg">{product.name[locale]}</h3>
+              <p className="font-mono text-sm text-charcoal/60 mt-1">&euro;{product.price}.00</p>
             </div>
           ))}
         </div>

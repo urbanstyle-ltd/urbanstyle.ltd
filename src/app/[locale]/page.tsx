@@ -1,15 +1,21 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { products, teamMembers, getProductImageUrl, getTeamImageUrl } from '@/data/products';
+import type { Locale } from '@/i18n/config';
+
+const featuredProducts = products.filter(p =>
+  ['denim-jacket', 'sage-hoodie', 'tallinn-tee', 'charcoal-joggers', 'crossbody-bag', 'tech-parka'].includes(p.id)
+);
 
 export default function HomePage() {
   const t = useTranslations();
+  const locale = useLocale() as Locale;
 
   return (
     <>
       {/* Hero Section */}
       <section className="relative h-screen flex items-end pb-24 px-6 md:px-16 overflow-hidden">
         <div className="absolute inset-0 bg-charcoal">
-          {/* Hero image placeholder - will be replaced with gen-AI lifestyle photo */}
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto w-full">
@@ -43,14 +49,18 @@ export default function HomePage() {
             {t('products.featured')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Product cards will be populated with gen-AI images */}
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="group">
+            {featuredProducts.map((product) => (
+              <div key={product.id} className="group">
                 <div className="aspect-[3/4] bg-limestone/30 rounded-lg overflow-hidden mb-4">
-                  <div className="w-full h-full bg-limestone/50 group-hover:scale-[1.02] transition-transform duration-300" />
+                  <img
+                    src={getProductImageUrl(product.heroImage, 'md')}
+                    alt={product.name[locale]}
+                    className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300"
+                    loading="lazy"
+                  />
                 </div>
-                <h3 className="font-medium text-lg">Product {i}</h3>
-                <p className="font-mono text-sm text-charcoal/60 mt-1">&euro;89.00</p>
+                <h3 className="font-medium text-lg">{product.name[locale]}</h3>
+                <p className="font-mono text-sm text-charcoal/60 mt-1">&euro;{product.price}.00</p>
               </div>
             ))}
           </div>
@@ -82,10 +92,18 @@ export default function HomePage() {
             {t('about.team')}
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {['Kristi Tamm', 'Toomas Kask', 'Anna Mets', 'Marko Saar', 'Liis Koppel'].map((name) => (
-              <div key={name} className="text-center">
-                <div className="aspect-square bg-limestone/30 rounded-full overflow-hidden mb-4 mx-auto w-32 h-32" />
-                <h3 className="font-medium">{name}</h3>
+            {teamMembers.map((member) => (
+              <div key={member.id} className="text-center">
+                <div className="aspect-square bg-limestone/30 rounded-full overflow-hidden mb-4 mx-auto w-32 h-32">
+                  <img
+                    src={getTeamImageUrl(member.imageKey, 'sm')}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <h3 className="font-medium">{member.name}</h3>
+                <p className="text-charcoal/60 text-sm">{member.role[locale]}</p>
               </div>
             ))}
           </div>
