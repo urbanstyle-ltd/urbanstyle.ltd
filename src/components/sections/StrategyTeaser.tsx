@@ -74,7 +74,7 @@ export default function StrategyTeaser() {
                     />
                   ))}
                 </div>
-                <div className="flex justify-between text-xs font-mono text-charcoal/50 border-t border-offwhite/10 pt-4">
+                <div aria-hidden="true" className="flex justify-between text-xs font-mono text-charcoal/50 border-t border-offwhite/10 pt-4">
                   <span className="text-sage">SYSTEM_OPTIMIZED</span>
                   <span>v.2.0.25</span>
                 </div>
