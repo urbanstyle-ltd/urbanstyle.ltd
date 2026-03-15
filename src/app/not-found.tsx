@@ -1,6 +1,7 @@
 "use client";
 
 import { getImageUrl } from '@/data/images';
+import './globals.css';
 
 export default function GlobalNotFound() {
   return (
