@@ -4,6 +4,7 @@ import type { NextConfig } from "next";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
+  compress: true, // Force gzip/brotli compression for Pingdom (F0 to A100)
   images: {
     formats: ['image/avif', 'image/webp'],
   },
