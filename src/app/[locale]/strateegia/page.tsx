@@ -94,7 +94,9 @@ export default function StrategyPage() {
             {ctaText[locale]}
           </p>
           <a
-            href="https://ettevotluskeskus.ee/daca"
+            href={locale === 'et'
+              ? 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi'
+              : 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator'}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-10 py-5 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg hover:bg-burnt-orange/90 transition-colors duration-300"

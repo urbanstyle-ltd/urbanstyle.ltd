@@ -57,14 +57,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             {teamMembers.map((member) => (
               <div key={member.id} className="text-center">
-                <div className="aspect-[3/4] bg-limestone/30 rounded-lg overflow-hidden mb-4">
-                  <img
-                    src={getTeamImageUrl(member.imageKey, 'md')}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+                <div className="aspect-[3/4] bg-limestone/30 rounded-lg overflow-hidden mb-4" />
                 <h3 className="font-bold text-lg">{member.name}</h3>
                 <p className="text-charcoal/60 text-sm">{member.role[locale]}</p>
                 <p className="text-charcoal/50 text-sm italic mt-2">&ldquo;{member.quote[locale]}&rdquo;</p>

@@ -1,8 +1,16 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import type { Locale } from '@/i18n/config';
+
+const programLinks: Record<Locale, string> = {
+  et: 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi',
+  en: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
+  ru: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
+};
 
 export function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale() as Locale;
   const year = new Date().getFullYear();
 
   return (
@@ -62,7 +70,7 @@ export function Footer() {
           <p className="text-xs text-offwhite/30">
             {t('simulation')}{' '}
             <a
-              href="https://ettevotluskeskus.ee"
+              href={programLinks[locale]}
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-offwhite/50 transition-colors"

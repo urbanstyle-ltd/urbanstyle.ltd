@@ -20,9 +20,19 @@ This is the **urbanstyle.ltd** website — a fictional Estonian streetwear brand
 - **Ettevõtluskeskus OÜ** is the real company behind the DACA program
 - Address: Liivalaia 13, Tallinn, Estonia
 - Website: ettevotluskeskus.ee
-- The conversion funnel: urbanstyle.ltd/strateegia → ettevotluskeskus.ee/daca
+- Conversion funnel landing pages:
+  - ET: `https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi`
+  - EN: `https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator`
+- The conversion funnel: urbanstyle.ltd/strateegia → locale-specific DACA landing page
 
-### 3. Fictional Addresses (UrbanStyle stores)
+### 3. Image Rules
+- **Persona ref sheets are NOT portraits** — the `_ref` images are 4-view turnaround work files
+- Do NOT show persona ref images on the website as team photos
+- Team section uses placeholder divs until proper portrait images are generated
+- Only product hero images are ready for the website
+- Source images go to `public/images/{category}/`, get processed via `npm run images:process`
+
+### 4. Fictional Addresses (UrbanStyle stores)
 These are intentionally fictional — do NOT replace with real addresses:
 
 | Store | Address |
@@ -31,12 +41,12 @@ These are intentionally fictional — do NOT replace with real addresses:
 | Tartu | Jaamapõllu 12, 51008 Tartu |
 | Pärnu | Päikesekalda 7, 80032 Pärnu |
 
-### 4. Estonian Characters (öäüõ)
+### 5. Estonian Characters (öäüõ)
 - Always use proper Estonian diacritics: ö, ä, ü, õ, š, ž
 - In English translations, Estonian proper nouns keep their diacritics: "Pärnu" not "Parnu", "Tallinn" not "Talinn"
 - Exception: URL slugs use ASCII (e.g., `/parnu` not `/pärnu`)
 
-### 5. Content Language
+### 6. Content Language
 - All hardcoded text in .tsx files MUST go through i18n (next-intl)
 - Default locale: Estonian (et)
 - Supported: et, en, ru
@@ -140,6 +150,14 @@ The DACA (Andmeanalüütiku Karjäärikiirendi) is an 11-week (W0-W10) data anal
 - Each week covers a different PM/analytics topic using UrbanStyle as case study
 - The website makes the simulation feel real and immersive
 - The /strateegia page bridges from "company website" to "join the training program"
+
+### Prompt Libraries & Specs (in this repo)
+All gen-AI prompt libraries and the website specification are in `docs/prompts/`:
+- `A_S_6` — Product imagery prompts (8 categories, 50+ variants)
+- `A_S_7` — Persona imagery prompts (5 characters, ref + portraits + situations)
+- `A_S_8` — **Brand identity & logo prompts** (colors, typography, patterns, packaging)
+- `A_S_9` — Website asset gap analysis (67 supplementary prompts by priority)
+- `A_S_10` — Full website specification (pages, SEO, i18n, components, animations)
 
 ### Canonical Reference (DACA repo)
 Full program details, character bibles, and narrative arcs are in:

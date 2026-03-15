@@ -94,14 +94,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {teamMembers.map((member) => (
               <div key={member.id} className="text-center">
-                <div className="aspect-square bg-limestone/30 rounded-full overflow-hidden mb-4 mx-auto w-32 h-32">
-                  <img
-                    src={getTeamImageUrl(member.imageKey, 'sm')}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+                <div className="aspect-square bg-limestone/30 rounded-full overflow-hidden mb-4 mx-auto w-32 h-32" />
                 <h3 className="font-medium">{member.name}</h3>
                 <p className="text-charcoal/60 text-sm">{member.role[locale]}</p>
               </div>
