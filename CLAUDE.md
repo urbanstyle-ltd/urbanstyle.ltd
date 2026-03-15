@@ -195,3 +195,36 @@ public/                    # Static assets (robots.txt, llms.txt, favicon)
 - **Estonian diacritics preserved** in all languages when referring to Estonian proper nouns
 - **Commit often** with descriptive messages
 - **Mobile-first** responsive design
+
+## UX & CONVERSION BACKLOG (APPROACH PAGE /lahenemine)
+**Target Audience**: High-level decision-makers (CxO, Public Sector, Google/Coursera Execs, Partners).
+**Goal**: High-conversion, mobile-first, immediate value prop recognition ("Zoom-Out"), detailed drill-downs when requested ("Zoom-In").
+
+**1. "Executive Summary" Layer (The Zoom-Out)**
+- **Current Issue**: The page immediately dives into heavy tabs (Learners/Employers/Methodology) causing cognitive overload.
+- **UX Fix**: Implement an "above the fold" Executive Summary *before* the tabs.
+- **Action**: Add a bold, scannable Value Proposition component focusing on ROI and transformation. (e.g., "From raw talent to job-ready data analysts in 11 weeks via immersive simulation.")
+- **Action**: Add a mobile-friendly 4-point visual metric row (13 EAP | 100% Portfolio | HAKA Quality | 0 Disruption).
+
+**2. Progressive Disclosure (The Zoom-In)**
+- **Current Issue**: High-level execs don't read walls of text; they scan for keywords.
+- **UX Fix**: Enhance the "Zoom" logic. 
+- **Action**: Keep the default view extremely punchy (bullet points, bold text). Place all the Deep-Dive text ("Weekly Flow", "Shu-Ha-Ri", "4C Method") clearly behind visually modern "Deep Dive" or "Read Concept" modals/accordions.
+
+**3. Visual Storytelling over Text Blocks**
+- **Current Issue**: The 11-week curriculum and methodology are explained in heavy text objects.
+- **UX Fix**: Replace text with infographic-style React components.
+- **Action**: Create an interactive SVG or Framer Motion timeline for the "11-Week Topic Map".
+- **Action**: For the "Spiral Learning" and "4C" methods, use animated loop graphics rather than text lists.
+
+**4. Mobile-First Navigation & Architecture**
+- **Current Issue**: Standard tabs can be clunky on mobile if text is long.
+- **UX Fix**: Convert the `AudienceTab` selector into a sticky, horizontally scrollable segmented control or "pill" navigation at the top as users scroll.
+- **Action**: Auto-detect the persona. If the URL contains `?audience=exec`, default to the "Employers" tab.
+
+**5. Micro-Conversions & Contextual CTAs**
+- **Current Issue**: "Get in Touch" or "Apply Now" are too generic for high-level executives.
+- **UX Fix**: Offer lower-friction conversions.
+- **Action**: Add "Download the Executive Syllabus (PDF)" or "Book a 15-min Partnership Fit Call" buttons alongside the main CTA.
+
+*(Note: This backlog is intended for `claude code` or follow-up autonomous agent execution when i18n logic completion allows for structural changes).*
