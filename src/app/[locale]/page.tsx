@@ -1,5 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
-import { products, teamMembers, getProductImageUrl } from '@/data/products';
+import { products, teamMembers, getProductImageUrl, getTeamImageUrl } from '@/data/products';
 import { getImageUrl } from '@/data/images';
 import type { Locale } from '@/i18n/config';
 
@@ -105,7 +105,14 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {teamMembers.map((member) => (
               <div key={member.id} className="text-center group">
-                <div className="aspect-square bg-limestone/30 rounded-full overflow-hidden mb-6 mx-auto w-40 h-40 filter grayscale group-hover:grayscale-0 transition-all duration-500 shadow-sm group-hover:shadow-md" />
+                <div className="aspect-square bg-limestone/30 rounded-full overflow-hidden mb-6 mx-auto w-40 h-40 filter grayscale group-hover:grayscale-0 transition-all duration-500 shadow-sm group-hover:shadow-md relative">
+                  <img
+                    src={getTeamImageUrl(member.imageKey, 'md')}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <h3 className="font-semibold tracking-wide uppercase">{member.name}</h3>
                 <p className="text-burnt-orange text-sm mt-1">{member.role[locale]}</p>
               </div>

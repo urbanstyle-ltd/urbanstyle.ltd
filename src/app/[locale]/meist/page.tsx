@@ -136,10 +136,14 @@ export default function AboutPage() {
                 >
                   <div className={`
                     ${isCEO ? 'w-64 h-64 md:w-80 md:h-80' : 'w-48 h-48 md:w-56 md:h-56'} 
-                    bg-limestone/30 rounded-full overflow-hidden mb-8 shadow-sm group
+                    bg-limestone/30 rounded-full overflow-hidden mb-8 shadow-sm group relative
                   `}>
-                    {/* Placeholder for real team images */}
-                    <div className="w-full h-full bg-limestone/50 group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img
+                      src={getTeamImageUrl(member.imageKey, isCEO ? 'md' : 'sm')}
+                      alt={member.name}
+                      className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
                   <h3 className="font-bold text-2xl tracking-tight text-charcoal">{member.name}</h3>
                   <p className="text-charcoal/60 text-sm tracking-widest uppercase mt-2 font-mono">{member.role[locale as Locale]}</p>
