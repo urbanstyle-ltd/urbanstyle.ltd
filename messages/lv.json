@@ -84,5 +84,11 @@
       "overview": "Pārskats",
       "details": "Pilna informācija"
     }
+  },
+  "notFound": {
+    "title": "404 - Lapa nav atrasta",
+    "description": "Atvainojiet, lapa, kuru meklējat, nepastāv. Šis datu punkts ir noņemts no mūsu sistēmām. Izmantojiet šo iespēju, lai atklātu jaunus produktus.",
+    "homeCta": "Atpakaļ uz sākumu",
+    "productsCta": "Skatīt produktus"
   }
 }

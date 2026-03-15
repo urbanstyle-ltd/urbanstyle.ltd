@@ -84,5 +84,11 @@
       "overview": "Overview",
       "details": "Full Details"
     }
+  },
+  "notFound": {
+    "title": "404 - Page Not Found",
+    "description": "Sorry, the page you are looking for does not exist. This data point has been removed from our systems. Use this opportunity to discover new products.",
+    "homeCta": "Back to Home",
+    "productsCta": "Explore Products"
   }
 }

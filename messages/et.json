@@ -84,5 +84,11 @@
       "overview": "Ülevaade",
       "details": "Täisdetailid"
     }
+  },
+  "notFound": {
+    "title": "404 - Lehte ei leitud",
+    "description": "Vabandust, otsitud lehekülge pole olemas. See andmepunkt on meie süsteemidest eemaldatud. Kasuta võimalust uute toodete avastamiseks.",
+    "homeCta": "Tagasi avalehele",
+    "productsCta": "Avasta tooteid"
   }
 }
