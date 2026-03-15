@@ -12,27 +12,34 @@ export default function AboutPage() {
   const t = useTranslations('about');
 
   const timeline = [
-    { year: '2020', event: { et: 'Asutatud Tallinnas', en: 'Founded in Tallinn', ru: 'Основан в Таллинне' } },
-    { year: '2021', event: { et: 'Esimene pop-up pood', en: 'First pop-up store', ru: 'Первый поп-ап магазин' } },
-    { year: '2022', event: { et: 'E-poe avamine, laienemine Tartusse', en: 'E-commerce launch, expanded to Tartu', ru: 'Запуск интернет-магазина, расширение в Тарту' } },
-    { year: '2023', event: { et: 'Pärnu pood, 350+ toodet', en: 'Pärnu store, 350+ products', ru: 'Магазин в Пярну, 350+ товаров' } },
-    { year: '2025', event: { et: 'Andmepõhine transformatsioon algab', en: 'Data-driven transformation begins', ru: 'Начало цифровой трансформации' } },
+    { year: '2020', event: { et: 'Asutatud Tallinnas', en: 'Founded in Tallinn', ru: 'Основан в Таллинне', lv: 'Dibināts Tallinā' } },
+    { year: '2021', event: { et: 'Esimene pop-up pood', en: 'First pop-up store', ru: 'Первый поп-ап магазин', lv: 'Pirmais pop-up veikals' } },
+    { year: '2022', event: { et: 'E-poe avamine, laienemine Tartusse', en: 'E-commerce launch, expanded to Tartu', ru: 'Запуск интернет-магазина, расширение в Тарту', lv: 'E-komercijas atvēršana, paplašināšanās uz Tartu' } },
+    { year: '2023', event: { et: 'Pärnu pood, 350+ toodet', en: 'Pärnu store, 350+ products', ru: 'Магазин в Пярну, 350+ товаров', lv: 'Pērnavas veikals, 350+ produkti' } },
+    { year: '2025', event: { et: 'Andmepõhine transformatsioon algab', en: 'Data-driven transformation begins', ru: 'Начало цифровой трансформации', lv: 'Sākas uz datiem balstīta transformācija' } },
   ];
 
   const storyText: Record<string, string> = {
     et: 'Asutatud 2020. aastal Tallinnas, UrbanStyle ühendab Eesti tänavakultuurist inspiratsiooni Skandinaavia disainipõhimõtetega. Alustades väikese hoolikalt valitud baaskollektsiooniga, on bränd kasvanud Tallinna loomingulise energia kehastuseks — toores, viimistletud ja vaieldamatult kohalik.',
     en: 'Founded in 2020 in Tallinn, UrbanStyle blends Estonian street culture with Scandinavian design principles. What started as a small collection of carefully crafted basics has grown into a brand that represents the creative energy of Tallinn — raw, refined, and unmistakably local.',
     ru: 'Основанный в 2020 году в Таллинне, UrbanStyle сочетает эстонскую уличную культуру со скандинавскими принципами дизайна. То, что началось как небольшая коллекция тщательно продуманных базовых вещей, выросло в бренд, воплощающий творческую энергию Таллинна — необработанную, утончённую и безошибочно местную.',
+    lv: 'Dibināts 2020. gadā Tallinā, UrbanStyle apvieno Igaunijas ielu kultūru ar skandināvu dizaina principiem. Tas, kas sākās kā neliela rūpīgi veidotu pamata apģērbu kolekcija, ir izaudzis par zīmolu, kas iemieso Tallinas radošo enerģiju — neapstrādātu, izsmalcinātu un nepārprotami vietēju.',
   };
 
   return (
     <div className="pb-16 overflow-hidden">
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[500px] mb-24 flex items-center justify-center">
-        <div 
-          className="absolute inset-0 bg-charcoal bg-cover bg-[center_top_30%] opacity-90 mix-blend-overlay"
-          style={{ backgroundImage: `url(${getImageUrl('images/v1/hero/team_group_hero_lg.webp')})` }}
-        />
+        <div className="absolute inset-0 bg-charcoal">
+          <img 
+            src={getImageUrl('images/v1/hero/team_group_hero_lg.webp')}
+            alt="Team UrbanStyle"
+            className="w-full h-full object-cover object-[center_top_30%] opacity-90 mix-blend-overlay"
+            fetchPriority="high"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-offwhite/20 to-charcoal/40" />
         
         <div className="relative z-10 text-center text-offwhite px-6 mt-16 max-w-4xl mx-auto">

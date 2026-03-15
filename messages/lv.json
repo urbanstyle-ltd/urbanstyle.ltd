@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "title": "UrbanStyle — Tallinas ielu kultūra",
+    "description": "Premium Igaunijas ielu mode. Tallinas ielu kultūra, izsmalcināta ar skandināvu skaidrību."
+  },
+  "nav": {
+    "products": "Produkti",
+    "about": "Par mums",
+    "strategy": "Stratēģija",
+    "contact": "Kontakti",
+    "approach": "DACA Programma"
+  },
+  "hero": {
+    "headline": "JAUNA KOLEKCIJA",
+    "subheadline": "Izstrādāts Igaunijā, radīts ilgtspējīgi. Atklājiet jaunāko kolekciju, kas apvieno ielu kultūras asumu un skandināvu minimālismu.",
+    "cta": "Veikalā",
+    "secondaryCta": "Lasiet mūsu stāstu",
+    "liveData": "Live system active"
+  },
+  "brand": {
+    "statement": "Tallinas ielu kultūra, izsmalcināta ar skandināvu skaidrību."
+  },
+  "footer": {
+    "newsletter": "Pierakstieties jaunumiem",
+    "emailPlaceholder": "jusu@epasts.lv",
+    "subscribe": "Pierakstīties",
+    "simulation": "Šī ir mācību programmas simulācija.",
+    "moreInfo": "Vairāk informācijas",
+    "copyright": "© {year} UrbanStyle. Tallina, Igaunija.",
+    "products": "Produkti",
+    "company": "Uzņēmums",
+    "about": "Par mums",
+    "strategy": "Stratēģija",
+    "contact": "Kontakti",
+    "legal": "Juridiskā informācija",
+    "privacy": "Privātums",
+    "terms": "Noteikumi",
+    "program": "Programma"
+  },
+  "products": {
+    "title": "Mūsu produkti",
+    "filter": "Filtrs",
+    "all": "Visi",
+    "featured": "Populāri produkti"
+  },
+  "about": {
+    "title": "Par mums",
+    "team": "Mūsu komanda",
+    "story": "Mūsu stāsts",
+    "values": "Vērtības"
+  },
+  "strategy": {
+    "title": "Stratēģija",
+    "eyebrow": "Sistēmas",
+    "headline": "Dati aiz dizaina",
+    "teaserDesc": "Kā datu analītika un caurspīdīgas sistēmas padarīja mūs par vienu no Igaunijas veiksmīgākajiem ielu modes zīmoliem. Atklājiet mūsu dzinēju.",
+    "dataTransformation": "Digitālā transformācija",
+    "aiRole": "AI mūsu procesos",
+    "results": "Rezultāti",
+    "joinCta": "Ieskatieties zem pārsega",
+    "programLink": "Iepazīstiet programmu"
+  },
+  "contact": {
+    "title": "Kontakti",
+    "name": "Vārds",
+    "email": "E-pasts",
+    "message": "Ziņojums",
+    "send": "Sūtīt"
+  },
+  "approach": {
+    "meta": {
+      "title": "DACA — Datu analītiķa karjeras akselerators",
+      "description": "11 nedēļu simulācijas datu analītikas programma. SQL, Python, AI, informācijas paneļi. HAKA kvalitātes zīme."
+    },
+    "tabs": {
+      "learners": "Dalībniekiem",
+      "learnersDesc": "Vēlos pieteikties",
+      "employers": "Darba devējiem",
+      "employersDesc": "Apmācīt komandu",
+      "methodology": "Metodoloģija",
+      "methodologyDesc": "Kā tas darbojas"
+    },
+    "zoom": {
+      "overview": "Pārskats",
+      "details": "Pilna informācija"
+    }
+  }
+}

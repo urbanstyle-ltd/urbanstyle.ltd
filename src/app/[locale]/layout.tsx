@@ -40,12 +40,13 @@ export async function generateMetadata({
         et: '/',
         en: '/en',
         ru: '/ru',
+        lv: '/lv',
       },
     },
     openGraph: {
       type: 'website',
       siteName: 'UrbanStyle',
-      locale: locale === 'et' ? 'et_EE' : locale === 'ru' ? 'ru_RU' : 'en_US',
+      locale: locale === 'et' ? 'et_EE' : locale === 'ru' ? 'ru_RU' : locale === 'lv' ? 'lv_LV' : 'en_US',
     },
   };
 }

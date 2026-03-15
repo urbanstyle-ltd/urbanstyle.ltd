@@ -11,17 +11,15 @@ export default function Hero() {
   return (
     <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-charcoal">
       {/* Background with abstract data/fashion imagery overlay */}
-      <div className="absolute inset-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
+      <div className="absolute inset-0 bg-charcoal">
+        <img 
+          src={getImageUrl('images/v1/hero/hero_denim_season_lg.webp')}
+          alt={t('hero.headline')}
           className="w-full h-full object-cover opacity-60 mix-blend-overlay"
-          poster={getImageUrl('images/v1/hero/hero_denim_season_lg.webp')}
-        >
-          {/* We will rely on CSS fallback/image poster if no video exists yet */}
-        </video>
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-charcoal/20" />
         
         {/* Abstract animated grid (Data representation) */}

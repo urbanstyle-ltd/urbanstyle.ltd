@@ -14,10 +14,16 @@ export default function ProductsPage() {
     <div className="pt-24 pb-16 px-6 md:px-16">
       <div className="relative w-full h-[40vh] min-h-[400px] mb-16 overflow-hidden flex items-center justify-center p-6 md:p-16">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-charcoal bg-cover bg-center opacity-80 mix-blend-overlay"
-          style={{ backgroundImage: `url(${getProductImageUrl('hero_product_focus', 'lg')})` }}
-        />
+        <div className="absolute inset-0 bg-charcoal">
+          <img 
+            src={getProductImageUrl('hero_product_focus', 'lg')}
+            alt="UrbanStyle Products"
+            className="w-full h-full object-cover object-center opacity-80 mix-blend-overlay"
+            fetchPriority="high"
+            loading="eager"
+            decoding="sync"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-offwhite/5 to-transparent" />
         
         <div className="relative z-10 text-center max-w-2xl mx-auto mt-16">

@@ -7,6 +7,7 @@ const programLinks: Record<Locale, string> = {
   et: 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi',
   en: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
   ru: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
+  lv: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
 };
 
 export function Footer() {

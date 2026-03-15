@@ -7,7 +7,8 @@
     "products": "Продукция",
     "about": "О нас",
     "strategy": "Стратегия",
-    "contact": "Контакт"
+    "contact": "Контакт",
+    "approach": "Программа DACA"
   },
   "hero": {
     "headline": "НОВАЯ КОЛЛЕКЦИЯ",
@@ -65,5 +66,23 @@
     "email": "Эл. почта",
     "message": "Сообщение",
     "send": "Отправить"
+  },
+  "approach": {
+    "meta": {
+      "title": "DACA — Акселератор карьеры аналитика данных",
+      "description": "11-недельная программа аналитики данных на основе симуляции. SQL, Python, AI, дашборды. Знак качества HAKA."
+    },
+    "tabs": {
+      "learners": "Для учащихся",
+      "learnersDesc": "Хочу участвовать",
+      "employers": "Для работодателей",
+      "employersDesc": "Обучить команду",
+      "methodology": "Методология",
+      "methodologyDesc": "Как это работает"
+    },
+    "zoom": {
+      "overview": "Обзор",
+      "details": "Полные детали"
+    }
   }
 }
