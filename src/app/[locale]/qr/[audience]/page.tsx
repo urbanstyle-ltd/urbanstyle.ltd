@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 
 const AUDIENCES = ["learner", "employer", "partner", "contact"] as const;
@@ -9,17 +10,78 @@ type Audience = (typeof AUDIENCES)[number];
 
 const UTM = "?utm_source=qr&utm_medium=conference&utm_campaign=daca2026";
 
-const REDIRECT_MAP: Record<Exclude<Audience, "contact">, string> = {
-  learner: "/approach#learners",
-  employer: "/approach#employers",
-  partner: "/approach#methodology",
+// Locale-aware approach paths (ET default has no prefix)
+const APPROACH_PATHS: Record<string, string> = {
+  et: "/lahenemine",
+  en: "/en/approach",
+  ru: "/ru/podkhod",
 };
 
-const REDIRECT_LABELS: Record<Exclude<Audience, "contact">, string> = {
-  learner: "Redirecting to learner information...",
-  employer: "Redirecting to employer information...",
-  partner: "Redirecting to partnership details...",
+function getRedirectUrl(audience: Exclude<Audience, "contact">, locale: string): string {
+  const basePath = APPROACH_PATHS[locale] || APPROACH_PATHS.en;
+  const HASH_MAP: Record<Exclude<Audience, "contact">, string> = {
+    learner: "#learners",
+    employer: "#employers",
+    partner: "#methodology",
+  };
+  return basePath + HASH_MAP[audience];
+}
+
+// Locale-aware redirect labels (RU falls back to EN)
+const REDIRECT_LABELS: Record<string, Record<Exclude<Audience, "contact">, string>> = {
+  et: {
+    learner: "Suunamine õppija infole...",
+    employer: "Suunamine tööandja infole...",
+    partner: "Suunamine koostöö detailidele...",
+  },
+  en: {
+    learner: "Redirecting to learner information...",
+    employer: "Redirecting to employer information...",
+    partner: "Redirecting to partnership details...",
+  },
 };
+
+function getRedirectLabel(audience: Exclude<Audience, "contact">, locale: string): string {
+  const labels = REDIRECT_LABELS[locale] || REDIRECT_LABELS.en;
+  return labels[audience];
+}
+
+// Locale-aware contact card labels (RU falls back to EN)
+const CONTACT_LABELS: Record<string, {
+  saveContact: string;
+  saved: string;
+  mobile: string;
+  email: string;
+  office: string;
+  program: string;
+  programm: string;
+  iosHint: string;
+}> = {
+  et: {
+    saveContact: "Salvesta kontakt",
+    saved: "Salvestatud!",
+    mobile: "Mobiil",
+    email: "E-post",
+    office: "Kontor",
+    program: "Program",
+    programm: "Programm",
+    iosHint: "iOS: Puuduta Jaga > Lisa avakuvale",
+  },
+  en: {
+    saveContact: "Save Contact",
+    saved: "Saved!",
+    mobile: "Mobile",
+    email: "Email",
+    office: "Office",
+    program: "Program",
+    programm: "Programm",
+    iosHint: "iOS: Tap Share > Add to Home Screen",
+  },
+};
+
+function getContactLabels(locale: string) {
+  return CONTACT_LABELS[locale] || CONTACT_LABELS.en;
+}
 
 // --- vCard generator ---
 function generateVCard(): string {
@@ -54,13 +116,17 @@ function downloadVCard() {
 
 // --- Redirect page (learner / employer / partner) ---
 function RedirectPage({ audience }: { audience: Exclude<Audience, "contact"> }) {
+  const locale = useLocale();
+
   useEffect(() => {
-    const target = REDIRECT_MAP[audience] + UTM;
+    const target = getRedirectUrl(audience, locale) + UTM;
     const timer = setTimeout(() => {
       window.location.href = target;
     }, 1200);
     return () => clearTimeout(timer);
-  }, [audience]);
+  }, [audience, locale]);
+
+  const redirectUrl = getRedirectUrl(audience, locale);
 
   return (
     <div className="fixed inset-0 z-[100] bg-charcoal flex flex-col items-center justify-center text-offwhite">
@@ -99,7 +165,7 @@ function RedirectPage({ audience }: { audience: Exclude<Audience, "contact"> }) 
         </div>
 
         <p className="text-offwhite/60 text-sm font-mono tracking-wide">
-          {REDIRECT_LABELS[audience]}
+          {getRedirectLabel(audience, locale)}
         </p>
       </motion.div>
 
@@ -107,11 +173,11 @@ function RedirectPage({ audience }: { audience: Exclude<Audience, "contact"> }) 
       <noscript>
         <meta
           httpEquiv="refresh"
-          content={`0;url=${REDIRECT_MAP[audience]}${UTM}`}
+          content={`0;url=${redirectUrl}${UTM}`}
         />
         <p style={{ color: "#F5F0EB", textAlign: "center", marginTop: "2rem" }}>
           <a
-            href={`${REDIRECT_MAP[audience]}${UTM}`}
+            href={`${redirectUrl}${UTM}`}
             style={{ color: "#C4622D" }}
           >
             Click here if not redirected
@@ -124,6 +190,8 @@ function RedirectPage({ audience }: { audience: Exclude<Audience, "contact"> }) 
 
 // --- Contact card page ---
 function ContactCard() {
+  const locale = useLocale();
+  const labels = getContactLabels(locale);
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
@@ -175,7 +243,7 @@ function ContactCard() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-offwhite/40 text-xs font-mono uppercase tracking-wider">Mobile</p>
+                  <p className="text-offwhite/40 text-xs font-mono uppercase tracking-wider">{labels.mobile}</p>
                   <p className="text-offwhite text-sm font-medium group-hover:text-burnt-orange transition-colors">+372 502 1033</p>
                 </div>
               </a>
@@ -190,7 +258,7 @@ function ContactCard() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-offwhite/40 text-xs font-mono uppercase tracking-wider">Email</p>
+                  <p className="text-offwhite/40 text-xs font-mono uppercase tracking-wider">{labels.email}</p>
                   <p className="text-offwhite text-sm font-medium group-hover:text-sage transition-colors">info@ettevotluskeskus.ee</p>
                 </div>
               </a>
@@ -205,7 +273,7 @@ function ContactCard() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-offwhite/40 text-xs font-mono uppercase tracking-wider">Office</p>
+                  <p className="text-offwhite/40 text-xs font-mono uppercase tracking-wider">{labels.office}</p>
                   <p className="text-offwhite text-sm font-medium group-hover:text-slate-blue transition-colors">+372 652 0001</p>
                 </div>
               </a>
@@ -219,7 +287,7 @@ function ContactCard() {
                 rel="noopener noreferrer"
                 className="flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center transition-colors"
               >
-                <span className="text-offwhite/60 text-xs font-mono uppercase tracking-wider block">Program</span>
+                <span className="text-offwhite/60 text-xs font-mono uppercase tracking-wider block">{labels.program}</span>
                 <span className="text-offwhite text-sm font-medium">EN</span>
               </a>
               <a
@@ -228,7 +296,7 @@ function ContactCard() {
                 rel="noopener noreferrer"
                 className="flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-center transition-colors"
               >
-                <span className="text-offwhite/60 text-xs font-mono uppercase tracking-wider block">Programm</span>
+                <span className="text-offwhite/60 text-xs font-mono uppercase tracking-wider block">{labels.programm}</span>
                 <span className="text-offwhite text-sm font-medium">ET</span>
               </a>
             </div>
@@ -239,12 +307,12 @@ function ContactCard() {
               whileTap={{ scale: 0.97 }}
               className="mt-6 w-full py-4 rounded-xl bg-burnt-orange text-offwhite font-semibold text-sm uppercase tracking-widest hover:bg-burnt-orange/90 transition-colors"
             >
-              {saved ? "Saved!" : "Save Contact"}
+              {saved ? labels.saved : labels.saveContact}
             </motion.button>
 
             {/* iOS hint */}
             <p className="mt-4 text-offwhite/30 text-[11px] font-mono">
-              iOS: Tap Share {">"} Add to Home Screen
+              {labels.iosHint}
             </p>
           </div>
         </div>

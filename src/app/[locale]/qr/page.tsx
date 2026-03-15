@@ -1,43 +1,96 @@
 "use client";
 
 import { useState } from "react";
+import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 
-const QR_CODES = [
-  {
-    id: "learner",
-    label: "For Learners",
-    sublabel: "Program info",
-    color: "#7A8B6F", // sage
-    url: "https://urbanstyle.ltd/en/qr/learner",
+// Locale-aware labels (RU falls back to EN)
+const LABELS: Record<string, {
+  qrCodes: string;
+  forLearners: string;
+  programInfo: string;
+  forEmployers: string;
+  partnership: string;
+  forPartners: string;
+  methodology: string;
+  myContact: string;
+  vCard: string;
+  hint: string;
+  tapToClose: string;
+}> = {
+  et: {
+    qrCodes: "QR koodid",
+    forLearners: "Õppijale",
+    programInfo: "Programmi info",
+    forEmployers: "Tööandjale",
+    partnership: "Koostöö",
+    forPartners: "Partnerile",
+    methodology: "Metoodika",
+    myContact: "Minu kontakt",
+    vCard: "vCard",
+    hint: "Puuduta suurendamiseks \u00b7 Hoia all salvestamiseks",
+    tapToClose: "Puuduta sulgemiseks",
   },
-  {
-    id: "employer",
-    label: "For Employers",
-    sublabel: "Partnership",
-    color: "#4A6274", // slate-blue
-    url: "https://urbanstyle.ltd/en/qr/employer",
+  en: {
+    qrCodes: "QR Codes",
+    forLearners: "For Learners",
+    programInfo: "Program info",
+    forEmployers: "For Employers",
+    partnership: "Partnership",
+    forPartners: "For Partners",
+    methodology: "Methodology",
+    myContact: "My Contact",
+    vCard: "vCard",
+    hint: "Tap to show fullscreen \u00b7 Press & hold to save",
+    tapToClose: "Tap anywhere to close",
   },
-  {
-    id: "partner",
-    label: "For Partners",
-    sublabel: "Methodology",
-    color: "#C4622D", // burnt-orange
-    url: "https://urbanstyle.ltd/en/qr/partner",
-  },
-  {
-    id: "contact",
-    label: "My Contact",
-    sublabel: "vCard",
-    color: "#C4A08A", // dusty-rose
-    url: "https://urbanstyle.ltd/en/qr/contact",
-  },
-] as const;
+};
+
+function getLabels(locale: string) {
+  return LABELS[locale] || LABELS.en;
+}
+
+function getQrCodes(locale: string) {
+  const l = getLabels(locale);
+  return [
+    {
+      id: "learner",
+      label: l.forLearners,
+      sublabel: l.programInfo,
+      color: "#7A8B6F", // sage
+      url: "https://urbanstyle.ltd/en/qr/learner",
+    },
+    {
+      id: "employer",
+      label: l.forEmployers,
+      sublabel: l.partnership,
+      color: "#4A6274", // slate-blue
+      url: "https://urbanstyle.ltd/en/qr/employer",
+    },
+    {
+      id: "partner",
+      label: l.forPartners,
+      sublabel: l.methodology,
+      color: "#C4622D", // burnt-orange
+      url: "https://urbanstyle.ltd/en/qr/partner",
+    },
+    {
+      id: "contact",
+      label: l.myContact,
+      sublabel: l.vCard,
+      color: "#C4A08A", // dusty-rose
+      url: "https://urbanstyle.ltd/en/qr/contact",
+    },
+  ] as const;
+}
 
 export default function QrGalleryPage() {
+  const locale = useLocale();
+  const labels = getLabels(locale);
+  const qrCodes = getQrCodes(locale);
   const [fullscreen, setFullscreen] = useState<string | null>(null);
 
-  const activeCode = QR_CODES.find((q) => q.id === fullscreen);
+  const activeCode = qrCodes.find((q) => q.id === fullscreen);
 
   return (
     <div className="fixed inset-0 z-[100] bg-[#0d0d0d] flex flex-col overflow-hidden">
@@ -46,13 +99,13 @@ export default function QrGalleryPage() {
         <h1 className="text-lg font-bold text-offwhite/80 tracking-tight">
           <span className="text-offwhite">Urban</span>
           <span className="text-burnt-orange">Style</span>
-          <span className="text-offwhite/40 font-normal ml-2 text-sm">QR Codes</span>
+          <span className="text-offwhite/40 font-normal ml-2 text-sm">{labels.qrCodes}</span>
         </h1>
       </div>
 
       {/* 2x2 Grid */}
       <div className="flex-1 grid grid-cols-2 gap-3 p-4 max-w-lg mx-auto w-full">
-        {QR_CODES.map((qr) => (
+        {qrCodes.map((qr) => (
           <motion.button
             key={qr.id}
             onClick={() => setFullscreen(qr.id)}
@@ -100,7 +153,7 @@ export default function QrGalleryPage() {
 
       {/* Hint */}
       <p className="text-center text-offwhite/20 text-[10px] font-mono pb-8 px-4">
-        Tap to show fullscreen &middot; Press & hold to save
+        {labels.hint}
       </p>
 
       {/* Fullscreen overlay */}
@@ -154,7 +207,7 @@ export default function QrGalleryPage() {
 
               {/* Tap to close hint */}
               <p className="text-charcoal/30 text-xs font-mono">
-                Tap anywhere to close
+                {labels.tapToClose}
               </p>
             </motion.div>
           </motion.div>
