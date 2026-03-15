@@ -12,11 +12,16 @@ export default function StrategyTeaser() {
       
       {/* Terminal/Data background effect */}
       <div aria-hidden="true" className="absolute inset-0 opacity-10 font-mono text-[8px] sm:text-xs leading-none whitespace-pre select-none pointer-events-none text-sage overflow-hidden flex flex-wrap">
-        {Array.from({ length: 50 }).map((_, i) => (
-          <span key={i} className="mr-8 mb-2">
-            {`[${new Date().getFullYear()}-03-15 ${String(Math.floor(Math.random() * 24)).padStart(2, '0')}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}] INFO [core] Analyzing user behavior pattern | Conf: ${(Math.random() * 0.9 + 0.1).toFixed(3)}`}
-          </span>
-        ))}
+        {Array.from({ length: 50 }).map((_, i) => {
+          const logText = `[${new Date().getFullYear()}-03-15 ${String(Math.floor(Math.random() * 24)).padStart(2, '0')}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}] INFO [core] Analyzing user behavior pattern | Conf: ${(Math.random() * 0.9 + 0.1).toFixed(3)}`;
+          return (
+            <span 
+              key={i} 
+              className="mr-8 mb-2 before:content-[attr(data-log)]" 
+              data-log={logText}
+            />
+          );
+        })}
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-16">
@@ -75,8 +80,8 @@ export default function StrategyTeaser() {
                   ))}
                 </div>
                 <div aria-hidden="true" className="flex justify-between text-xs font-mono text-charcoal/50 border-t border-offwhite/10 pt-4">
-                  <span className="text-sage">SYSTEM_OPTIMIZED</span>
-                  <span>v.2.0.25</span>
+                  <span className="text-sage before:content-[attr(data-text)]" data-text="SYSTEM_OPTIMIZED" />
+                  <span className="before:content-[attr(data-text)]" data-text="v.2.0.25" />
                 </div>
              </div>
           </motion.div>

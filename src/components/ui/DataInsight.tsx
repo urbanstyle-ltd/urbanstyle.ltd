@@ -14,11 +14,11 @@ export function DataInsightWidget({ label, value, trend }: DataInsightProps) {
       whileHover={{ y: -2, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
       className="flex items-center justify-between p-3 border border-charcoal/5 rounded-sm bg-offwhite/50 backdrop-blur-md group cursor-default transition-colors"
     >
-      <span className="text-xs font-mono text-charcoal/60 uppercase tracking-widest">{label}</span>
-      <div className="flex items-center space-x-2">
-        <span className="font-mono font-medium text-charcoal">{value}</span>
-        {trend === 'up' && <span className="text-sage text-xs">↑</span>}
-        {trend === 'down' && <span className="text-burnt-orange text-xs">↓</span>}
+      <span className="text-xs font-mono text-charcoal/60 uppercase tracking-widest before:content-[attr(data-text)]" data-text={label} />
+      <div aria-hidden="true" className="flex items-center space-x-2">
+        <span className="font-mono font-medium text-charcoal before:content-[attr(data-text)]" data-text={value.toString()} />
+        {trend === 'up' && <span className="text-sage text-xs before:content-['↑']" />}
+        {trend === 'down' && <span className="text-burnt-orange text-xs before:content-['↓']" />}
       </div>
       
       {/* Hidden decorative tech element that shows on hover */}

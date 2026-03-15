@@ -136,8 +136,8 @@ export default function StrategyPage() {
                 <h3 className="font-bold text-2xl mb-4 text-charcoal tracking-tight">{card.title[locale as Locale]}</h3>
                 <p className="text-charcoal/70 text-lg leading-relaxed font-medium">{card.desc[locale as Locale]}</p>
                 <div aria-hidden="true" className="mt-8 pt-6 border-t border-charcoal/10 flex justify-between items-center text-sm font-mono text-charcoal/40 uppercase tracking-widest">
-                  <span>SYSTEM_ACTIVE</span>
-                  <span className="text-sage">OPTIMIZED</span>
+                  <span className="before:content-[attr(data-text)]" data-text="SYSTEM_ACTIVE" />
+                  <span className="text-sage before:content-[attr(data-text)]" data-text="OPTIMIZED" />
                 </div>
               </motion.div>
             ))}

@@ -49,9 +49,9 @@ export default function HomePage() {
                   
                   {/* Fake "data metric" overlay on hover */}
                   <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-charcoal/80 backdrop-blur-md text-offwhite text-xs font-mono px-2 py-1 flex items-center gap-2">
+                    <div aria-hidden="true" className="bg-charcoal/80 backdrop-blur-md text-offwhite text-xs font-mono px-2 py-1 flex items-center gap-2">
                        <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
-                       TRENDING: {(Math.random() * 4 + 1).toFixed(1)}K VIEWS/DAY
+                       <span className="before:content-[attr(data-text)]" data-text={`TRENDING: ${(Math.random() * 4 + 1).toFixed(1)}K VIEWS/DAY`} />
                     </div>
                   </div>
                 </div>
