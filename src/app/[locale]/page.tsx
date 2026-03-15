@@ -1,5 +1,6 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { products, teamMembers, getProductImageUrl } from '@/data/products';
+import { getImageUrl } from '@/data/images';
 import type { Locale } from '@/i18n/config';
 
 import Hero from '@/components/sections/Hero';
@@ -66,7 +67,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Texture Details Divider */}
+      <section className="w-full h-32 md:h-48 lg:h-64 overflow-hidden relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${getImageUrl('images/v1/products/strip_texture_montage_lg.webp')})` }}
+        />
+        {/* Subtle dark tint to make it blend well with offwhite above and below */}
+        <div className="absolute inset-0 bg-charcoal/10 mix-blend-multiply" />
+      </section>
+
       <StrategyTeaser />
+
+      {/* Lookbook Parallax Break */}
+      <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-charcoal bg-cover bg-[center_30%] opacity-80 mix-blend-overlay bg-fixed"
+          style={{ backgroundImage: `url(${getImageUrl('images/v1/hero/hero_storm_ready_lg.webp')})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-transparent to-transparent" />
+        
+        {/* Optional tech badge to maintain dual interface context */}
+        <div className="absolute bottom-8 right-8 z-20">
+          <div aria-hidden="true" className="bg-charcoal/80 backdrop-blur-md text-offwhite text-xs font-mono px-3 py-1.5 rounded-sm flex items-center gap-2 border border-offwhite/10">
+             <span className="w-1.5 h-1.5 rounded-full bg-sage shadow-[0_0_8px_rgba(102,153,102,0.8)]" />
+             <span>WINTER_CAPSULE_AI_FORECAST // ACTIVE</span>
+          </div>
+        </div>
+      </section>
 
       {/* Team Preview */}
       <section className="py-24 px-6 md:px-16 bg-offwhite">

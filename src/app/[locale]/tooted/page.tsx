@@ -12,11 +12,34 @@ export default function ProductsPage() {
 
   return (
     <div className="pt-24 pb-16 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-16">
-          {t('title')}
-        </h1>
+      <div className="relative w-full h-[40vh] min-h-[400px] mb-16 overflow-hidden flex items-center justify-center p-6 md:p-16">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-charcoal bg-cover bg-center opacity-80 mix-blend-overlay"
+          style={{ backgroundImage: `url(${getProductImageUrl('hero_product_focus', 'lg')})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-offwhite/5 to-transparent" />
+        
+        <div className="relative z-10 text-center max-w-2xl mx-auto mt-16">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-bold uppercase tracking-tight text-charcoal mb-4"
+          >
+            {t('title')}
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-charcoal/80 font-medium"
+          >
+            Premium urban streetwear, disainitud Tallinnas
+          </motion.p>
+        </div>
+      </div>
 
+      <div className="max-w-7xl mx-auto px-6 md:px-16">
         {/* Filter bar */}
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

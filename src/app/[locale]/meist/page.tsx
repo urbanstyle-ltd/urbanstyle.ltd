@@ -5,6 +5,7 @@ import { teamMembers, getTeamImageUrl } from '@/data/products';
 import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
+import { getImageUrl } from '@/data/images';
 
 export default function AboutPage() {
   const locale = useLocale() as Locale;
@@ -25,7 +26,31 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="pt-32 pb-16 overflow-hidden">
+    <div className="pb-16 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative w-full h-[60vh] min-h-[500px] mb-24 flex items-center justify-center">
+        <div 
+          className="absolute inset-0 bg-charcoal bg-cover bg-[center_top_30%] opacity-90 mix-blend-overlay"
+          style={{ backgroundImage: `url(${getImageUrl('images/v1/hero/team_group_hero_lg.webp')})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-offwhite/20 to-charcoal/40" />
+        
+        <div className="relative z-10 text-center text-offwhite px-6 mt-16 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter leading-none mb-6 text-offwhite">
+              Kes me oleme
+            </h1>
+            <p className="text-xl md:text-3xl text-offwhite/90 font-medium">
+              45 inimest. 3 linna. 1 missioon.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Story section */}
       <section className="px-6 md:px-16 mb-32 relative">
         {/* Background decorative Monogram */}
@@ -34,16 +59,16 @@ export default function AboutPage() {
         </div>
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <motion.h1 
+          <motion.h2 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-[100px] font-bold uppercase tracking-tight leading-[0.9] text-charcoal mb-12"
+            className="text-4xl md:text-6xl lg:text-[80px] font-bold uppercase tracking-tight leading-[0.9] text-charcoal mb-12"
             style={{ letterSpacing: '-0.02em' }}
           >
             {t('story')}
-          </motion.h1>
+          </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
