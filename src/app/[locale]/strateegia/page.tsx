@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations, useLocale } from 'next-intl';
 import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
@@ -83,10 +85,10 @@ export default function StrategyPage() {
           >
             <h2 className="text-4xl font-bold uppercase tracking-tight mb-8 flex items-center gap-4">
               <span className="text-burnt-orange font-mono text-2xl">01</span>
-              {challengeTitle[locale]}
+              {challengeTitle[locale as Locale]}
             </h2>
             <p className="text-xl text-charcoal/80 leading-relaxed mb-24 font-medium pl-10 border-l-2 border-charcoal/10">
-              {challengeText[locale]}
+              {challengeText[locale as Locale]}
             </p>
           </motion.div>
 
@@ -101,7 +103,7 @@ export default function StrategyPage() {
               {t('dataTransformation')}
             </h2>
             <p className="text-xl text-charcoal/80 leading-relaxed font-medium pl-10 border-l-2 border-charcoal/10">
-              {transformText[locale]}
+              {transformText[locale as Locale]}
             </p>
           </motion.div>
         </div>
@@ -131,8 +133,8 @@ export default function StrategyPage() {
                 {/* Tech glitch accent */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-slate-blue scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
                 
-                <h3 className="font-bold text-2xl mb-4 text-charcoal tracking-tight">{card.title[locale]}</h3>
-                <p className="text-charcoal/70 text-lg leading-relaxed font-medium">{card.desc[locale]}</p>
+                <h3 className="font-bold text-2xl mb-4 text-charcoal tracking-tight">{card.title[locale as Locale]}</h3>
+                <p className="text-charcoal/70 text-lg leading-relaxed font-medium">{card.desc[locale as Locale]}</p>
                 <div className="mt-8 pt-6 border-t border-charcoal/10 flex justify-between items-center text-sm font-mono text-charcoal/40 uppercase tracking-widest">
                   <span>SYSTEM_ACTIVE</span>
                   <span className="text-sage">OPTIMIZED</span>
@@ -166,7 +168,7 @@ export default function StrategyPage() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl text-offwhite/80 mb-16 leading-relaxed font-medium"
           >
-            {ctaText[locale]}
+            {ctaText[locale as Locale]}
           </motion.p>
           <motion.a
             initial={{ opacity: 0, y: 20 }}

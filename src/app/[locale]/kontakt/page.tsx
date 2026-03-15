@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations, useLocale } from 'next-intl';
 import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
@@ -96,7 +98,7 @@ export default function ContactPage() {
             <div className="space-y-10">
               {stores.map((store) => (
                 <div key={store.city} className="group">
-                  <h3 className="font-bold text-lg mb-2 text-charcoal group-hover:text-burnt-orange transition-colors">{store.label[locale]}</h3>
+                  <h3 className="font-bold text-lg mb-2 text-charcoal group-hover:text-burnt-orange transition-colors">{store.label[locale as Locale]}</h3>
                   <p className="text-charcoal/70 leading-relaxed font-medium">
                     {store.address}<br />
                     <span className="font-mono text-sm mt-1 inline-block">{store.zip}</span>

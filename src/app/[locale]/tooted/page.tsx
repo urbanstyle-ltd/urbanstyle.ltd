@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations, useLocale } from 'next-intl';
 import { products, getProductImageUrl } from '@/data/products';
 import type { Locale } from '@/i18n/config';
@@ -57,7 +59,7 @@ export default function ProductsPage() {
                 <div className="relative aspect-[3/4] bg-offwhite rounded-lg overflow-hidden mb-8 shadow-sm group-hover:shadow-xl transition-shadow duration-500">
                   <motion.img
                     src={getProductImageUrl(product.heroImage, 'md')}
-                    alt={product.name[locale]}
+                    alt={product.name[locale as Locale]}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -84,7 +86,7 @@ export default function ProductsPage() {
                 
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-bold text-xl lg:text-2xl tracking-tight text-charcoal">{product.name[locale]}</h3>
+                    <h3 className="font-bold text-xl lg:text-2xl tracking-tight text-charcoal">{product.name[locale as Locale]}</h3>
                     <p className="text-sm text-charcoal/50 mt-1 uppercase tracking-widest">{t('category_' + product.category, { defaultValue: product.category })}</p>
                   </div>
                   <p className="font-mono text-lg font-medium text-charcoal">&euro;{product.price}.00</p>

@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslations, useLocale } from 'next-intl';
 import { teamMembers, getTeamImageUrl } from '@/data/products';
 import type { Locale } from '@/i18n/config';
@@ -5,8 +7,8 @@ import { motion } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
 
 export default function AboutPage() {
-  const t = useTranslations('about');
   const locale = useLocale() as Locale;
+  const t = useTranslations('about');
 
   const timeline = [
     { year: '2020', event: { et: 'Asutatud Tallinnas', en: 'Founded in Tallinn', ru: 'Основан в Таллинне' } },
@@ -68,7 +70,7 @@ export default function AboutPage() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <span className="font-mono text-burnt-orange text-3xl md:text-4xl tracking-widest">{year}</span>
-                <span className="text-xl md:text-2xl font-medium tracking-wide leading-tight">{event[locale] || event.en}</span>
+                <span className="text-xl md:text-2xl font-medium tracking-wide leading-tight">{event[locale as Locale] || event.en}</span>
               </motion.div>
             ))}
           </div>
@@ -115,8 +117,8 @@ export default function AboutPage() {
                     <div className="w-full h-full bg-limestone/50 group-hover:scale-105 transition-transform duration-700 ease-out" />
                   </div>
                   <h3 className="font-bold text-2xl tracking-tight text-charcoal">{member.name}</h3>
-                  <p className="text-charcoal/60 text-sm tracking-widest uppercase mt-2 font-mono">{member.role[locale]}</p>
-                  <p className="text-charcoal/80 text-lg italic mt-4 max-w-sm">&ldquo;{member.quote[locale]}&rdquo;</p>
+                  <p className="text-charcoal/60 text-sm tracking-widest uppercase mt-2 font-mono">{member.role[locale as Locale]}</p>
+                  <p className="text-charcoal/80 text-lg italic mt-4 max-w-sm">&ldquo;{member.quote[locale as Locale]}&rdquo;</p>
                 </motion.div>
               );
             })}
