@@ -1,6 +1,8 @@
 import { useTranslations, useLocale } from 'next-intl';
 import { teamMembers, getTeamImageUrl } from '@/data/products';
 import type { Locale } from '@/i18n/config';
+import { motion } from 'framer-motion';
+import { Logo } from '@/components/ui/Logo';
 
 export default function AboutPage() {
   const t = useTranslations('about');
@@ -21,48 +23,103 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="pt-32 pb-16 overflow-hidden">
       {/* Story section */}
-      <section className="px-6 md:px-16 mb-24">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide mb-8">
+      <section className="px-6 md:px-16 mb-32 relative">
+        {/* Background decorative Monogram */}
+        <div className="absolute top-0 right-0 -mr-32 -mt-32 opacity-5 pointer-events-none hidden md:block">
+          <Logo variant="monogram" className="w-[600px] h-[600px] text-charcoal" />
+        </div>
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl lg:text-[100px] font-bold uppercase tracking-tight leading-[0.9] text-charcoal mb-12"
+            style={{ letterSpacing: '-0.02em' }}
+          >
             {t('story')}
-          </h1>
-          <p className="text-lg text-charcoal/70 leading-relaxed">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-charcoal/80 leading-relaxed font-medium max-w-2xl"
+          >
             {storyText[locale] || storyText.en}
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="px-6 md:px-16 py-24 bg-charcoal text-offwhite mb-24">
+      <section className="px-6 md:px-16 py-32 bg-charcoal text-offwhite my-32">
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-12">
-            {timeline.map(({ year, event }) => (
-              <div key={year} className="flex gap-8 items-baseline">
-                <span className="font-mono text-burnt-orange text-xl">{year}</span>
-                <span className="text-lg">{event[locale] || event.en}</span>
-              </div>
+          <div className="space-y-16">
+            {timeline.map(({ year, event }, i) => (
+              <motion.div 
+                key={year} 
+                className="flex flex-col md:flex-row gap-4 md:gap-16 items-start md:items-baseline border-b border-offwhite/10 pb-16 last:border-0 last:pb-0"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+              >
+                <span className="font-mono text-burnt-orange text-3xl md:text-4xl tracking-widest">{year}</span>
+                <span className="text-xl md:text-2xl font-medium tracking-wide leading-tight">{event[locale] || event.en}</span>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Team */}
-      <section className="px-6 md:px-16">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold uppercase tracking-wide mb-16">
+      <section className="px-6 md:px-16 mb-24 relative">
+        {/* Background decorative Monogram */}
+        <div className="absolute bottom-0 left-0 -ml-32 -mb-32 opacity-[0.03] pointer-events-none hidden md:block">
+          <Logo variant="monogram" className="w-[800px] h-[800px] text-charcoal" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative z-10">
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-24 text-center md:text-left"
+          >
             {t('team')}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="text-center">
-                <div className="aspect-[3/4] bg-limestone/30 rounded-lg overflow-hidden mb-4" />
-                <h3 className="font-bold text-lg">{member.name}</h3>
-                <p className="text-charcoal/60 text-sm">{member.role[locale]}</p>
-                <p className="text-charcoal/50 text-sm italic mt-2">&ldquo;{member.quote[locale]}&rdquo;</p>
-              </div>
-            ))}
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-8 gap-y-20">
+            {teamMembers.map((member, idx) => {
+              // Create asymmetrical layout logic
+              const colSpan = idx === 0 ? 'lg:col-span-12' : (idx === 1 || idx === 2 ? 'lg:col-span-6' : 'lg:col-span-4');
+              const isCEO = idx === 0;
+
+              return (
+                <motion.div 
+                  key={member.id} 
+                  className={`flex flex-col ${isCEO ? 'items-center text-center' : 'items-center text-center'} ${colSpan}`}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                >
+                  <div className={`
+                    ${isCEO ? 'w-64 h-64 md:w-80 md:h-80' : 'w-48 h-48 md:w-56 md:h-56'} 
+                    bg-limestone/30 rounded-full overflow-hidden mb-8 shadow-sm group
+                  `}>
+                    {/* Placeholder for real team images */}
+                    <div className="w-full h-full bg-limestone/50 group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
+                  <h3 className="font-bold text-2xl tracking-tight text-charcoal">{member.name}</h3>
+                  <p className="text-charcoal/60 text-sm tracking-widest uppercase mt-2 font-mono">{member.role[locale]}</p>
+                  <p className="text-charcoal/80 text-lg italic mt-4 max-w-sm">&ldquo;{member.quote[locale]}&rdquo;</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

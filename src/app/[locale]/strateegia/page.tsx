@@ -1,5 +1,7 @@
 import { useTranslations, useLocale } from 'next-intl';
 import type { Locale } from '@/i18n/config';
+import { motion } from 'framer-motion';
+import { Logo } from '@/components/ui/Logo';
 
 export default function StrategyPage() {
   const t = useTranslations('strategy');
@@ -35,74 +37,151 @@ export default function StrategyPage() {
   ];
 
   return (
-    <div className="pt-24 pb-16">
+    <div className="pt-32 pb-16 overflow-hidden">
       {/* Hero */}
-      <section className="px-6 md:px-16 py-24 bg-charcoal text-offwhite">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-wide mb-8">
+      <section className="px-6 md:px-16 py-32 bg-charcoal text-offwhite relative">
+        {/* Subtle data grid background */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+             style={{ backgroundImage: 'radial-gradient(var(--color-offwhite) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+             <Logo variant="monogram" className="w-24 h-24 mx-auto text-offwhite/20" />
+          </motion.div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-5xl md:text-7xl lg:text-[90px] font-bold uppercase tracking-tighter leading-[0.9] mb-12"
+          >
             {t('headline')}
-          </h1>
-          <p className="text-xl text-offwhite/70 max-w-2xl mx-auto">
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-xl md:text-2xl text-offwhite/80 max-w-2xl mx-auto font-medium leading-relaxed"
+          >
             {t('dataTransformation')}
-          </p>
+          </motion.p>
         </div>
       </section>
 
       {/* Problem - Transformation */}
-      <section className="px-6 md:px-16 py-24">
+      <section className="px-6 md:px-16 py-32 relative">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold uppercase tracking-wide mb-8">
-            {challengeTitle[locale]}
-          </h2>
-          <p className="text-lg text-charcoal/70 leading-relaxed mb-12">
-            {challengeText[locale]}
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-bold uppercase tracking-tight mb-8 flex items-center gap-4">
+              <span className="text-burnt-orange font-mono text-2xl">01</span>
+              {challengeTitle[locale]}
+            </h2>
+            <p className="text-xl text-charcoal/80 leading-relaxed mb-24 font-medium pl-10 border-l-2 border-charcoal/10">
+              {challengeText[locale]}
+            </p>
+          </motion.div>
 
-          <h2 className="text-3xl font-bold uppercase tracking-wide mb-8">
-            {t('dataTransformation')}
-          </h2>
-          <p className="text-lg text-charcoal/70 leading-relaxed">
-            {transformText[locale]}
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h2 className="text-4xl font-bold uppercase tracking-tight mb-8 flex items-center gap-4">
+              <span className="text-burnt-orange font-mono text-2xl">02</span>
+              {t('dataTransformation')}
+            </h2>
+            <p className="text-xl text-charcoal/80 leading-relaxed font-medium pl-10 border-l-2 border-charcoal/10">
+              {transformText[locale]}
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* AI Role */}
-      <section className="px-6 md:px-16 py-24 bg-limestone/30">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold uppercase tracking-wide mb-12">
+      <section className="px-6 md:px-16 py-32 bg-limestone/20">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-16 text-center"
+          >
             {t('aiRole')}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {aiCards.map((card) => (
-              <div key={card.title.en} className="bg-white rounded-xl p-8 shadow-[0_2px_16px_rgba(0,0,0,0.06)]">
-                <h3 className="font-bold text-lg mb-2">{card.title[locale]}</h3>
-                <p className="text-charcoal/60">{card.desc[locale]}</p>
-              </div>
+          </motion.h2>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {aiCards.map((card, idx) => (
+              <motion.div 
+                key={card.title.en} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-offwhite rounded-xl p-10 shadow-sm border border-charcoal/5 group hover:shadow-xl transition-all duration-500 relative overflow-hidden"
+              >
+                {/* Tech glitch accent */}
+                <div className="absolute top-0 left-0 w-1 h-full bg-slate-blue scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
+                
+                <h3 className="font-bold text-2xl mb-4 text-charcoal tracking-tight">{card.title[locale]}</h3>
+                <p className="text-charcoal/70 text-lg leading-relaxed font-medium">{card.desc[locale]}</p>
+                <div className="mt-8 pt-6 border-t border-charcoal/10 flex justify-between items-center text-sm font-mono text-charcoal/40 uppercase tracking-widest">
+                  <span>SYSTEM_ACTIVE</span>
+                  <span className="text-sage">OPTIMIZED</span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA - conversion funnel to DACA program */}
-      <section className="px-6 md:px-16 py-24 bg-charcoal text-offwhite text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-wide mb-8">
+      <section className="px-6 md:px-16 py-32 bg-charcoal text-offwhite text-center relative overflow-hidden">
+        {/* Background decorative Monogram */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+          <Logo variant="monogram" className="w-[800px] h-[800px] text-offwhite" />
+        </div>
+
+        <div className="max-w-3xl mx-auto relative z-10">
+          <motion.h2 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-bold uppercase tracking-tighter mb-8"
+          >
             {t('joinCta')}
-          </h2>
-          <p className="text-lg text-offwhite/70 mb-12">
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl text-offwhite/80 mb-16 leading-relaxed font-medium"
+          >
             {ctaText[locale]}
-          </p>
-          <a
+          </motion.p>
+          <motion.a
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
             href={locale === 'et'
               ? 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi'
               : 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator'}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-10 py-5 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg hover:bg-burnt-orange/90 transition-colors duration-300"
+            className="inline-flex items-center justify-center px-12 py-5 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-500 shadow-xl hover:shadow-2xl"
           >
             {t('programLink')}
-          </a>
+          </motion.a>
         </div>
       </section>
     </div>
