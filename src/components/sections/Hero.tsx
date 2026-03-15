@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
+import { getImageUrl } from '@/data/images';
 
 export default function Hero() {
   const t = useTranslations();
@@ -16,8 +17,8 @@ export default function Hero() {
           muted 
           loop 
           playsInline
-          className="w-full h-full object-cover opacity-40 mix-blend-overlay"
-          poster="https://storage.googleapis.com/urbanstyle-ltd.firebasestorage.app/images/v1/products/hero-fallback.webp"
+          className="w-full h-full object-cover opacity-60 mix-blend-overlay"
+          poster={getImageUrl('images/v1/hero/hero_denim_season_lg.webp')}
         >
           {/* We will rely on CSS fallback/image poster if no video exists yet */}
         </video>

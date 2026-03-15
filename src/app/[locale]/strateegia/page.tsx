@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
+import { getImageUrl } from '@/data/images';
 
 export default function StrategyPage() {
   const t = useTranslations('strategy');
@@ -41,7 +42,14 @@ export default function StrategyPage() {
   return (
     <div className="pt-32 pb-16 overflow-hidden">
       {/* Hero */}
-      <section className="px-6 md:px-16 py-32 bg-charcoal text-offwhite relative">
+      <section className="px-6 md:px-16 py-32 bg-charcoal text-offwhite relative overflow-hidden">
+        {/* Cityscape Background */}
+        <div 
+          className="absolute inset-0 opacity-40 mix-blend-overlay bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: `url(${getImageUrl('images/v1/hero/hero_cityscape_lg.webp')})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-charcoal/40 pointer-events-none" />
+
         {/* Subtle data grid background */}
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
              style={{ backgroundImage: 'radial-gradient(var(--color-offwhite) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />

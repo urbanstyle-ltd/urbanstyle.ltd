@@ -42,9 +42,20 @@ async function main() {
   const dirIdx = args.indexOf('--dir');
   const processedDir = dirIdx >= 0 ? args[dirIdx + 1] : './processed';
 
-  // Initialize with application default credentials
+  const serviceAccountPath = './service-account.json';
+  
+  let credential;
+  try {
+    const serviceAccount = JSON.parse(await readFile(serviceAccountPath, 'utf8'));
+    credential = cert(serviceAccount);
+  } catch (e) {
+    console.warn('⚠️ Could not load service-account.json, falling back to applicationDefault()');
+    credential = applicationDefault();
+  }
+
+  // Initialize with credentials
   initializeApp({
-    credential: applicationDefault(),
+    credential,
     storageBucket: BUCKET,
   });
 
