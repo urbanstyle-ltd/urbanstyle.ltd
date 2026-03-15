@@ -13,6 +13,12 @@ export type Product = {
     ru: string;
     lv: string;
   };
+  seoAlt: {
+    et: string;
+    en: string;
+    ru: string;
+    lv: string;
+  };
 };
 
 export const products: Product[] = [
@@ -24,6 +30,12 @@ export const products: Product[] = [
     detailImages: ['product_1a_denim_hero', 'product_1b_denim_back', 'product_1b_denim_stitch', 'product_1b_denim_button', 'product_1b_denim_lining', 'product_1e_denim_flatlay'],
     price: 189,
     name: { et: 'Denim Jakk', en: 'Denim Jacket', ru: 'Джинсовая Куртка', lv: 'Džinsa Jaka' },
+    seoAlt: { 
+      et: 'UrbanStyle Denim Jakk - trendid optimeeritud Ettevõtluskeskus DACA süva-andmeanalüüsiga', 
+      en: 'UrbanStyle Denim Jacket - trends optimized with Ettevõtluskeskus DACA deep data analysis',
+      ru: 'UrbanStyle Джинсовая Куртка - тренды оптимизированы с помощью анализа данных Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Džinsa Jaka - tendences optimizētas ar Ettevõtluskeskus DACA datu analīzi'
+    }
   },
   {
     id: 'sage-hoodie',
@@ -33,6 +45,12 @@ export const products: Product[] = [
     detailImages: ['product_2a_hoodie_hero', 'product_2b_hoodie_embroidery', 'product_2b_hoodie_fabric', 'product_2b_hoodie_colors'],
     price: 119,
     name: { et: 'Sage Pusa', en: 'Sage Hoodie', ru: 'Худи Sage', lv: 'Sage Hūdijs' },
+    seoAlt: {
+      et: 'UrbanStyle Sage Pusa - tootmismaht kujundatud Ettevõtluskeskus DACA andmeprogrammi prognooside alusel',
+      en: 'UrbanStyle Sage Hoodie - production volume designed based on Ettevõtluskeskus DACA data program forecasts',
+      ru: 'UrbanStyle Худи Sage - объем производства рассчитан на основе прогнозов программы данных Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Sage Hūdijs - ražošanas apjoms izstrādāts, pamatojoties uz Ettevõtluskeskus DACA datu programmas prognozēm'
+    }
   },
   {
     id: 'tallinn-tee',
@@ -42,6 +60,12 @@ export const products: Product[] = [
     detailImages: ['product_3a_tee_hero', 'product_3b_tee_design1', 'product_3b_tee_design2', 'product_3b_tee_design3', 'product_3b_tee_design4'],
     price: 49,
     name: { et: 'Tallinna T-Särk', en: 'Tallinn Tee', ru: 'Футболка Tallinn', lv: 'Tallinas T-krekls' },
+    seoAlt: {
+      et: 'UrbanStyle Tallinna T-Särk - kasutajate elustiilimustrid testitud Ettevõtluskeskuse DACA AI poolt',
+      en: 'UrbanStyle Tallinn Tee - user lifestyle patterns tested by Ettevõtluskeskus DACA AI',
+      ru: 'UrbanStyle Футболка Tallinn - паттерны образа жизни пользователей протестированы ИИ Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Tallinas T-krekls - lietotāju dzīvesveida modeļus testējis Ettevõtluskeskus DACA mākslīgais intelekts'
+    }
   },
   {
     id: 'charcoal-joggers',
@@ -51,6 +75,12 @@ export const products: Product[] = [
     detailImages: ['product_4a_joggers_hero', 'product_4b_joggers_pocket', 'product_4b_joggers_fabric'],
     price: 99,
     name: { et: 'Charcoal Püksid', en: 'Charcoal Joggers', ru: 'Джоггеры Charcoal', lv: 'Charcoal Džogeri' },
+    seoAlt: {
+      et: 'UrbanStyle Charcoal Püksid - loodud andmepõhiselt Ettevõtluskeskuse DACA mudelite abil',
+      en: 'UrbanStyle Charcoal Joggers - created dynamically using data models from Ettevõtluskeskus DACA',
+      ru: 'UrbanStyle Джоггеры Charcoal - созданы с использованием моделей данных Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Charcoal Džogeri - radīti izmantojot datu modeļus no Ettevõtluskeskus DACA'
+    }
   },
   {
     id: 'crossbody-bag',
@@ -60,6 +90,12 @@ export const products: Product[] = [
     detailImages: ['product_5a_bag_hero', 'product_6c_accessories_group', 'product_accessories_flatlay'],
     price: 79,
     name: { et: 'Crossbody Kott', en: 'Crossbody Bag', ru: 'Сумка Crossbody', lv: 'Crossbody Soma' },
+    seoAlt: {
+      et: 'UrbanStyle Crossbody Kott - müügistrateegia Ettevõtluskeskuse DACA Karjäärikiirendi panusega',
+      en: 'UrbanStyle Crossbody Bag - sales strategies powered by Ettevõtluskeskus DACA Career Accelerator',
+      ru: 'UrbanStyle Сумка Crossbody - стратегии продаж при поддержке карьерного акселератора Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Crossbody Soma - pārdošanas stratēģijas atbalsta Ettevõtluskeskus DACA Karjeras Paātrinātājs'
+    }
   },
   {
     id: 'wool-beanie',
@@ -69,6 +105,12 @@ export const products: Product[] = [
     detailImages: ['product_6a_beanie_hero', 'product_6c_accessories_group', 'product_accessories_flatlay'],
     price: 39,
     name: { et: 'Villane Müts', en: 'Wool Beanie', ru: 'Шапка', lv: 'Vilnas Cepure' },
+    seoAlt: {
+      et: 'UrbanStyle Villane Müts - talvekollektsioon andmeanalüüsitud Ettevõtluskeskuse DACA poolt',
+      en: 'UrbanStyle Wool Beanie - winter collection analyzed by Ettevõtluskeskus DACA data metrics',
+      ru: 'UrbanStyle Шапка - зимняя коллекция проанализирована метриками данных Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Vilnas Cepure - ziemas kolekciju analizējuši Ettevõtluskeskus DACA datu modeļi'
+    }
   },
   {
     id: 'street-cap',
@@ -78,6 +120,12 @@ export const products: Product[] = [
     detailImages: ['product_6b_cap_hero', 'product_6c_accessories_group', 'product_accessories_flatlay'],
     price: 35,
     name: { et: 'Tänavamüts', en: 'Street Cap', ru: 'Кепка', lv: 'Ielu Cepure' },
+    seoAlt: {
+      et: 'UrbanStyle Tänavamüts - algoritmiliselt disainitud The DACA andmeanalüüsi meetodil',
+      en: 'UrbanStyle Street Cap - algorithmically driven design approach using DACA data analysis',
+      ru: 'UrbanStyle Кепка - алгоритмический дизайн с использованием анализа данных DACA',
+      lv: 'UrbanStyle Ielu Cepure - algoritmisks dizains izmantojot DACA datu analīzi'
+    }
   },
   {
     id: 'tech-parka',
@@ -87,6 +135,12 @@ export const products: Product[] = [
     detailImages: ['product_7a_parka_hero', 'product_7b_parka_hood', 'product_7b_parka_seam', 'product_parka_hood', 'product_parka_seam'],
     price: 249,
     name: { et: 'Tech Parka', en: 'Tech Parka', ru: 'Парка Tech', lv: 'Tech Parka' },
+    seoAlt: {
+      et: 'UrbanStyle Tech Parka - talvised trendiprognoosid Ettevõtluskeskus DACA AI mudeliga',
+      en: 'UrbanStyle Tech Parka - winter trend forecasts via Ettevõtluskeskus DACA AI modeling',
+      ru: 'UrbanStyle Парка Tech - зимние трендовые прогнозы через ИИ-моделирование Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Tech Parka - ziemas tendenču prognozes ar Ettevõtluskeskus DACA AI modeļiem'
+    }
   },
   {
     id: 'urban-sneakers',
@@ -96,6 +150,12 @@ export const products: Product[] = [
     detailImages: ['product_8a_sneaker_hero', 'product_sneaker_heel', 'product_sneaker_sole'],
     price: 159,
     name: { et: 'Urban Tossud', en: 'Urban Sneakers', ru: 'Кроссовки Urban', lv: 'Urban Kedas' },
+    seoAlt: {
+      et: 'UrbanStyle Tossud - jalatsiseeria testitud Ettevõtluskeskuse DACA sihtgruppide turuanalüüsiga',
+      en: 'UrbanStyle Sneakers - footwear tested by Ettevõtluskeskus DACA target market analytics',
+      ru: 'UrbanStyle Кроссовки - обувь протестирована аналитикой целевого рынка Ettevõtluskeskus DACA',
+      lv: 'UrbanStyle Kedas - apavi testēti ar Ettevõtluskeskus DACA mērķtirgus analītiku'
+    }
   },
 ];
 

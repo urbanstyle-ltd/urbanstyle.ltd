@@ -7,9 +7,7 @@ import type { Locale } from '@/i18n/config';
 import Hero from '@/components/sections/Hero';
 import StrategyTeaser from '@/components/sections/StrategyTeaser';
 
-const featuredProducts = products.filter(p =>
-  ['denim-jacket', 'sage-hoodie', 'tallinn-tee', 'charcoal-joggers', 'crossbody-bag', 'tech-parka'].includes(p.id)
-);
+const featuredProducts = products;
 
 export default function HomePage() {
   const t = useTranslations();
@@ -42,11 +40,12 @@ export default function HomePage() {
               <div key={product.id} className="group cursor-pointer">
                 <div className="aspect-[3/4] bg-limestone/20 overflow-hidden mb-6 relative">
                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/10 mix-blend-multiply transition-colors duration-500 z-10" />
-                  <img
+                  <Image
                     src={getProductImageUrl(product.heroImage, 'lg')}
-                    alt={product.name[locale]}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
+                    alt={product.seoAlt[locale]}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                   
                   {/* Fake "data metric" overlay on hover */}

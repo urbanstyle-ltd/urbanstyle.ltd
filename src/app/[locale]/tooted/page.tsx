@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { products, getProductImageUrl } from '@/data/products';
 import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { DataInsightWidget } from '@/components/ui/DataInsight';
 
 export default function ProductsPage() {
@@ -86,14 +87,19 @@ export default function ProductsPage() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
                 <div className="relative aspect-[3/4] bg-offwhite rounded-lg overflow-hidden mb-8 shadow-sm group-hover:shadow-xl transition-shadow duration-500">
-                  <motion.img
-                    src={getProductImageUrl(product.heroImage, 'md')}
-                    alt={product.name[locale as Locale]}
-                    className="w-full h-full object-cover"
+                  <motion.div
+                    className="absolute inset-0 w-full h-full"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    loading="lazy"
-                  />
+                  >
+                    <Image
+                      src={getProductImageUrl(product.heroImage, 'md')}
+                      alt={product.seoAlt[locale as Locale]}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  </motion.div>
                   
                   {/* Subtle Tech Overlay - The "Dual Interface" trick */}
                   <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/5 pointer-events-none transition-colors duration-300" />

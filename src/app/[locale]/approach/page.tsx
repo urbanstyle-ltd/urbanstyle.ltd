@@ -161,7 +161,7 @@ const TECH_STACK = [
   "AI Tools (NotebookLM, GitHub Copilot)",
 ];
 
-const CONTENT: Record<"en" | "et", PageContent> = {
+const CONTENT: Record<string, PageContent> = {
   // =========================================================================
   // ENGLISH
   // =========================================================================
@@ -877,7 +877,7 @@ const CONTENT: Record<"en" | "et", PageContent> = {
 
 function useContent(): PageContent {
   const locale = useLocale() as Locale;
-  return CONTENT[locale as "en" | "et"] || CONTENT.en;
+  return CONTENT[locale as "en" | "et" | "ru" | "lv"] || CONTENT.en;
 }
 
 // ---------------------------------------------------------------------------
