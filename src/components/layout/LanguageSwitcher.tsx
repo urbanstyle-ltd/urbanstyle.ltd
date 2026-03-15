@@ -25,7 +25,7 @@ export function LanguageSwitcher() {
           className={`text-xs font-mono tracking-wider transition-colors duration-300 ${
             locale === l
               ? 'text-burnt-orange'
-              : 'text-offwhite/50 hover:text-offwhite'
+              : 'text-offwhite/80 hover:text-offwhite'
           }`}
         >
           {labels[l]}

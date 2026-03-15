@@ -68,17 +68,17 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-offwhite/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-offwhite/40">
+        <div className="mt-16 pt-8 border-t border-offwhite/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-offwhite/60">
             {t('copyright', { year })}
           </p>
-          <p className="text-xs text-offwhite/30">
+          <p className="text-xs text-offwhite/60">
             {t('simulation')}{' '}
             <a
               href={programLinks[locale]}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-offwhite/50 transition-colors"
+              className="text-burnt-orange hover:text-burnt-orange/80 underline transition-colors"
             >
               {t('moreInfo')}
             </a>

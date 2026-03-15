@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
 import { products, teamMembers, getProductImageUrl, getTeamImageUrl } from '@/data/products';
 import { getImageUrl } from '@/data/images';
@@ -69,9 +70,12 @@ export default function HomePage() {
 
       {/* Texture Details Divider */}
       <section className="w-full h-32 md:h-48 lg:h-64 overflow-hidden relative">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${getImageUrl('images/v1/products/strip_texture_montage_lg.webp')})` }}
+        <Image 
+          src={getImageUrl('images/v1/products/strip_texture_montage_lg.webp')}
+          alt="Texture Details"
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
         />
         {/* Subtle dark tint to make it blend well with offwhite above and below */}
         <div className="absolute inset-0 bg-charcoal/10 mix-blend-multiply" />
@@ -81,10 +85,15 @@ export default function HomePage() {
 
       {/* Lookbook Parallax Break */}
       <section className="relative w-full h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-charcoal bg-cover bg-[center_30%] opacity-80 mix-blend-overlay bg-fixed"
-          style={{ backgroundImage: `url(${getImageUrl('images/v1/hero/hero_storm_ready_lg.webp')})` }}
-        />
+        <div className="absolute inset-0 bg-charcoal">
+          <Image 
+            src={getImageUrl('images/v1/hero/hero_storm_ready_lg.webp')}
+            alt="Winter Capsule"
+            fill
+            sizes="100vw"
+            className="object-cover object-[center_30%] opacity-80 mix-blend-overlay"
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-offwhite via-transparent to-transparent" />
         
         {/* Optional tech badge to maintain dual interface context */}

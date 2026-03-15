@@ -35,12 +35,12 @@ export async function generateMetadata({
     description: t('description'),
     metadataBase: new URL('https://urbanstyle.ltd'),
     alternates: {
-      canonical: '/',
+      canonical: `/${locale === 'et' ? '' : locale}`,
       languages: {
-        et: '/',
-        en: '/en',
-        ru: '/ru',
-        lv: '/lv',
+        'et-EE': '/',
+        'en-US': '/en',
+        'ru-RU': '/ru',
+        'lv-LV': '/lv',
       },
     },
     openGraph: {

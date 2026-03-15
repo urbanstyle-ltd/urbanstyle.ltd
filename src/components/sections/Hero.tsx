@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { getImageUrl } from '@/data/images';
 
@@ -12,13 +13,13 @@ export default function Hero() {
     <section className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-charcoal">
       {/* Background with abstract data/fashion imagery overlay */}
       <div className="absolute inset-0 bg-charcoal">
-        <img 
+        <Image 
           src={getImageUrl('images/v1/hero/hero_denim_season_lg.webp')}
           alt={t('hero.headline')}
-          className="w-full h-full object-cover opacity-60 mix-blend-overlay"
-          fetchPriority="high"
-          loading="eager"
-          decoding="sync"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-60 mix-blend-overlay"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/80 to-charcoal/20" />
         
