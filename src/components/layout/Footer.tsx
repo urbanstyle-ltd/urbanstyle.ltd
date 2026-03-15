@@ -40,7 +40,7 @@ export function Footer() {
           <div>
             <h4 className="font-medium mb-4">{t('company')}</h4>
             <ul className="space-y-2 text-sm text-offwhite/60">
-              <li><Link href="/lahenemine" className="text-burnt-orange font-medium hover:text-burnt-orange/80 transition-colors">{t('program')}</Link></li>
+              <li><Link href="/approach" className="text-burnt-orange font-medium hover:text-burnt-orange/80 transition-colors">{t('program')}</Link></li>
               <li><Link href="/meist" className="hover:text-offwhite transition-colors">{t('about')}</Link></li>
               <li><Link href="/strateegia" className="hover:text-offwhite transition-colors">{t('strategy')}</Link></li>
               <li><Link href="/kontakt" className="hover:text-offwhite transition-colors">{t('contact')}</Link></li>

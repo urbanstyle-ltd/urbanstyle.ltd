@@ -33,7 +33,7 @@ export const routing = defineRouting({
       en: '/contact',
       ru: '/kontakt',
     },
-    '/lahenemine': {
+    '/approach': {
       et: '/lahenemine',
       en: '/approach',
       ru: '/podkhod',

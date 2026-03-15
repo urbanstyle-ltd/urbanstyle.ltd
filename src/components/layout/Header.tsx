@@ -65,6 +65,16 @@ export function Header() {
               {label}
             </Link>
           ))}
+          <Link
+            href={'/approach' as const}
+            className={`ml-2 px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
+              pathname === '/approach'
+                ? 'bg-burnt-orange text-offwhite'
+                : 'bg-burnt-orange/90 text-offwhite hover:bg-burnt-orange'
+            }`}
+          >
+            {t('approach')}
+          </Link>
           <LanguageSwitcher />
         </div>
 
@@ -107,7 +117,19 @@ export function Header() {
                   </Link>
                 ))}
               </div>
-              
+
+              <Link
+                href={'/approach' as const}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`px-8 py-3 rounded-full text-lg font-bold uppercase tracking-widest transition-all duration-300 ${
+                  pathname === '/approach'
+                    ? 'bg-burnt-orange text-offwhite'
+                    : 'bg-burnt-orange/90 text-offwhite hover:bg-burnt-orange'
+                }`}
+              >
+                {t('approach')}
+              </Link>
+
               <div className="w-16 h-[1px] bg-offwhite/20" />
               
               <div className="flex flex-col items-center space-y-6">

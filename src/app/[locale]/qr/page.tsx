@@ -1,0 +1,165 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const QR_CODES = [
+  {
+    id: "learner",
+    label: "For Learners",
+    sublabel: "Program info",
+    color: "#7A8B6F", // sage
+    url: "https://urbanstyle.ltd/en/qr/learner",
+  },
+  {
+    id: "employer",
+    label: "For Employers",
+    sublabel: "Partnership",
+    color: "#4A6274", // slate-blue
+    url: "https://urbanstyle.ltd/en/qr/employer",
+  },
+  {
+    id: "partner",
+    label: "For Partners",
+    sublabel: "Methodology",
+    color: "#C4622D", // burnt-orange
+    url: "https://urbanstyle.ltd/en/qr/partner",
+  },
+  {
+    id: "contact",
+    label: "My Contact",
+    sublabel: "vCard",
+    color: "#C4A08A", // dusty-rose
+    url: "https://urbanstyle.ltd/en/qr/contact",
+  },
+] as const;
+
+export default function QrGalleryPage() {
+  const [fullscreen, setFullscreen] = useState<string | null>(null);
+
+  const activeCode = QR_CODES.find((q) => q.id === fullscreen);
+
+  return (
+    <div className="fixed inset-0 z-[100] bg-[#0d0d0d] flex flex-col overflow-hidden">
+      {/* Header */}
+      <div className="pt-12 pb-4 px-6 text-center shrink-0">
+        <h1 className="text-lg font-bold text-offwhite/80 tracking-tight">
+          <span className="text-offwhite">Urban</span>
+          <span className="text-burnt-orange">Style</span>
+          <span className="text-offwhite/40 font-normal ml-2 text-sm">QR Codes</span>
+        </h1>
+      </div>
+
+      {/* 2x2 Grid */}
+      <div className="flex-1 grid grid-cols-2 gap-3 p-4 max-w-lg mx-auto w-full">
+        {QR_CODES.map((qr) => (
+          <motion.button
+            key={qr.id}
+            onClick={() => setFullscreen(qr.id)}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center justify-center p-4 hover:bg-white/10 transition-colors relative overflow-hidden"
+          >
+            {/* QR placeholder - uses the generated SVGs from /public/qr/ */}
+            <div className="w-full aspect-square max-w-[160px] rounded-xl bg-white flex items-center justify-center mb-3 overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/qr/qr-${qr.id}.svg`}
+                alt={`QR code for ${qr.label}`}
+                className="w-full h-full object-contain p-2"
+                onError={(e) => {
+                  // Fallback: show URL text if SVG not generated yet
+                  const target = e.currentTarget;
+                  target.style.display = "none";
+                  const parent = target.parentElement;
+                  if (parent) {
+                    const fallback = document.createElement("div");
+                    fallback.className = "text-charcoal/40 text-[10px] font-mono text-center p-2 break-all";
+                    fallback.textContent = qr.url;
+                    parent.appendChild(fallback);
+                  }
+                }}
+              />
+            </div>
+
+            {/* Label */}
+            <p className="text-offwhite text-sm font-semibold tracking-tight">
+              {qr.label}
+            </p>
+            <p className="text-offwhite/40 text-[10px] font-mono uppercase tracking-wider">
+              {qr.sublabel}
+            </p>
+
+            {/* Color accent dot */}
+            <div
+              className="absolute top-3 right-3 w-2 h-2 rounded-full"
+              style={{ backgroundColor: qr.color }}
+            />
+          </motion.button>
+        ))}
+      </div>
+
+      {/* Hint */}
+      <p className="text-center text-offwhite/20 text-[10px] font-mono pb-8 px-4">
+        Tap to show fullscreen &middot; Press & hold to save
+      </p>
+
+      {/* Fullscreen overlay */}
+      <AnimatePresence>
+        {fullscreen && activeCode && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center p-8"
+            onClick={() => setFullscreen(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, type: "spring", damping: 25 }}
+              className="w-full max-w-xs flex flex-col items-center"
+            >
+              {/* QR Code large */}
+              <div className="w-full aspect-square rounded-2xl bg-white flex items-center justify-center mb-6 shadow-2xl">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/qr/qr-${activeCode.id}.svg`}
+                  alt={`QR code for ${activeCode.label}`}
+                  className="w-full h-full object-contain"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.style.display = "none";
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const fallback = document.createElement("div");
+                      fallback.className = "text-charcoal/30 text-xs font-mono text-center p-4 break-all";
+                      fallback.textContent = activeCode.url;
+                      parent.appendChild(fallback);
+                    }
+                  }}
+                />
+              </div>
+
+              {/* Label */}
+              <h2
+                className="text-2xl font-bold text-charcoal tracking-tight mb-1"
+              >
+                {activeCode.label}
+              </h2>
+              <p className="text-charcoal/40 text-xs font-mono tracking-wider mb-8">
+                {activeCode.url.replace("https://", "")}
+              </p>
+
+              {/* Tap to close hint */}
+              <p className="text-charcoal/30 text-xs font-mono">
+                Tap anywhere to close
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
