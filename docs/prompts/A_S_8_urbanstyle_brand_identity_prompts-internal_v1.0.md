@@ -1,7 +1,9 @@
-# UrbanStyle OÜ — Brand Identity & Logo Prompt Library v1.0
+# urbanstyle.ltd — Brand Identity & Logo Prompt Library v1.1
 
 **Purpose:** Gen-AI prompts for logo, brand assets, and complete visual identity system
 **Domain:** urbanstyle.ltd
+**Brand name:** UrbanStyle (no suffix — never "OÜ", never ".ltd" in the logo)
+**Monogram:** US
 **Founded:** 2020, Tallinn, Estonia
 **Positioning:** Premium accessible Estonian urban streetwear
 
@@ -25,6 +27,16 @@
 - **If UrbanStyle were a person:** A 27-year-old Tallinn creative who studied architecture, skates to work, wears one perfectly chosen outfit, speaks quietly but gets noticed.
 - **Voice:** Confident but not loud. Knows quality. Doesn't try too hard.
 - **NOT:** Flashy, hypebeast, fast fashion, mass market, corporate, generic Scandi-minimal.
+
+### Brand Name Usage Rules
+| Context | Correct | WRONG |
+|---------|---------|-------|
+| Logo / Wordmark | **UrbanStyle** | UrbanStyle.ltd, UrbanStyle OÜ |
+| Monogram | **US** | U.S., us |
+| Lockup | **UrbanStyle US** | UrbanStyle Ltd |
+| Domain / URL only | **urbanstyle.ltd** | — |
+| Legal / footer text | **urbanstyle.ltd** | UrbanStyle OÜ |
+| Clothing label | **UrbanStyle** | — |
 
 ---
 
@@ -265,7 +277,7 @@ seamless repeating pattern --ar 1:1 --style raw --v 6.1
 ```
 Website hero section for urbanstyle.ltd,
 full-bleed lifestyle photography background showing model in UrbanStyle clothing
-walking through Tallinn Rotermann Quarter at golden hour,
+walking through a modern Tallinn district at golden hour,
 dark gradient overlay from bottom (charcoal to transparent),
 large white geometric sans-serif text "NEW COLLECTION" top-left,
 "UrbanStyle" wordmark logo top-center,
@@ -398,19 +410,44 @@ clean modern email design --ar 3:1 --style raw --v 6.1
 
 ## BRAND GUIDELINES SUMMARY CARD
 
-### One-Page Cheat Sheet Prompt
+### One-Page Cheat Sheet Prompt (v1.1 — fixed text rendering)
+
+**IMPORTANT:** Gen-AI often hallucinates body text on guideline sheets. This prompt locks ALL visible text to prevent gibberish.
+
 ```
 Brand guidelines summary card for "UrbanStyle" fashion brand,
-single page layout showing:
-TOP ROW: Logo wordmark + monogram + lockup variations
-MIDDLE LEFT: Color palette swatches with hex codes
-(charcoal #2C2C2C, off-white #F5F0EB, burnt orange #C4622D,
-sage #7A8B6F, slate blue #4A6274, dusty rose #C4A08A)
-MIDDLE RIGHT: Typography showing heading font and body font samples
-BOTTOM: Three photography style reference thumbnails
-(product shot, lifestyle shot, detail shot)
-clean organized grid layout, white background,
-professional brand guidelines document design --ar 3:4 --style raw --v 6.1
+single page layout on warm off-white (#F5F0EB) background,
+organized in clean grid with thin charcoal divider lines:
+
+TOP LEFT section labeled "WORDMARK":
+large "UrbanStyle" text in bold geometric sans-serif,
+
+TOP RIGHT section labeled "MONOGRAM & LOCKUP":
+large "US" monogram mark,
+below it "UrbanStyle US" lockup,
+
+MIDDLE LEFT section labeled "COLOR PALETTE":
+six color swatches in a row, each a rounded rectangle with hex code below:
+Charcoal #2C2C2C, Off-White #F5F0EB, Limestone #D4CDC4,
+Burnt Orange #C4622D, Sage #7A8B6F, Slate Blue #4A6274,
+
+MIDDLE RIGHT section labeled "TYPOGRAPHY":
+"Aa Bb Cc 123" in large bold geometric sans-serif,
+below it the text "PP Neue Montreal" in medium weight,
+below that "contemporary geometric sans-serif" in small text,
+then "Inter" in a different clean sans-serif font,
+below that "clean modern sans-serif for body text" in small text,
+
+BOTTOM section labeled "BRAND TONE & TEXTURES":
+three square thumbnail images side by side:
+1. sage green fabric texture with small "UrbanStyle US" woven label,
+2. male model in casual streetwear standing against concrete wall,
+3. raw concrete texture close-up,
+
+NO other text anywhere on the card,
+NO lorem ipsum, NO placeholder text, NO descriptions beyond what is specified above,
+professional brand guidelines document design,
+clean organized grid layout --ar 3:4 --style raw --v 6.1
 ```
 
 ---
@@ -441,3 +478,14 @@ us_brand_guidelines_summary_v1.png
 7. **Packaging** → physical brand world
 8. **Website mockups** → digital brand world
 9. **Social templates** → marketing assets
+
+---
+
+## KNOWN ISSUES & FIXES (from v1.0 generation)
+
+| Issue | Cause | Fix in v1.1 |
+|-------|-------|-------------|
+| Inter description text is gibberish | Gen-AI hallucinated body text | Summary card prompt now locks ALL text explicitly |
+| "Rotermann Quarter" in hero prompt | Real location reference | Changed to "modern Tallinn district" |
+| "UrbanStyle OÜ" in document title | OÜ implies legal entity | Changed to "urbanstyle.ltd" |
+| Dusty Rose missing from summary card | Only 5 colors listed | Added note: use 6 primary colors in prompt |
