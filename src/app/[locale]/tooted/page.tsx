@@ -6,10 +6,16 @@ import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { DataInsightWidget } from '@/components/ui/DataInsight';
+import { useState } from 'react';
 
 export default function ProductsPage() {
   const t = useTranslations('products');
   const locale = useLocale() as Locale;
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const filteredProducts = activeFilter === 'all' 
+    ? products 
+    : products.filter(p => p.category === activeFilter);
 
   return (
     <div className="pt-24 pb-16 px-6 md:px-16">
@@ -53,26 +59,24 @@ export default function ProductsPage() {
           animate={{ opacity: 1, y: 0 }}
           className="flex gap-4 mb-20 overflow-x-auto pb-4 scrollbar-hide"
         >
-          {['all', 'jackets', 'hoodies', 'tees', 'pants', 'accessories'].map((filter) => (
+          {['all', 'jackets', 'hoodies', 'tees', 'pants', 'outerwear', 'footwear', 'bags', 'accessories'].map((filter) => (
             <button
               key={filter}
-              className="px-6 py-2 rounded-lg border border-charcoal/20 text-sm font-medium whitespace-nowrap hover:bg-charcoal hover:text-offwhite transition-colors duration-300 tracking-wide"
+              onClick={() => setActiveFilter(filter)}
+              className={`px-6 py-2 rounded-lg border text-sm font-medium whitespace-nowrap transition-colors duration-300 tracking-wide ${
+                activeFilter === filter 
+                  ? 'bg-charcoal text-offwhite border-charcoal' 
+                  : 'border-charcoal/20 text-charcoal hover:bg-charcoal hover:text-offwhite'
+              }`}
             >
-              {filter === 'all' ? t('all') : filter}
+              {filter === 'all' ? t('all') : t('category_' + filter, { defaultValue: filter })}
             </button>
           ))}
         </motion.div>
 
-        {/* Product grid - Asymmetrical with aggressive whitespace */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-24 gap-x-12 lg:gap-x-16">
-          {products.map((product, idx) => {
-            // Create an asymmetrical layout pattern (span 5, 7, 6, 6 columns etc)
-            const isWide = idx % 3 === 0;
-            const spanClass = isWide ? 'lg:col-span-7' : 'lg:col-span-5';
-            
-            // Offset every other item vertically on large screens for a staggered look
-            const offsetClass = idx % 2 !== 0 ? 'lg:mt-32' : '';
-
+        {/* Product grid - Uniform 3-column layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-8 lg:gap-x-12">
+          {filteredProducts.map((product) => {
             // Simulated dynamic analytics data per product
             const views = Math.floor(Math.random() * 500) + 100;
             const trend = Math.random() > 0.5 ? 'up' : 'down';
@@ -80,7 +84,8 @@ export default function ProductsPage() {
             return (
               <motion.div 
                 key={product.id} 
-                className={`group cursor-pointer flex flex-col ${spanClass} ${offsetClass}`}
+                layout
+                className="group cursor-pointer flex flex-col"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
