@@ -76,10 +76,11 @@ export default function ProductsPage() {
 
         {/* Product grid - Uniform 3-column layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-8 lg:gap-x-12">
-          {filteredProducts.map((product) => {
-            // Simulated dynamic analytics data per product
-            const views = Math.floor(Math.random() * 500) + 100;
-            const trend = Math.random() > 0.5 ? 'up' : 'down';
+          {filteredProducts.map((product, idx) => {
+            // Deterministic dynamic analytics data per product
+            const seed = product.id.charCodeAt(0) + product.id.charCodeAt(product.id.length - 1) + idx;
+            const views = (seed * 13) % 400 + 100;
+            const trend = seed % 2 === 0 ? 'up' : 'down';
 
             return (
               <motion.div 
@@ -119,7 +120,7 @@ export default function ProductsPage() {
                     <DataInsightWidget 
                       label="View Velocity" 
                       value={`${views}/h`} 
-                      trend={trend as any} 
+                      trend={trend as "up" | "down" | "neutral"} 
                     />
                   </motion.div>
                 </div>

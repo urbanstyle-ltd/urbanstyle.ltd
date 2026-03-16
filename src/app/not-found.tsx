@@ -2,6 +2,7 @@
 
 import { getImageUrl } from '@/data/images';
 import './globals.css';
+import Link from 'next/link';
 
 export default function GlobalNotFound() {
   return (
@@ -24,12 +25,12 @@ export default function GlobalNotFound() {
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a href="/en/tooted" className="inline-flex items-center justify-center px-10 py-4 bg-[#F2F0ED] text-[#1A1A1A] font-bold uppercase tracking-wide decoration-none">
+              <Link href="/en/tooted" className="inline-flex items-center justify-center px-10 py-4 bg-[#F2F0ED] text-[#1A1A1A] font-bold uppercase tracking-wide decoration-none">
                 Explore Products
-              </a>
-              <a href="/en" className="inline-flex items-center justify-center px-10 py-4 border border-[#F2F0ED]/20 text-[#F2F0ED] font-mono text-sm uppercase tracking-wider decoration-none bg-[#1A1A1A]/30 backdrop-blur-sm">
+              </Link>
+              <Link href="/en" className="inline-flex items-center justify-center px-10 py-4 border border-[#F2F0ED]/20 text-[#F2F0ED] font-mono text-sm uppercase tracking-wider decoration-none bg-[#1A1A1A]/30 backdrop-blur-sm">
                 Back to Home
-              </a>
+              </Link>
             </div>
           </div>
         </div>

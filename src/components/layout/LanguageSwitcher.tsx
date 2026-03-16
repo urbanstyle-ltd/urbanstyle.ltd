@@ -21,6 +21,7 @@ export function LanguageSwitcher() {
       {locales.map((l) => (
         <button
           key={l}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           onClick={() => router.replace(pathname as any, { locale: l })}
           className={`text-xs font-mono tracking-wider transition-colors duration-300 ${
             locale === l

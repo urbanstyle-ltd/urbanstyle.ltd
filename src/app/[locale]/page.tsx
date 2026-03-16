@@ -52,7 +52,7 @@ export default function HomePage() {
                   <div className="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div aria-hidden="true" className="bg-charcoal/80 backdrop-blur-md text-offwhite text-xs font-mono px-2 py-1 flex items-center gap-2">
                        <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse" />
-                       <span className="before:content-[attr(data-text)]" data-text={`TRENDING: ${(Math.random() * 4 + 1).toFixed(1)}K VIEWS/DAY`} />
+                       <span className="before:content-[attr(data-text)]" data-text={`TRENDING: ${(((product.id.charCodeAt(0) * 13) % 40) / 10 + 1).toFixed(1)}K VIEWS/DAY`} />
                     </div>
                   </div>
                 </div>

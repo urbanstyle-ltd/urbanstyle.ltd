@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/config";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import CalendlyEmbed from "@/components/ui/CalendlyEmbed";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -87,6 +88,8 @@ interface PageContent {
     ctaTitle: string;
     ctaDesc: string;
     ctaButton: string;
+    execCtaPrimary: string;
+    execCtaSecondary: string;
     accordions: {
       roi: string;
       quality: string;
@@ -107,6 +110,7 @@ interface PageContent {
   methodology: {
     eyebrow: string;
     headline: string;
+    stats: Array<{ value: string; label: string }>;
     simTitle: string;
     simDesc: string;
     fourCompTitle: string;
@@ -324,6 +328,8 @@ const CONTENT: Record<string, PageContent> = {
       ctaTitle: "Send Your Team to DACA",
       ctaDesc: "Contact us to discuss cohort enrollment, funding options, and custom scheduling.",
       ctaButton: "Get in Touch",
+      execCtaPrimary: "Book 15-min Fit Call",
+      execCtaSecondary: "Download Syllabus (PDF)",
 
       accordions: {
         roi: "Return on Investment",
@@ -368,6 +374,11 @@ const CONTENT: Record<string, PageContent> = {
     methodology: {
       eyebrow: "Pedagogy",
       headline: "We don\u2019t sell information \u2014 it\u2019s free online. We sell a transformative experience.",
+      stats: [
+        { value: "4", label: "Core Principles" },
+        { value: "11", label: "Weeks Simulation" },
+        { value: "100%", label: "Hands-on Practice" },
+      ],
       simTitle: "Simulation-Based Learning",
       simDesc:
         "Every exercise, dataset, and character belongs to UrbanStyle \u2014 a simulated Estonian fashion startup. Participants don\u2019t study data analytics; they practice it in a realistic context that builds transferable skills.",
@@ -678,6 +689,8 @@ const CONTENT: Record<string, PageContent> = {
       ctaTitle: "Saatke oma meeskond DACA-sse",
       ctaDesc: "V\u00f5tke meiega \u00fchendust, et arutada grupiliitumist, rahastamisv\u00f5imalusi ja kohandatud ajakava.",
       ctaButton: "V\u00f5ta \u00fchendust",
+      execCtaPrimary: "Broneeri 15-min Partnerlusk\u00f5ne",
+      execCtaSecondary: "Executive Syllabus (PDF)",
 
       accordions: {
         roi: "Investeeringu tasuvus",
@@ -722,6 +735,11 @@ const CONTENT: Record<string, PageContent> = {
     methodology: {
       eyebrow: "Pedagoogika",
       headline: "Me ei m\u00fc\u00fc informatsiooni \u2014 see on internetis tasuta. Me m\u00fc\u00fcme transformatiivset kogemust.",
+      stats: [
+        { value: "4", label: "P\u00f5hiprintsiipi" },
+        { value: "11", label: "N\u00e4dalat Simulatsiooni" },
+        { value: "100%", label: "Praktiline \u00d5pe" },
+      ],
       simTitle: "Simulatsioonip\u00f5hine \u00f5pe",
       simDesc:
         "Iga harjutus, andmestik ja karakter kuulub UrbanStyle\u2019ile \u2014 simuleeritud Eesti moefirmale. Osalejad ei \u00f5pi andmeanal\u00fc\u00fctikat; nad praktiseerivad seda realistlikus kontekstis, mis arendab \u00fclekantavaid oskusi.",
@@ -998,6 +1016,8 @@ const CONTENT: Record<string, PageContent> = {
       ctaTitle: "\u041d\u0430\u043f\u0440\u0430\u0432\u044c\u0442\u0435 \u0441\u0432\u043e\u044e \u043a\u043e\u043c\u0430\u043d\u0434\u0443 \u0432 DACA",
       ctaDesc: "\u0421\u0432\u044f\u0436\u0438\u0442\u0435\u0441\u044c \u0441 \u043d\u0430\u043c\u0438 \u0434\u043b\u044f \u043e\u0431\u0441\u0443\u0436\u0434\u0435\u043d\u0438\u044f \u0433\u0440\u0443\u043f\u043f\u043e\u0432\u043e\u0433\u043e \u0443\u0447\u0430\u0441\u0442\u0438\u044f, \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432 \u0444\u0438\u043d\u0430\u043d\u0441\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438 \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044f.",
       ctaButton: "\u0421\u0432\u044f\u0437\u0430\u0442\u044c\u0441\u044f",
+      execCtaPrimary: "\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c 15-\u043c\u0438\u043d. \u0437\u0432\u043e\u043d\u043e\u043a",
+      execCtaSecondary: "\u0421\u043a\u0430\u0447\u0430\u0442\u044c Syllabus (PDF)",
 
       accordions: {
         roi: "\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0438\u043d\u0432\u0435\u0441\u0442\u0438\u0446\u0438\u0439",
@@ -1041,6 +1061,11 @@ const CONTENT: Record<string, PageContent> = {
     methodology: {
       eyebrow: "\u041f\u0435\u0434\u0430\u0433\u043e\u0433\u0438\u043a\u0430",
       headline: "\u041c\u044b \u043d\u0435 \u043f\u0440\u043e\u0434\u0430\u0451\u043c \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u2014 \u043e\u043d\u0430 \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0430 \u0432 \u0438\u043d\u0442\u0435\u0440\u043d\u0435\u0442\u0435. \u041c\u044b \u043f\u0440\u043e\u0434\u0430\u0451\u043c \u0442\u0440\u0430\u043d\u0441\u0444\u043e\u0440\u043c\u0438\u0440\u0443\u044e\u0449\u0438\u0439 \u043e\u043f\u044b\u0442.",
+      stats: [
+        { value: "4", label: "\u0411\u0430\u0437\u043e\u0432\u044b\u0445 \u043f\u0440\u0438\u043d\u0446\u0438\u043f\u0430" },
+        { value: "11", label: "\u041d\u0435\u0434\u0435\u043b\u044c \u0441\u0438\u043c\u0443\u043b\u044f\u0446\u0438\u0438" },
+        { value: "100%", label: "\u041f\u0440\u0430\u043a\u0442\u0438\u043a\u0438" },
+      ],
       simTitle: "\u041e\u0431\u0443\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u0441\u0438\u043c\u0443\u043b\u044f\u0446\u0438\u0438",
       simDesc:
         "\u041a\u0430\u0436\u0434\u043e\u0435 \u0443\u043f\u0440\u0430\u0436\u043d\u0435\u043d\u0438\u0435, \u043d\u0430\u0431\u043e\u0440 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438 \u043f\u0435\u0440\u0441\u043e\u043d\u0430\u0436 \u043f\u0440\u0438\u043d\u0430\u0434\u043b\u0435\u0436\u0438\u0442 UrbanStyle \u2014 \u0441\u0438\u043c\u0443\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u043c\u0443 \u044d\u0441\u0442\u043e\u043d\u0441\u043a\u043e\u043c\u0443 \u043c\u043e\u0434\u043d\u043e\u043c\u0443 \u0441\u0442\u0430\u0440\u0442\u0430\u043f\u0443. \u0423\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0438 \u043d\u0435 \u0438\u0437\u0443\u0447\u0430\u044e\u0442 \u0430\u043d\u0430\u043b\u0438\u0442\u0438\u043a\u0443 \u0434\u0430\u043d\u043d\u044b\u0445; \u043e\u043d\u0438 \u043f\u0440\u0430\u043a\u0442\u0438\u043a\u0443\u044e\u0442 \u0435\u0451 \u0432 \u0440\u0435\u0430\u043b\u0438\u0441\u0442\u0438\u0447\u043d\u043e\u043c \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u0435, \u0440\u0430\u0437\u0432\u0438\u0432\u0430\u044e\u0449\u0435\u043c \u043f\u0435\u0440\u0435\u043d\u043e\u0441\u0438\u043c\u044b\u0435 \u043d\u0430\u0432\u044b\u043a\u0438.",
@@ -1268,6 +1293,8 @@ const CONTENT: Record<string, PageContent> = {
       ctaTitle: "Nos\u016btiet savu komandu uz DACA",
       ctaDesc: "Sazinieties ar mums, lai apspriestu grupas dal\u012bbu, finans\u0113\u0161anas iesp\u0113jas un piel\u0101gotu grafiku. Programma ir pieejama dal\u012bbniekiem no visas Baltijas.",
       ctaButton: "Sazin\u0101ties",
+      execCtaPrimary: "Rezerv\u0113t 15 min zvanu",
+      execCtaSecondary: "Lejupiel\u0101d\u0113t Syllabus (PDF)",
 
       accordions: {
         roi: "Ieguld\u012bjumu atdeve",
@@ -1311,6 +1338,11 @@ const CONTENT: Record<string, PageContent> = {
     methodology: {
       eyebrow: "Pedago\u0123ija",
       headline: "M\u0113s nep\u0101rdodam inform\u0101ciju \u2014 t\u0101 ir bezmaksas internet\u0101. M\u0113s p\u0101rdodam transform\u0113jo\u0161u pieredzi.",
+      stats: [
+        { value: "4", label: "Pamatprincipi" },
+        { value: "11", label: "Ned\u0113\u013cu simul\u0101cija" },
+        { value: "100%", label: "Praktiska pieeja" },
+      ],
       simTitle: "Uz simul\u0101ciju balst\u012bta m\u0101c\u012b\u0161an\u0101s",
       simDesc:
         "Katrs uzdevums, datu kopa un varonis pieder UrbanStyle \u2014 simul\u0113tam Igaunijas modes jaun\u0101uz\u0146\u0113mumam. Dal\u012bbnieki nem\u0101c\u0101s datu anal\u012btiku; vi\u0146i to praktiz\u0113 re\u0101listisk\u0101 kontekst\u0101, kas att\u012bsta p\u0101rnesamas prasmes.",
@@ -1495,6 +1527,42 @@ function StatCounter({ value, label }: StatItem) {
         {numericValue ? `${count}${suffix}` : value}
       </span>
       <span className="block mt-2 text-sm font-medium text-charcoal/60 uppercase tracking-widest">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function StatHorizontal({ value, label }: StatItem) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true });
+  const numericMatch = value.match(/^(\d+)/);
+  const numericValue = numericMatch ? parseInt(numericMatch[1], 10) : 0;
+  const suffix = numericMatch ? value.slice(numericMatch[1].length) : value;
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!inView || !numericValue) return;
+    let frame: number;
+    const duration = 1200;
+    const start = performance.now();
+    const animate = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * numericValue));
+      if (progress < 1) frame = requestAnimationFrame(animate);
+    };
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [inView, numericValue]);
+
+  return (
+    <div ref={ref} className="flex flex-col border-l-2 border-charcoal/10 pl-4 py-1 shrink-0 snap-start">
+      <span className="block text-3xl font-bold font-mono tracking-tight leading-none text-burnt-orange">
+        {numericValue ? `${count}${suffix}` : value}
+      </span>
+      <span className="block mt-1 text-xs font-semibold text-charcoal/60 uppercase tracking-widest max-w-[140px] leading-tight">
         {label}
       </span>
     </div>
@@ -2003,12 +2071,14 @@ function LearnersView() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="px-6 md:px-16 py-16 border-b border-charcoal/10">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {l.stats.map((s) => (
-            <StatCounter key={s.label} {...s} />
-          ))}
+      {/* Executive Summary (Stats) */}
+      <section className="border-b border-charcoal/10 bg-offwhite">
+        <div className="w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory lg:flex lg:justify-center">
+          <div className="flex gap-6 md:gap-10 px-6 md:px-16 py-8 md:py-12 w-max">
+            {l.stats.map((s) => (
+              <StatHorizontal key={s.label} {...s} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -2111,6 +2181,13 @@ function LearnersView() {
           </RevealSection>
         </div>
       </section>
+
+      {/* Booking */}
+      <section className="px-6 md:px-16 pb-24 bg-charcoal">
+        <div className="max-w-4xl mx-auto">
+          <CalendlyEmbed theme="dark" />
+        </div>
+      </section>
     </div>
   );
 }
@@ -2158,12 +2235,14 @@ function EmployersView() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="px-6 md:px-16 py-16 border-b border-charcoal/10">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8">
-          {e.stats.map((s) => (
-            <StatCounter key={s.label} {...s} />
-          ))}
+      {/* Executive Summary (Stats) */}
+      <section className="border-b border-charcoal/10 bg-offwhite">
+        <div className="w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory lg:flex lg:justify-center">
+          <div className="flex gap-6 md:gap-10 px-6 md:px-16 py-8 md:py-12 w-max">
+            {e.stats.map((s) => (
+              <StatHorizontal key={s.label} {...s} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -2263,19 +2342,34 @@ function EmployersView() {
             <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
               {e.ctaTitle}
             </h2>
-            <p className="text-offwhite/70 text-lg mb-8">
+            <p className="text-offwhite/70 text-lg mb-10">
               {e.ctaDesc}
             </p>
-            <a
-              href="mailto:info@ettevotluskeskus.ee?subject=DACA%20Partnership%20Inquiry"
-              className="inline-flex items-center justify-center px-10 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-500 shadow-xl"
-            >
-              {e.ctaButton}
-            </a>
-            <p className="mt-6 text-offwhite/50 text-sm">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="mailto:info@ettevotluskeskus.ee?subject=DACA%20Partnership%20Inquiry%20(Exec%20Fit%20Call)"
+                className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
+              >
+                {e.execCtaPrimary}
+              </a>
+              <a
+                href="#employers"
+                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
+              >
+                {e.execCtaSecondary}
+              </a>
+            </div>
+            <p className="mt-8 text-offwhite/50 text-sm">
               info@ettevotluskeskus.ee &middot; +372 652 0001
             </p>
           </RevealSection>
+        </div>
+      </section>
+
+      {/* Booking */}
+      <section className="px-6 md:px-16 pb-24 bg-slate-blue">
+        <div className="max-w-4xl mx-auto">
+          <CalendlyEmbed theme="slate" />
         </div>
       </section>
     </div>
@@ -2314,6 +2408,17 @@ function MethodologyView() {
           >
             {m.headline}
           </motion.h1>
+        </div>
+      </section>
+
+      {/* Executive Summary (Stats) */}
+      <section className="border-b border-charcoal/10 bg-offwhite">
+        <div className="w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory lg:flex lg:justify-center">
+          <div className="flex gap-6 md:gap-10 px-6 md:px-16 py-8 md:py-12 w-max">
+            {m.stats.map((s) => (
+              <StatHorizontal key={s.label} {...s} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -2456,20 +2561,34 @@ function MethodologyView() {
       </section>
 
       {/* Contact */}
-      <section className="px-6 md:px-16 py-16 bg-charcoal text-offwhite text-center">
+      <section className="px-6 md:px-16 py-24 bg-slate-blue text-offwhite text-center">
         <div className="max-w-3xl mx-auto">
           <RevealSection>
-            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tighter mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
               {m.contactTitle}
             </h2>
-            <p className="text-offwhite/70 mb-6">
+            <p className="text-offwhite/70 text-lg mb-10">
               {m.contactDesc}
             </p>
-            <p className="text-offwhite/50 text-sm">
-              info@ettevotluskeskus.ee &middot; +372 652 0001 &middot; Alek
-              Kozlov +372 502 1033
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a
+                href="mailto:info@ettevotluskeskus.ee?subject=DACA%20Methodology%20Inquiry"
+                className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
+              >
+                Send Message
+              </a>
+            </div>
+            <p className="mt-8 text-offwhite/50 text-sm">
+              info@ettevotluskeskus.ee &middot; +372 652 0001
             </p>
           </RevealSection>
+        </div>
+      </section>
+
+      {/* Booking */}
+      <section className="px-6 md:px-16 pb-24 bg-slate-blue">
+        <div className="max-w-4xl mx-auto">
+          <CalendlyEmbed theme="slate" />
         </div>
       </section>
     </div>
@@ -2484,8 +2603,19 @@ export default function ApproachPage() {
   const [activeTab, setActiveTab] = useState<AudienceTab>("learners");
   const t = useContent();
 
-  // Hash-based deep linking
-  const handleHashChange = useCallback(() => {
+  // Hash-based and URL Parameter deep linking
+  const handleUrlState = useCallback(() => {
+    if (typeof window === "undefined") return;
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("audience") === "exec") {
+      setActiveTab("employers");
+      // Clean URL, push to history
+      const unparamUrl = window.location.pathname + window.location.hash;
+      window.history.replaceState(null, "", unparamUrl);
+      return;
+    }
+
     const hash = window.location.hash.replace("#", "") as AudienceTab;
     if (hash && ["learners", "employers", "methodology"].includes(hash)) {
       setActiveTab(hash);
@@ -2493,10 +2623,13 @@ export default function ApproachPage() {
   }, []);
 
   useEffect(() => {
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [handleHashChange]);
+    const timer = setTimeout(() => handleUrlState(), 0);
+    window.addEventListener("hashchange", handleUrlState);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", handleUrlState);
+    };
+  }, [handleUrlState]);
 
   // Update hash when tab changes
   const switchTab = (tab: AudienceTab) => {
@@ -2506,34 +2639,36 @@ export default function ApproachPage() {
 
   return (
     <div className="pt-20 overflow-hidden">
-      {/* Sticky tab navigation */}
+      {/* Sticky pill navigation */}
       <nav
-        className="sticky top-20 z-40 bg-offwhite/90 backdrop-blur-md border-b border-charcoal/10"
+        className="sticky top-14 md:top-20 z-40 bg-offwhite/90 backdrop-blur-md border-b border-charcoal/10"
         aria-label="Audience views"
       >
-        <div className="max-w-5xl mx-auto px-6 md:px-16 flex">
-          {(["learners", "employers", "methodology"] as AudienceTab[]).map(
-            (tab) => (
-              <button
-                key={tab}
-                onClick={() => switchTab(tab)}
-                className={`relative flex-1 py-4 text-sm md:text-base font-medium tracking-wide text-center transition-colors duration-300 ${
-                  activeTab === tab
-                    ? "text-charcoal"
-                    : "text-charcoal/40 hover:text-charcoal/70"
-                }`}
-              >
-                {t.tabs[tab]}
-                {activeTab === tab && (
-                  <motion.div
-                    layoutId="activeTabIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-burnt-orange"
-                    transition={{ type: "spring", stiffness: 500, damping: 35 }}
-                  />
-                )}
-              </button>
-            )
-          )}
+        <div className="max-w-5xl mx-auto px-4 md:px-16 py-3 flex justify-center overflow-x-auto hide-scrollbar">
+          <div className="bg-charcoal/5 p-1 flex items-center justify-between rounded-full w-full max-w-lg md:max-w-max">
+            {(["learners", "employers", "methodology"] as AudienceTab[]).map(
+              (tab) => (
+                <button
+                  key={tab}
+                  onClick={() => switchTab(tab)}
+                  className={`relative flex-1 sm:min-w-[150px] py-2.5 px-3 md:px-6 text-xs md:text-sm lg:text-base font-semibold tracking-wide text-center transition-all duration-300 rounded-full whitespace-nowrap ${
+                    activeTab === tab
+                      ? "text-offwhite shadow-sm"
+                      : "text-charcoal/60 hover:text-charcoal transition-colors hover:bg-charcoal/5"
+                  }`}
+                >
+                  {activeTab === tab && (
+                    <motion.div
+                      layoutId="activeTabIndicator"
+                      className="absolute inset-0 bg-charcoal rounded-full -z-10"
+                      transition={{ type: "spring", stiffness: 500, damping: 35 }}
+                    />
+                  )}
+                  <span className="relative z-10">{t.tabs[tab]}</span>
+                </button>
+              )
+            )}
+          </div>
         </div>
       </nav>
 

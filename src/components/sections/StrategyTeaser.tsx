@@ -13,7 +13,10 @@ export default function StrategyTeaser() {
       {/* Terminal/Data background effect */}
       <div aria-hidden="true" className="absolute inset-0 opacity-10 font-mono text-[8px] sm:text-xs leading-none whitespace-pre select-none pointer-events-none text-sage overflow-hidden flex flex-wrap">
         {Array.from({ length: 50 }).map((_, i) => {
-          const logText = `[${new Date().getFullYear()}-03-15 ${String(Math.floor(Math.random() * 24)).padStart(2, '0')}:${String(Math.floor(Math.random() * 60)).padStart(2, '0')}] INFO [core] Analyzing user behavior pattern | Conf: ${(Math.random() * 0.9 + 0.1).toFixed(3)}`;
+          const hours = String((i * 13) % 24).padStart(2, '0');
+          const mins = String((i * 31) % 60).padStart(2, '0');
+          const conf = (((i * 7) % 90 + 10) / 100).toFixed(3);
+          const logText = `[${new Date().getFullYear()}-03-15 ${hours}:${mins}] INFO [core] Analyzing user behavior pattern | Conf: ${conf}`;
           return (
             <span 
               key={i} 
