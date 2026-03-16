@@ -36,6 +36,7 @@ const AUDIENCES = [
   { id: "employer", label: "For Employers", url: "https://urbanstyle.ltd/en/qr/employer" },
   { id: "partner", label: "For Partners", url: "https://urbanstyle.ltd/en/qr/partner" },
   { id: "contact", label: "Contact Card", url: "https://urbanstyle.ltd/en/qr/contact" },
+  { id: "calendly", label: "Book a Meeting", url: "https://calendly.com/alekkozlov/daca-with-producer-data-analyst-career-accelerator" },
 ];
 
 // --- QR Code generation ---

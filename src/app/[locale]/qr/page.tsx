@@ -16,6 +16,8 @@ const LABELS: Record<string, {
   methodology: string;
   myContact: string;
   vCard: string;
+  bookMeeting: string;
+  meetingDesc: string;
   hint: string;
   tapToClose: string;
 }> = {
@@ -29,6 +31,8 @@ const LABELS: Record<string, {
     methodology: "Metoodika",
     myContact: "Minu kontakt",
     vCard: "vCard",
+    bookMeeting: "Broneeri kohtumine",
+    meetingDesc: "15 min Google Meet",
     hint: "Puuduta suurendamiseks \u00b7 Hoia all salvestamiseks",
     tapToClose: "Puuduta sulgemiseks",
   },
@@ -42,6 +46,8 @@ const LABELS: Record<string, {
     methodology: "Methodology",
     myContact: "My Contact",
     vCard: "vCard",
+    bookMeeting: "Book a Meeting",
+    meetingDesc: "15 min Google Meet",
     hint: "Tap to show fullscreen \u00b7 Press & hold to save",
     tapToClose: "Tap anywhere to close",
   },
@@ -55,6 +61,8 @@ const LABELS: Record<string, {
     methodology: "Методология",
     myContact: "Мой контакт",
     vCard: "vCard",
+    bookMeeting: "Записаться на встречу",
+    meetingDesc: "15 мин Google Meet",
     hint: "Нажмите для полноэкранного просмотра \u00b7 Удерживайте для сохранения",
     tapToClose: "Нажмите для закрытия",
   },
@@ -68,6 +76,8 @@ const LABELS: Record<string, {
     methodology: "Metodoloģija",
     myContact: "Mans kontakts",
     vCard: "vCard",
+    bookMeeting: "Rezervēt tikšanos",
+    meetingDesc: "15 min Google Meet",
     hint: "Nospiediet pilnekrāna režīmam \u00b7 Turiet nospiestu saglabāšanai",
     tapToClose: "Nospiediet lai aizvērtu",
   },
@@ -108,6 +118,13 @@ function getQrCodes(locale: string) {
       color: "#C4A08A", // dusty-rose
       url: "https://urbanstyle.ltd/en/qr/contact",
     },
+    {
+      id: "calendly",
+      label: l.bookMeeting,
+      sublabel: l.meetingDesc,
+      color: "#C4622D", // burnt-orange
+      url: "https://calendly.com/alekkozlov/daca-with-producer-data-analyst-career-accelerator",
+    },
   ] as const;
 }
 
@@ -130,14 +147,16 @@ export default function QrGalleryPage() {
         </h1>
       </div>
 
-      {/* 2x2 Grid */}
-      <div className="flex-1 grid grid-cols-2 gap-3 p-4 max-w-lg mx-auto w-full">
-        {qrCodes.map((qr) => (
+      {/* QR Grid — 2 cols, last item centered if odd */}
+      <div className="flex-1 grid grid-cols-2 gap-3 p-4 max-w-lg mx-auto w-full auto-rows-min content-center">
+        {qrCodes.map((qr, idx) => {
+          const isLastOdd = qrCodes.length % 2 === 1 && idx === qrCodes.length - 1;
+          return (
           <motion.button
             key={qr.id}
             onClick={() => setFullscreen(qr.id)}
             whileTap={{ scale: 0.95 }}
-            className="bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center justify-center p-4 hover:bg-white/10 transition-colors relative overflow-hidden"
+            className={`bg-white/5 rounded-2xl border border-white/10 flex flex-col items-center justify-center p-4 hover:bg-white/10 transition-colors relative overflow-hidden ${isLastOdd ? 'col-span-2 max-w-[50%] justify-self-center' : ''}`}
           >
             {/* QR placeholder - uses the generated SVGs from /public/qr/ */}
             <div className="w-full aspect-square max-w-[160px] rounded-xl bg-white flex items-center justify-center mb-3 overflow-hidden">
@@ -175,7 +194,8 @@ export default function QrGalleryPage() {
               style={{ backgroundColor: qr.color }}
             />
           </motion.button>
-        ))}
+          );
+        })}
       </div>
 
       {/* Language switcher + Hint */}
