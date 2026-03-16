@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { useLocale } from "next-intl";
 import type { Locale } from "@/i18n/config";
 import { motion, AnimatePresence, useInView } from "framer-motion";
-import CalendlyEmbed from "@/components/ui/CalendlyEmbed";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -2167,25 +2166,42 @@ function LearnersView() {
             <p className="font-mono text-burnt-orange text-sm uppercase tracking-widest mb-4">
               {l.ctaEyebrow}
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-10">
               {l.ctaHeadline}
             </h2>
-            <a
-              href={programUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-500 shadow-xl"
-            >
-              {l.ctaButton}
-            </a>
+            
+            <div className="bg-white/5 border border-offwhite/10 rounded-xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-sm">
+              <h3 className="text-offwhite/90 text-2xl font-bold mb-2">
+                15-min Google Meet kohtumine Alek Kozloviga
+              </h3>
+              <p className="text-offwhite/70 text-base mb-8">
+                Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href={programUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
+                >
+                  {l.ctaButton}
+                </a>
+                <a
+                  href="https://calendly.com/alekkozlov/daca-with-producer-data-analyst-career-accelerator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
+                >
+                  Broneeri Kohtumine (Calendly)
+                </a>
+              </div>
+            </div>
+            
+            <p className="mt-8 text-offwhite/50 text-sm">
+              Alek Kozlov &middot; ak@ettevotluskeskus.ee &middot; +372 502 1033
+            </p>
           </RevealSection>
-        </div>
-      </section>
-
-      {/* Booking */}
-      <section className="px-6 md:px-16 pb-24 bg-charcoal">
-        <div className="max-w-4xl mx-auto">
-          <CalendlyEmbed theme="dark" />
         </div>
       </section>
     </div>
@@ -2345,31 +2361,37 @@ function EmployersView() {
             <p className="text-offwhite/70 text-lg mb-10">
               {e.ctaDesc}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="mailto:info@ettevotluskeskus.ee?subject=DACA%20Partnership%20Inquiry%20(Exec%20Fit%20Call)"
-                className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
-              >
-                {e.execCtaPrimary}
-              </a>
-              <a
-                href="#employers"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
-              >
-                {e.execCtaSecondary}
-              </a>
+            
+            <div className="bg-charcoal/20 border border-offwhite/10 rounded-xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-sm">
+              <h3 className="text-offwhite/90 text-2xl font-bold mb-2">
+                15-min Google Meet kohtumine Alek Kozloviga
+              </h3>
+              <p className="text-offwhite/70 text-base mb-8">
+                Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="#employers"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
+                >
+                  {e.execCtaSecondary}
+                </a>
+                <a
+                  href="https://calendly.com/alekkozlov/daca-with-producer-data-analyst-career-accelerator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
+                >
+                  Broneeri Kohtumine (Calendly)
+                </a>
+              </div>
             </div>
+            
             <p className="mt-8 text-offwhite/50 text-sm">
-              info@ettevotluskeskus.ee &middot; +372 652 0001
+              Alek Kozlov &middot; ak@ettevotluskeskus.ee &middot; +372 502 1033
             </p>
           </RevealSection>
-        </div>
-      </section>
-
-      {/* Booking */}
-      <section className="px-6 md:px-16 pb-24 bg-slate-blue">
-        <div className="max-w-4xl mx-auto">
-          <CalendlyEmbed theme="slate" />
         </div>
       </section>
     </div>
@@ -2570,25 +2592,31 @@ function MethodologyView() {
             <p className="text-offwhite/70 text-lg mb-10">
               {m.contactDesc}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
-                href="mailto:info@ettevotluskeskus.ee?subject=DACA%20Methodology%20Inquiry"
-                className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
-              >
-                Send Message
-              </a>
+            
+            <div className="bg-charcoal/20 border border-offwhite/10 rounded-xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-sm">
+              <h3 className="text-offwhite/90 text-2xl font-bold mb-2">
+                15-min Google Meet kohtumine Alek Kozloviga
+              </h3>
+              <p className="text-offwhite/70 text-base mb-8">
+                Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.
+              </p>
+              
+              <div className="flex flex-col justify-center items-center">
+                <a
+                  href="https://calendly.com/alekkozlov/daca-with-producer-data-analyst-career-accelerator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
+                >
+                  Broneeri Kohtumine (Calendly)
+                </a>
+              </div>
             </div>
+            
             <p className="mt-8 text-offwhite/50 text-sm">
-              info@ettevotluskeskus.ee &middot; +372 652 0001
+              Alek Kozlov &middot; ak@ettevotluskeskus.ee &middot; +372 502 1033
             </p>
           </RevealSection>
-        </div>
-      </section>
-
-      {/* Booking */}
-      <section className="px-6 md:px-16 pb-24 bg-slate-blue">
-        <div className="max-w-4xl mx-auto">
-          <CalendlyEmbed theme="slate" />
         </div>
       </section>
     </div>
