@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 // Locale-aware labels (RU falls back to EN)
 const LABELS: Record<string, {
@@ -43,6 +44,32 @@ const LABELS: Record<string, {
     vCard: "vCard",
     hint: "Tap to show fullscreen \u00b7 Press & hold to save",
     tapToClose: "Tap anywhere to close",
+  },
+  ru: {
+    qrCodes: "QR коды",
+    forLearners: "Для учащихся",
+    programInfo: "Информация",
+    forEmployers: "Для работодателей",
+    partnership: "Сотрудничество",
+    forPartners: "Для партнёров",
+    methodology: "Методология",
+    myContact: "Мой контакт",
+    vCard: "vCard",
+    hint: "Нажмите для полноэкранного просмотра \u00b7 Удерживайте для сохранения",
+    tapToClose: "Нажмите для закрытия",
+  },
+  lv: {
+    qrCodes: "QR kodi",
+    forLearners: "Dalībniekiem",
+    programInfo: "Programmas info",
+    forEmployers: "Darba devējiem",
+    partnership: "Sadarbība",
+    forPartners: "Partneriem",
+    methodology: "Metodoloģija",
+    myContact: "Mans kontakts",
+    vCard: "vCard",
+    hint: "Nospiediet pilnekrāna režīmam \u00b7 Turiet nospiestu saglabāšanai",
+    tapToClose: "Nospiediet lai aizvērtu",
   },
 };
 
@@ -151,10 +178,13 @@ export default function QrGalleryPage() {
         ))}
       </div>
 
-      {/* Hint */}
-      <p className="text-center text-offwhite/20 text-[10px] font-mono pb-8 px-4">
-        {labels.hint}
-      </p>
+      {/* Language switcher + Hint */}
+      <div className="flex flex-col items-center gap-4 pb-8 px-4 shrink-0">
+        <LanguageSwitcher />
+        <p className="text-offwhite/20 text-[10px] font-mono">
+          {labels.hint}
+        </p>
+      </div>
 
       {/* Fullscreen overlay */}
       <AnimatePresence>

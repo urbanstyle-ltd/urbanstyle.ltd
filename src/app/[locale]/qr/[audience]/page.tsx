@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 
 const AUDIENCES = ["learner", "employer", "partner", "contact"] as const;
 type Audience = (typeof AUDIENCES)[number];
@@ -15,6 +16,7 @@ const APPROACH_PATHS: Record<string, string> = {
   et: "/lahenemine",
   en: "/en/approach",
   ru: "/ru/podkhod",
+  lv: "/lv/pieeja",
 };
 
 function getRedirectUrl(audience: Exclude<Audience, "contact">, locale: string): string {
@@ -27,7 +29,7 @@ function getRedirectUrl(audience: Exclude<Audience, "contact">, locale: string):
   return basePath + HASH_MAP[audience];
 }
 
-// Locale-aware redirect labels (RU falls back to EN)
+// Locale-aware redirect labels
 const REDIRECT_LABELS: Record<string, Record<Exclude<Audience, "contact">, string>> = {
   et: {
     learner: "Suunamine õppija infole...",
@@ -39,6 +41,16 @@ const REDIRECT_LABELS: Record<string, Record<Exclude<Audience, "contact">, strin
     employer: "Redirecting to employer information...",
     partner: "Redirecting to partnership details...",
   },
+  ru: {
+    learner: "Перенаправление на информацию для учащихся...",
+    employer: "Перенаправление на информацию для работодателей...",
+    partner: "Перенаправление на детали сотрудничества...",
+  },
+  lv: {
+    learner: "Pāradresācija uz dalībnieku informāciju...",
+    employer: "Pāradresācija uz darba devēju informāciju...",
+    partner: "Pāradresācija uz sadarbības detaļām...",
+  },
 };
 
 function getRedirectLabel(audience: Exclude<Audience, "contact">, locale: string): string {
@@ -46,7 +58,7 @@ function getRedirectLabel(audience: Exclude<Audience, "contact">, locale: string
   return labels[audience];
 }
 
-// Locale-aware contact card labels (RU falls back to EN)
+// Locale-aware contact card labels
 const CONTACT_LABELS: Record<string, {
   saveContact: string;
   saved: string;
@@ -76,6 +88,26 @@ const CONTACT_LABELS: Record<string, {
     program: "Program",
     programm: "Programm",
     iosHint: "iOS: Tap Share > Add to Home Screen",
+  },
+  ru: {
+    saveContact: "Сохранить контакт",
+    saved: "Сохранено!",
+    mobile: "Мобильный",
+    email: "Эл. почта",
+    office: "Офис",
+    program: "Program",
+    programm: "Программа",
+    iosHint: "iOS: Нажмите Поделиться > На экран Домой",
+  },
+  lv: {
+    saveContact: "Saglabāt kontaktu",
+    saved: "Saglabāts!",
+    mobile: "Mobilais",
+    email: "E-pasts",
+    office: "Birojs",
+    program: "Program",
+    programm: "Programma",
+    iosHint: "iOS: Nospiediet Kopīgot > Pievienot sākuma ekrānam",
   },
 };
 
@@ -317,8 +349,13 @@ function ContactCard() {
           </div>
         </div>
 
+        {/* Language switcher */}
+        <div className="flex justify-center mt-6">
+          <LanguageSwitcher />
+        </div>
+
         {/* Branding */}
-        <p className="text-center mt-6 text-offwhite/20 text-xs font-mono tracking-[0.3em] uppercase">
+        <p className="text-center mt-4 text-offwhite/20 text-xs font-mono tracking-[0.3em] uppercase">
           urbanstyle.ltd
         </p>
       </motion.div>
