@@ -40,6 +40,12 @@ interface ComponentCard {
 interface PageContent {
   tabs: Record<AudienceTab, string>;
   zoom: { show: string; hide: string };
+  sharedCta: {
+    bookCallTitle: string;
+    bookCallDesc: string;
+    bookCallBtn: string;
+    contactInfo: string;
+  };
   learners: {
     eyebrow: string;
     headline: string;
@@ -175,6 +181,12 @@ const CONTENT: Record<string, PageContent> = {
       methodology: "Methodology",
     },
     zoom: { show: "Show Full Details", hide: "Hide Details" },
+    sharedCta: {
+      bookCallTitle: "15-min Google Meet with Alek Kozlov",
+      bookCallDesc: "Meet with the producer to discuss collaboration ideas.",
+      bookCallBtn: "Book a Meeting (Calendly)",
+      contactInfo: "Alek Kozlov \u00b7 ak@ettevotluskeskus.ee \u00b7 +372 502 1033",
+    },
 
     // -- Learners -----------------------------------------------------------
     learners: {
@@ -536,6 +548,12 @@ const CONTENT: Record<string, PageContent> = {
       methodology: "Metoodika",
     },
     zoom: { show: "N\u00e4ita t\u00e4isdetaile", hide: "Peida detailid" },
+    sharedCta: {
+      bookCallTitle: "15-min Google Meet kohtumine Alek Kozloviga",
+      bookCallDesc: "Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.",
+      bookCallBtn: "Broneeri Kohtumine (Calendly)",
+      contactInfo: "Alek Kozlov \u00b7 ak@ettevotluskeskus.ee \u00b7 +372 502 1033",
+    },
 
     // -- Learners -----------------------------------------------------------
     learners: {
@@ -897,6 +915,12 @@ const CONTENT: Record<string, PageContent> = {
       methodology: "\u041c\u0435\u0442\u043e\u0434\u043e\u043b\u043e\u0433\u0438\u044f",
     },
     zoom: { show: "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0432\u0441\u0435 \u0434\u0435\u0442\u0430\u043b\u0438", hide: "\u0421\u043a\u0440\u044b\u0442\u044c \u0434\u0435\u0442\u0430\u043b\u0438" },
+    sharedCta: {
+      bookCallTitle: "15-\u043c\u0438\u043d. \u0432\u0441\u0442\u0440\u0435\u0447\u0430 Google Meet \u0441 \u0410\u043b\u0435\u043a\u043e\u043c \u041a\u043e\u0437\u043b\u043e\u0432\u044b\u043c",
+      bookCallDesc: "\u0412\u0441\u0442\u0440\u0435\u0447\u0430 \u0441 \u043f\u0440\u043e\u0434\u044e\u0441\u0435\u0440\u043e\u043c \u0438 \u0438\u0434\u0435\u0438 \u0434\u043b\u044f \u0441\u043e\u0442\u0440\u0443\u0434\u043d\u0438\u0447\u0435\u0441\u0442\u0432\u0430.",
+      bookCallBtn: "\u0417\u0430\u0431\u0440\u043e\u043d\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432\u0441\u0442\u0440\u0435\u0447\u0443 (Calendly)",
+      contactInfo: "\u0410\u043b\u0435\u043a \u041a\u043e\u0437\u043b\u043e\u0432 \u00b7 ak@ettevotluskeskus.ee \u00b7 +372 502 1033",
+    },
 
     learners: {
       eyebrow: "\u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 DACA",
@@ -1174,6 +1198,12 @@ const CONTENT: Record<string, PageContent> = {
       methodology: "Metodolo\u0123ija",
     },
     zoom: { show: "R\u0101d\u012bt visas deta\u013cas", hide: "Sl\u0113pt deta\u013cas" },
+    sharedCta: {
+      bookCallTitle: "15 min Google Meet ar Aleku Kozlovu",
+      bookCallDesc: "Tik\u0161an\u0101s ar producentu un sadarb\u012bbas idejas.",
+      bookCallBtn: "Rezerv\u0113t tik\u0161anos (Calendly)",
+      contactInfo: "Aleks Kozlovs \u00b7 ak@ettevotluskeskus.ee \u00b7 +372 502 1033",
+    },
 
     learners: {
       eyebrow: "DACA Programma",
@@ -2172,10 +2202,10 @@ function LearnersView() {
             
             <div className="bg-white/5 border border-offwhite/10 rounded-xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-sm">
               <h3 className="text-offwhite/90 text-2xl font-bold mb-2">
-                15-min Google Meet kohtumine Alek Kozloviga
+                {t.sharedCta.bookCallTitle}
               </h3>
               <p className="text-offwhite/70 text-base mb-8">
-                Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.
+                {t.sharedCta.bookCallDesc}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -2193,13 +2223,13 @@ function LearnersView() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
                 >
-                  Broneeri Kohtumine (Calendly)
+                  {t.sharedCta.bookCallBtn}
                 </a>
               </div>
             </div>
             
             <p className="mt-8 text-offwhite/50 text-sm">
-              Alek Kozlov &middot; ak@ettevotluskeskus.ee &middot; +372 502 1033
+              {t.sharedCta.contactInfo}
             </p>
           </RevealSection>
         </div>
@@ -2364,10 +2394,10 @@ function EmployersView() {
             
             <div className="bg-charcoal/20 border border-offwhite/10 rounded-xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-sm">
               <h3 className="text-offwhite/90 text-2xl font-bold mb-2">
-                15-min Google Meet kohtumine Alek Kozloviga
+                {t.sharedCta.bookCallTitle}
               </h3>
               <p className="text-offwhite/70 text-base mb-8">
-                Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.
+                {t.sharedCta.bookCallDesc}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -2383,13 +2413,13 @@ function EmployersView() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
                 >
-                  Broneeri Kohtumine (Calendly)
+                  {t.sharedCta.bookCallBtn}
                 </a>
               </div>
             </div>
             
             <p className="mt-8 text-offwhite/50 text-sm">
-              Alek Kozlov &middot; ak@ettevotluskeskus.ee &middot; +372 502 1033
+              {t.sharedCta.contactInfo}
             </p>
           </RevealSection>
         </div>
@@ -2595,10 +2625,10 @@ function MethodologyView() {
             
             <div className="bg-charcoal/20 border border-offwhite/10 rounded-xl p-8 mb-10 max-w-2xl mx-auto backdrop-blur-sm">
               <h3 className="text-offwhite/90 text-2xl font-bold mb-2">
-                15-min Google Meet kohtumine Alek Kozloviga
+                {t.sharedCta.bookCallTitle}
               </h3>
               <p className="text-offwhite/70 text-base mb-8">
-                Kohtumine produtsendiga ja koost\u00f6\u00f6 m\u00f5tteid.
+                {t.sharedCta.bookCallDesc}
               </p>
               
               <div className="flex flex-col justify-center items-center">
@@ -2608,13 +2638,13 @@ function MethodologyView() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-300 shadow-xl w-full sm:w-auto"
                 >
-                  Broneeri Kohtumine (Calendly)
+                  {t.sharedCta.bookCallBtn}
                 </a>
               </div>
             </div>
             
             <p className="mt-8 text-offwhite/50 text-sm">
-              Alek Kozlov &middot; ak@ettevotluskeskus.ee &middot; +372 502 1033
+              {t.sharedCta.contactInfo}
             </p>
           </RevealSection>
         </div>
