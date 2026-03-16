@@ -39,12 +39,23 @@
   },
   "products": {
     "title": "Наша Продукция",
+    "subtitle": "Премиум уличная одежда, созданная в Таллинне",
     "filter": "Фильтр",
     "all": "Все",
-    "featured": "Популярные Товары"
+    "featured": "Популярные Товары",
+    "category_jackets": "Куртки",
+    "category_hoodies": "Худи",
+    "category_tees": "Футболки",
+    "category_pants": "Брюки",
+    "category_bags": "Сумки",
+    "category_accessories": "Аксессуары",
+    "category_outerwear": "Верхняя одежда",
+    "category_footwear": "Обувь"
   },
   "about": {
     "title": "О Нас",
+    "heroTitle": "Кто мы",
+    "heroSubtitle": "45 человек. 3 города. 1 миссия.",
     "team": "Наша Команда",
     "story": "Наша История",
     "values": "Ценности"

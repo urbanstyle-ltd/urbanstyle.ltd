@@ -39,12 +39,23 @@
   },
   "products": {
     "title": "Meie Tooted",
+    "subtitle": "Premium urban streetwear, disainitud Tallinnas",
     "filter": "Filtreeri",
     "all": "Kõik",
-    "featured": "Populaarsed Tooted"
+    "featured": "Populaarsed Tooted",
+    "category_jackets": "Jakid",
+    "category_hoodies": "Hoodied",
+    "category_tees": "T-särgid",
+    "category_pants": "Püksid",
+    "category_bags": "Kotid",
+    "category_accessories": "Aksessuaarid",
+    "category_outerwear": "Üleriided",
+    "category_footwear": "Jalatsid"
   },
   "about": {
     "title": "Meist",
+    "heroTitle": "Kes me oleme",
+    "heroSubtitle": "45 inimest. 3 linna. 1 missioon.",
     "team": "Meie Meeskond",
     "story": "Meie Lugu",
     "values": "Väärtused"

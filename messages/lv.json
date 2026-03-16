@@ -39,12 +39,23 @@
   },
   "products": {
     "title": "Mūsu produkti",
+    "subtitle": "Premium ielu mode, izstrādāta Tallinā",
     "filter": "Filtrs",
     "all": "Visi",
-    "featured": "Populāri produkti"
+    "featured": "Populāri produkti",
+    "category_jackets": "Jakas",
+    "category_hoodies": "Kapuči",
+    "category_tees": "T-krekli",
+    "category_pants": "Bikses",
+    "category_bags": "Somas",
+    "category_accessories": "Aksesuāri",
+    "category_outerwear": "Virsdrēbes",
+    "category_footwear": "Apavi"
   },
   "about": {
     "title": "Par mums",
+    "heroTitle": "Kas mēs esam",
+    "heroSubtitle": "45 cilvēki. 3 pilsētas. 1 misija.",
     "team": "Mūsu komanda",
     "story": "Mūsu stāsts",
     "values": "Vērtības"

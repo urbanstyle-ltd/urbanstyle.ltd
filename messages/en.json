@@ -39,12 +39,23 @@
   },
   "products": {
     "title": "Our Products",
+    "subtitle": "Premium urban streetwear, designed in Tallinn",
     "filter": "Filter",
     "all": "All",
-    "featured": "Featured Products"
+    "featured": "Featured Products",
+    "category_jackets": "Jackets",
+    "category_hoodies": "Hoodies",
+    "category_tees": "Tees",
+    "category_pants": "Pants",
+    "category_bags": "Bags",
+    "category_accessories": "Accessories",
+    "category_outerwear": "Outerwear",
+    "category_footwear": "Footwear"
   },
   "about": {
     "title": "About Us",
+    "heroTitle": "Who we are",
+    "heroSubtitle": "45 people. 3 cities. 1 mission.",
     "team": "Our Team",
     "story": "Our Story",
     "values": "Values"

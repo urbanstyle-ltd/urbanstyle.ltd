@@ -49,10 +49,10 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold uppercase tracking-tighter leading-none mb-6 text-offwhite">
-              Kes me oleme
+              {t('heroTitle')}
             </h1>
             <p className="text-xl md:text-3xl text-offwhite/90 font-medium">
-              45 inimest. 3 linna. 1 missioon.
+              {t('heroSubtitle')}
             </p>
           </motion.div>
         </div>

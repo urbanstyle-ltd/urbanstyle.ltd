@@ -47,7 +47,7 @@ export default function ProductsPage() {
             transition={{ delay: 0.1 }}
             className="text-xl text-charcoal/80 font-medium"
           >
-            Premium urban streetwear, disainitud Tallinnas
+            {t('subtitle')}
           </motion.p>
         </div>
       </div>
