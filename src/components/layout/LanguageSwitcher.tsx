@@ -9,6 +9,7 @@ const labels: Record<Locale, string> = {
   en: 'EN',
   ru: 'RU',
   lv: 'LV',
+  uk: 'UA',
 };
 
 export function LanguageSwitcher() {

@@ -12,11 +12,11 @@ export default function AboutPage() {
   const t = useTranslations('about');
 
   const timeline = [
-    { year: '2020', event: { et: 'Asutatud Tallinnas', en: 'Founded in Tallinn', ru: 'Основан в Таллинне', lv: 'Dibināts Tallinā' } },
-    { year: '2021', event: { et: 'Esimene pop-up pood', en: 'First pop-up store', ru: 'Первый поп-ап магазин', lv: 'Pirmais pop-up veikals' } },
-    { year: '2022', event: { et: 'E-poe avamine, laienemine Tartusse', en: 'E-commerce launch, expanded to Tartu', ru: 'Запуск интернет-магазина, расширение в Тарту', lv: 'E-komercijas atvēršana, paplašināšanās uz Tartu' } },
-    { year: '2023', event: { et: 'Pärnu pood, 350+ toodet', en: 'Pärnu store, 350+ products', ru: 'Магазин в Пярну, 350+ товаров', lv: 'Pērnavas veikals, 350+ produkti' } },
-    { year: '2025', event: { et: 'Andmepõhine transformatsioon algab', en: 'Data-driven transformation begins', ru: 'Начало цифровой трансформации', lv: 'Sākas uz datiem balstīta transformācija' } },
+    { year: '2020', event: { et: 'Asutatud Tallinnas', en: 'Founded in Tallinn', ru: 'Основан в Таллинне', lv: 'Dibināts Tallinā', uk: 'Засновано у Таллінні' } },
+    { year: '2021', event: { et: 'Esimene pop-up pood', en: 'First pop-up store', ru: 'Первый поп-ап магазин', lv: 'Pirmais pop-up veikals', uk: 'Перший поп-ап магазин' } },
+    { year: '2022', event: { et: 'E-poe avamine, laienemine Tartusse', en: 'E-commerce launch, expanded to Tartu', ru: 'Запуск интернет-магазина, расширение в Тарту', lv: 'E-komercijas atvēršana, paplašināšanās uz Tartu', uk: 'Запуск е-комерції, розширення до Тарту' } },
+    { year: '2023', event: { et: 'Pärnu pood, 350+ toodet', en: 'Pärnu store, 350+ products', ru: 'Магазин в Пярну, 350+ товаров', lv: 'Pērnavas veikals, 350+ produkti', uk: 'Магазин у Пярну, 350+ товарів' } },
+    { year: '2025', event: { et: 'Andmepõhine transformatsioon algab', en: 'Data-driven transformation begins', ru: 'Начало цифровой трансформации', lv: 'Sākas uz datiem balstīta transformācija', uk: 'Початок трансформації на основі даних' } },
   ];
 
   const storyText: Record<string, string> = {
@@ -24,6 +24,7 @@ export default function AboutPage() {
     en: 'Founded in 2020 in Tallinn, UrbanStyle blends Estonian street culture with Scandinavian design principles. What started as a small collection of carefully crafted basics has grown into a brand that represents the creative energy of Tallinn — raw, refined, and unmistakably local.',
     ru: 'Основанный в 2020 году в Таллинне, UrbanStyle сочетает эстонскую уличную культуру со скандинавскими принципами дизайна. То, что началось как небольшая коллекция тщательно продуманных базовых вещей, выросло в бренд, воплощающий творческую энергию Таллинна — необработанную, утончённую и безошибочно местную.',
     lv: 'Dibināts 2020. gadā Tallinā, UrbanStyle apvieno Igaunijas ielu kultūru ar skandināvu dizaina principiem. Tas, kas sākās kā neliela rūpīgi veidotu pamata apģērbu kolekcija, ir izaudzis par zīmolu, kas iemieso Tallinas radošo enerģiju — neapstrādātu, izsmalcinātu un nepārprotami vietēju.',
+    uk: 'Заснований у 2020 році в Таллінні, UrbanStyle поєднує естонську вуличну культуру зі скандинавськими принципами дизайну. Те, що почалося як невелика колекція ретельно створених базових речей, виросло у бренд, що втілює творчу енергію Таллінна — сиру, витончену та безпомилково місцеву.',
   };
 
   return (

@@ -8,6 +8,7 @@ const programLinks: Record<Locale, string> = {
   en: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
   ru: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
   lv: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
+  uk: 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator',
 };
 
 export function Footer() {

@@ -17,6 +17,7 @@ const APPROACH_PATHS: Record<string, string> = {
   en: "/en/approach",
   ru: "/ru/podkhod",
   lv: "/lv/pieeja",
+  uk: "/uk/pidkhid",
 };
 
 function getRedirectUrl(audience: Exclude<Audience, "contact">, locale: string): string {
@@ -50,6 +51,11 @@ const REDIRECT_LABELS: Record<string, Record<Exclude<Audience, "contact">, strin
     learner: "Pāradresācija uz dalībnieku informāciju...",
     employer: "Pāradresācija uz darba devēju informāciju...",
     partner: "Pāradresācija uz sadarbības detaļām...",
+  },
+  uk: {
+    learner: "Перенаправлення на інформацію для учасників...",
+    employer: "Перенаправлення на інформацію для роботодавців...",
+    partner: "Перенаправлення на деталі співпраці...",
   },
 };
 
@@ -108,6 +114,16 @@ const CONTACT_LABELS: Record<string, {
     program: "Program",
     programm: "Programma",
     iosHint: "iOS: Nospiediet Kopīgot > Pievienot sākuma ekrānam",
+  },
+  uk: {
+    saveContact: "Зберегти контакт",
+    saved: "Збережено!",
+    mobile: "Мобільний",
+    email: "Ел. пошта",
+    office: "Офіс",
+    program: "Program",
+    programm: "Програма",
+    iosHint: "iOS: Натисніть Поділитися > На головний екран",
   },
 };
 

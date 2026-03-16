@@ -41,12 +41,13 @@ export async function generateMetadata({
         'en-US': '/en',
         'ru-RU': '/ru',
         'lv-LV': '/lv',
+        'uk-UA': '/uk',
       },
     },
     openGraph: {
       type: 'website',
       siteName: 'UrbanStyle',
-      locale: locale === 'et' ? 'et_EE' : locale === 'ru' ? 'ru_RU' : locale === 'lv' ? 'lv_LV' : 'en_US',
+      locale: locale === 'et' ? 'et_EE' : locale === 'ru' ? 'ru_RU' : locale === 'lv' ? 'lv_LV' : locale === 'uk' ? 'uk_UA' : 'en_US',
     },
   };
 }
@@ -60,7 +61,7 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
 
-  if (!routing.locales.includes(locale as "en" | "et" | "ru" | "lv")) {
+  if (!routing.locales.includes(locale as "en" | "et" | "ru" | "lv" | "uk")) {
     notFound();
   }
 

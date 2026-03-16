@@ -81,6 +81,21 @@ const LABELS: Record<string, {
     hint: "Nospiediet pilnekrāna režīmam \u00b7 Turiet nospiestu saglabāšanai",
     tapToClose: "Nospiediet lai aizvērtu",
   },
+  uk: {
+    qrCodes: "QR коди",
+    forLearners: "Для учасників",
+    programInfo: "Інформація про програму",
+    forEmployers: "Для роботодавців",
+    partnership: "Співпраця",
+    forPartners: "Для партнерів",
+    methodology: "Методологія",
+    myContact: "Мій контакт",
+    vCard: "vCard",
+    bookMeeting: "Записатися на зустріч",
+    meetingDesc: "15 хв Google Meet",
+    hint: "Натисніть для повноекранного перегляду \u00b7 Утримуйте для збереження",
+    tapToClose: "Натисніть для закриття",
+  },
 };
 
 function getLabels(locale: string) {

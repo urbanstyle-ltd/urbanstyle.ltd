@@ -15,6 +15,7 @@ export default function StrategyPage() {
     en: 'As UrbanStyle grew from a small Tallinn brand to operating across three cities with 350+ products, the complexity of decisions grew exponentially. Inventory management, customer insights, marketing ROI — intuition alone could no longer keep pace.',
     ru: 'По мере роста UrbanStyle от небольшого таллиннского бренда до компании с тремя магазинами и 350+ товарами, сложность решений росла экспоненциально. Управление запасами, понимание клиентов, ROI маркетинга — одной интуиции уже было недостаточно.',
     lv: 'UrbanStyle augot no neliela Tallinas zīmola līdz uzņēmumam ar trim veikaliem un 350+ produktiem, lēmumu sarežģītība pieauga eksponenciāli. Krājumu pārvaldība, klientu izpratne, mārketinga ROI — intuīcija vien vairs nespēja sekot līdzi.',
+    uk: 'Коли UrbanStyle виріс із невеликого таллінського бренду до компанії з трьома магазинами та 350+ товарами, складність рішень зросла експоненціально. Управління запасами, розуміння клієнтів, ROI маркетингу — самої інтуїції вже було недостатньо.',
   };
 
   const transformText: Record<string, string> = {
@@ -22,10 +23,11 @@ export default function StrategyPage() {
     en: 'We embarked on a strategic transformation, embedding data analytics and AI into every function — from supply chain optimization to personalized marketing. This was not just about tools; it was about building a data-literate culture across the entire organization.',
     ru: 'Мы начали стратегическую трансформацию, внедряя аналитику данных и ИИ в каждую функцию — от оптимизации цепочки поставок до персонализированного маркетинга. Дело было не только в инструментах, а в создании культуры работы с данными во всей организации.',
     lv: 'Mēs uzsākām stratēģisku transformāciju, integrējot datu analītiku un AI katrā funkcijā — no piegādes ķēdes optimizācijas līdz personalizētam mārketingam. Tas nebija tikai par rīkiem, bet par datu pratības kultūras veidošanu visā organizācijā.',
+    uk: 'Ми розпочали стратегічну трансформацію, інтегруючи аналітику даних та AI в кожну функцію — від оптимізації ланцюга постачання до персоналізованого маркетингу. Це було не лише про інструменти, а про створення культури роботи з даними у всій організації.',
   };
 
   const challengeTitle: Record<string, string> = {
-    et: 'Väljakutse', en: 'The Challenge', ru: 'Вызов', lv: 'Izaicinājums',
+    et: 'Väljakutse', en: 'The Challenge', ru: 'Вызов', lv: 'Izaicinājums', uk: 'Виклик',
   };
 
   const ctaText: Record<string, string> = {
@@ -33,13 +35,14 @@ export default function StrategyPage() {
     en: 'Our data transformation was supported by talented analysts from the DACA program. Discover how you can be part of the next cohort.',
     ru: 'Нашу цифровую трансформацию поддержали талантливые аналитики из программы DACA. Узнайте, как стать частью следующего потока.',
     lv: 'Mūsu datu transformāciju atbalstīja talantīgi analītiķi no DACA programmas. Uzziniet, kā jūs varat kļūt par nākamās grupas dalībnieku.',
+    uk: 'Нашу цифрову трансформацію підтримали талановиті аналітики з програми DACA. Дізнайтеся, як стати частиною наступного потоку.',
   };
 
   const aiCards: { title: Record<string, string>; desc: Record<string, string> }[] = [
-    { title: { et: 'Nõudluse prognoosimine', en: 'Demand Forecasting', ru: 'Прогнозирование спроса', lv: 'Pieprasījuma prognozēšana' }, desc: { et: 'AI-põhised prognoosid vähendavad ülelaoseisu 30%', en: 'AI-powered predictions reduce overstock by 30%', ru: 'Прогнозы на основе ИИ сокращают избыточные запасы на 30%', lv: 'AI prognozes samazina pārpalikumu par 30%' } },
-    { title: { et: 'Kliendisegmentimine', en: 'Customer Segmentation', ru: 'Сегментация клиентов', lv: 'Klientu segmentācija' }, desc: { et: 'Andmepõhised persoonad sihitud kampaaniate jaoks', en: 'Data-driven personas for targeted campaigns', ru: 'Персоны на основе данных для целевых кампаний', lv: 'Uz datiem balstītas personas mērķētām kampaņām' } },
-    { title: { et: 'Tarneahel', en: 'Supply Chain', ru: 'Цепочка поставок', lv: 'Piegādes ķēde' }, desc: { et: 'Automaatsed täienduspunktid kolme poe vahel', en: 'Automated reorder points across 3 stores', ru: 'Автоматические точки повторного заказа в 3 магазинах', lv: 'Automatizēti atkārtotas pasūtīšanas punkti 3 veikalos' } },
-    { title: { et: 'Sisu loomine', en: 'Content Creation', ru: 'Создание контента', lv: 'Satura veidošana' }, desc: { et: 'AI-toetatud tootekirjeldused ja visuaalid', en: 'AI-assisted product descriptions and imagery', ru: 'Описания товаров и визуалы с помощью ИИ', lv: 'AI atbalstīti produktu apraksti un vizuālie materiāli' } },
+    { title: { et: 'Nõudluse prognoosimine', en: 'Demand Forecasting', ru: 'Прогнозирование спроса', lv: 'Pieprasījuma prognozēšana', uk: 'Прогнозування попиту' }, desc: { et: 'AI-põhised prognoosid vähendavad ülelaoseisu 30%', en: 'AI-powered predictions reduce overstock by 30%', ru: 'Прогнозы на основе ИИ сокращают избыточные запасы на 30%', lv: 'AI prognozes samazina pārpalikumu par 30%', uk: 'Прогнози на основі AI скорочують надлишкові запаси на 30%' } },
+    { title: { et: 'Kliendisegmentimine', en: 'Customer Segmentation', ru: 'Сегментация клиентов', lv: 'Klientu segmentācija', uk: 'Сегментація клієнтів' }, desc: { et: 'Andmepõhised persoonad sihitud kampaaniate jaoks', en: 'Data-driven personas for targeted campaigns', ru: 'Персоны на основе данных для целевых кампаний', lv: 'Uz datiem balstītas personas mērķētām kampaņām', uk: 'Персони на основі даних для цільових кампаній' } },
+    { title: { et: 'Tarneahel', en: 'Supply Chain', ru: 'Цепочка поставок', lv: 'Piegādes ķēde', uk: 'Ланцюг постачання' }, desc: { et: 'Automaatsed täienduspunktid kolme poe vahel', en: 'Automated reorder points across 3 stores', ru: 'Автоматические точки повторного заказа в 3 магазинах', lv: 'Automatizēti atkārtotas pasūtīšanas punkti 3 veikalos', uk: 'Автоматичні точки повторного замовлення у 3 магазинах' } },
+    { title: { et: 'Sisu loomine', en: 'Content Creation', ru: 'Создание контента', lv: 'Satura veidošana', uk: 'Створення контенту' }, desc: { et: 'AI-toetatud tootekirjeldused ja visuaalid', en: 'AI-assisted product descriptions and imagery', ru: 'Описания товаров и визуалы с помощью ИИ', lv: 'AI atbalstīti produktu apraksti un vizuālie materiāli', uk: 'Описи товарів та візуали за допомогою AI' } },
   ];
 
   return (

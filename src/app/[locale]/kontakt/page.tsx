@@ -7,19 +7,19 @@ import { motion } from 'framer-motion';
 const stores = [
   {
     city: 'Tallinn',
-    label: { et: 'Peakontor & Flagship', en: 'HQ & Flagship', ru: 'Штаб-квартира & Флагман', lv: 'Galvenais birojs & Flagship' },
+    label: { et: 'Peakontor & Flagship', en: 'HQ & Flagship', ru: 'Штаб-квартира & Флагман', lv: 'Galvenais birojs & Flagship', uk: 'Штаб-квартира & Флагман' },
     address: 'Tormilinna 4',
     zip: '10145 Tallinn',
   },
   {
     city: 'Tartu',
-    label: { et: 'Tartu pood', en: 'Tartu Store', ru: 'Магазин в Тарту', lv: 'Tartu veikals' },
+    label: { et: 'Tartu pood', en: 'Tartu Store', ru: 'Магазин в Тарту', lv: 'Tartu veikals', uk: 'Магазин у Тарту' },
     address: 'Jaamapõllu 12',
     zip: '51008 Tartu',
   },
   {
     city: 'Pärnu',
-    label: { et: 'Pärnu pood', en: 'Pärnu Store', ru: 'Магазин в Пярну', lv: 'Pērnavas veikals' },
+    label: { et: 'Pärnu pood', en: 'Pärnu Store', ru: 'Магазин в Пярну', lv: 'Pērnavas veikals', uk: 'Магазин у Пярну' },
     address: 'Päikesekalda 7',
     zip: '80032 Pärnu',
   },
