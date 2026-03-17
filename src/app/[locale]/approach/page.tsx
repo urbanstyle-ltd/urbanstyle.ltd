@@ -2710,7 +2710,9 @@ function EmployersView() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="#employers"
+                  href="/daca-syllabus.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
                 >
                   {e.execCtaSecondary}
@@ -2939,7 +2941,15 @@ function MethodologyView() {
                 {t.sharedCta.bookCallDesc}
               </p>
               
-              <div className="flex flex-col justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a
+                  href="/daca-syllabus.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
+                >
+                  {t.employers.execCtaSecondary}
+                </a>
                 <a
                   href="https://calendly.com/alekkozlov/daca-with-producer-data-analyst-career-accelerator"
                   target="_blank"
