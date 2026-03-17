@@ -172,41 +172,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "GitHub repo + README", base: "Repository loodud, README.md, 1+ commit", advanced: "Kataloogistruktuur, .gitignore, badges" },
       tools: ["GitHub", "VS Code", "Supabase", "SQL (tutvustus)", "Power BI / Python", "NotebookLM"],
       textbooks: { mckinney: "Ch 1: Preliminaries", knaflic: "Ch 1: Importance of Context" },
-      datasets: ["test_sales.csv (20 rida)"],
+      
       fourC: "Connection (siduda kogemusega)",
-      groupWork: {
-        challenge: "Seadista meeskonna t\u00F6\u00F6keskkond ja tee esimene commit",
-        decomposition: "T\u00F6\u00F6riistade p\u00F5hine",
-        subtasks: "A=GitHub repo, B=Supabase projekt, C=NotebookLM, D=Team Charter",
-        demo: "GitHub repo link + Supabase SQL p\u00E4ring + NotebookLM notebook"
-      },
+      
       components: {
         mentorlus: "Programmi tutvustus + DA turu \u00FClevaade",
         portfoolio: "GitHub repo + README",
         eopik: "McKinney Ch1 + Knaflic Ch1",
         ekataloog: "4 CORE RAG + 2 weekly RAG"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: false, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Tutvustage DA turu statistikat: 56+ avatud rolli Eestis, kasvav sektor",
-        "R\u00F5hutage: \u201CTeie varasem taust on eelis, mitte puuduj\u00E4\u00E4k\u201D",
-        "6 meeskonda moodustatakse UrbanStyle osakondade j\u00E4rgi",
-        "Iga osaleja loob individuaalse t\u00F6\u00F6keskkonna + meeskond loob \u00FChise"
-      ]
-    },
-    {
-      id: 1,
-      name: "SQL P\u00F5hit\u00F5ed",
-      sprint: 1,
-      shuHaRi: "Shu",
-      bloomLevel: "M\u00F5istmine",
-      character: "Toomas",
-      characterQuote: "Meie sales tabelis on \u00FCle 5000 duplikaati. Ainult anal\u00FC\u00FCsige!",
-      narrativeTitle: "Toomas Avastab 5000 Duplikaati",
-      emotionalArc: "\u00C4revus (duplikaadid!) \u2192 SELECT t\u00F6\u00F6tab! \u2192 suurim m\u00FC\u00FCk leitud!",
-      aiLevel: { name: "Tutvumine", desc: "NotebookLM, AI k\u00FCsimused", pct: 15 },
-      sessions: {
-        s1: { topic: "SQL s\u00FCntaksi alused: SELECT, WHERE, ORDER BY", outcomes: ["Kirjutab SELECT p\u00E4ringuid", "Kasutab WHERE filtreerimist"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "Sales tabeli uurimine (andmedomeeni dekomposits.)", outcomes: ["5+ SQL p\u00E4ringut", "Duplikaadid ja NULLid leitud"], duration: "90 min" },
         s3: { topic: "Demo: Raporteerime Toomasele", outcomes: ["SQL tulemused esitletud", "Peer + mentor tagasiside"], duration: "90 min" }
       },
@@ -214,41 +190,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "Sales tabeli uurimisuuring", base: "5 SQL p\u00E4ringut + kommentaarid + README", advanced: "GROUP BY, duplikaatide list, iga kaupluse kogum\u00FC\u00FCk" },
       tools: ["SQL (SELECT, WHERE, ORDER BY, LIMIT, DISTINCT, COUNT)", "Supabase SQL Editor", "GitHub", "NotebookLM"],
       textbooks: { mckinney: "Ch 2: Python Basics", knaflic: "Ch 1 (kordamine)" },
-      datasets: ["sales (~15,234 rida, vigane)"],
+      
       fourC: "Connection (Excel filtreerimine = WHERE)",
-      groupWork: {
-        challenge: "Toomas: \u201CMeie sales tabelis on \u00FCle 5000 duplikaati. Leidke need!\u201D",
-        decomposition: "Andmedomeeni dekomposits. (veerg/m\u00F5\u00F5dik)",
-        subtasks: "A=COUNT+DISTINCT, B=Duplikaadid, C=NULL anal\u00FC\u00FCs, D=TOP m\u00FC\u00FCgid",
-        demo: "Mitu rida? Mitu unikaalset? Mitu duplikaati? Suurim m\u00FC\u00FCk?"
-      },
+      
       components: {
         mentorlus: "SQL s\u00FCntaks + live coding",
         portfoolio: "week1_sales_exploration.sql",
         eopik: "McKinney Ch2 + Knaflic Ch1",
         ekataloog: "2 weekly RAG (SQL basics)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "SELECT/WHERE/ORDER BY on SQL alus \u2014 v\u00F5rrelge Excel filtreerimisega",
-        "Toomas annab \u00E4ri-konteksti: duplikaadid = rahakadu",
-        "Grupit\u00F6\u00F6: andmedomeeni dekompositsioon (iga liige anal\u00FC\u00FCsib erinevat veergu)",
-        "Portfoolio: 5 p\u00E4ringut + README + kommentaarid GitHubis"
-      ]
-    },
-    {
-      id: 2,
-      name: "Andmete Puhastamine",
-      sprint: 1,
-      shuHaRi: "Shu",
-      bloomLevel: "Rakendamine",
-      character: "Toomas",
-      characterQuote: "Muljetavaldav. Te dokumenteeriste iga sammu. See on professionaalne t\u00F6\u00F6.",
-      narrativeTitle: "Toomas Vajab Puhastamisskripti",
-      emotionalArc: "Hirm (kustutada?) \u2192 COALESCE geniaalne! \u2192 5000+ puhastatud!",
-      aiLevel: { name: "Abiline", desc: "Debug, kontroll", pct: 25 },
-      sessions: {
-        s1: { topic: "DELETE, UPDATE, COALESCE, turvakoopia", outcomes: ["DELETE koos WHERE klausliga", "Test koopia loomine"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "Puhastamisskripti loomine (andmedomeeni dekomposits.)", outcomes: ["Cleaning script valmis", "Logi tabel loodud"], duration: "90 min" },
         s3: { topic: "Demo: Esitleme skripti Toomasele", outcomes: ["Skript esitletud", "Toomas kiidab"], duration: "90 min" }
       },
@@ -256,41 +208,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "Andmete puhastamisskript", base: "Test koopia + DELETE + UPDATE NULLid + logi", advanced: "Transaktsioonid, rollback plaan" },
       tools: ["SQL (DELETE, UPDATE, COALESCE, CASE WHEN)", "Supabase", "GitHub (branch)", "NotebookLM"],
       textbooks: { mckinney: "Ch 3: Data Structures", knaflic: "Ch 2: Effective Visuals" },
-      datasets: ["sales (puhastamata) \u2192 sales_clean"],
+      
       fourC: "Connection (Excel duplikaadid = DELETE)",
-      groupWork: {
-        challenge: "Kristi: \u201CJuhatuse koosolek 2 n\u00E4dala p\u00E4rast. Andmed PEAVAD olema puhtad.\u201D",
-        decomposition: "Andmedomeeni dekomposits. (veerg/m\u00F5\u00F5dik)",
-        subtasks: "A=Duplikaadid, B=NULL-id, C=Kuup\u00E4evad, D=Negatiivsed",
-        demo: "Enne/p\u00E4rast ridade arv, skripti sammud, logi tabel"
-      },
+      
       components: {
         mentorlus: "Puhastamise meetodid + turvalisus",
         portfoolio: "week2_cleaning_script.sql",
         eopik: "McKinney Ch3 + Knaflic Ch2",
         ekataloog: "2 weekly RAG (SQL cleaning)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "ALATI tee turvakoopia enne DELETE/UPDATE \u2014 see on professionaalne standard",
-        "COALESCE on \u201Cvarjatud p\u00E4rl\u201D \u2014 NULL-ide k\u00E4sitlemine elegantne",
-        "Grupit\u00F6\u00F6: iga liige puhastab erinevat andmet\u00FC\u00FCpi (duplikaadid, NULL-id, kuup\u00E4evad, negatiivsed)",
-        "Toomas tunnustab: \u201CProfessionaalne t\u00F6\u00F6, sest iga samm on dokumenteeritud\u201D"
-      ]
-    },
-    {
-      id: 3,
-      name: "SQL JOINs",
-      sprint: 2,
-      shuHaRi: "Shu",
-      bloomLevel: "Anal\u00FC\u00FCsimine",
-      character: "Toomas + Anna",
-      characterQuote: "See on T\u00C4PSELT see, mida ma vajasin! TOP klient tuleb Google Ads'ist!",
-      narrativeTitle: "Anna Ilmub \u2013 KES on Parimad Kliendid?",
-      emotionalArc: "JOIN? Mis see on? \u2192 INNER JOIN t\u00F6\u00F6tab! \u2192 Anna vaimustuses!",
-      aiLevel: { name: "Abiline", desc: "Debug, kontroll", pct: 30 },
-      sessions: {
-        s1: { topic: "INNER JOIN, LEFT JOIN, multi-table", outcomes: ["\u00DChendab 2 tabelit", "M\u00F5istab INNER vs LEFT"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "3 tabeli \u00FChendamine + turunduskanalid (andmedomeeni dekomposits.)", outcomes: ["TOP 20 klienti leitud", "Turunduskanalid anal\u00FC\u00FCsitud"], duration: "90 min" },
         s3: { topic: "Demo: Anna Metsa tagasiside", outcomes: ["Anna: WOW!", "Toomas noogutab"], duration: "90 min" }
       },
@@ -298,41 +226,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "TOP 20 klientide anal\u00FC\u00FCs", base: "Sales+customers JOIN, TOP 20", advanced: "3 tabeli JOIN (+ web_logs), turunduskanalid" },
       tools: ["SQL (INNER/LEFT/RIGHT JOIN, multi-table)", "Supabase", "GitHub (PR)", "NotebookLM"],
       textbooks: { mckinney: "Ch 5: pandas", knaflic: "Ch 3: Clutter is Your Enemy" },
-      datasets: ["sales (puhastatud)", "customers (uus)", "web_logs (uus)"],
+      
       fourC: "Connection (Excel VLOOKUP = SQL JOIN)",
-      groupWork: {
-        challenge: "Anna: \u201CKIIRE \u2014 vajan TOP 20 klientide listi koos turunduskanaliga.\u201D",
-        decomposition: "Andmedomeeni dekomposits. (tabel/vaade)",
-        subtasks: "A=2-tabeli JOIN, B=TOP 20, C=Turunduskanalid, D=Linna anal\u00FC\u00FCs",
-        demo: "TOP 20 nimekiri, turunduskanal, linn, loyal staatus"
-      },
+      
       components: {
         mentorlus: "JOIN loogika + live coding",
         portfoolio: "week3_top_customers_analysis.sql",
         eopik: "McKinney Ch5 + Knaflic Ch3",
         ekataloog: "2 weekly RAG (SQL JOINs)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Anna Mets (turundussjuht) ilmub \u2014 uus \u00E4ri-vajadus, uus perspektiiv",
-        "INNER vs LEFT JOIN: kasutage reaalelu anal\u00F6\u00F6giat (k\u00F5ik kliendid vs ainult ostjad)",
-        "3 tabeli JOIN on \u00E4riloogika p\u00F5hivajadus: m\u00FC\u00FCk + kliendid + veebilogi",
-        "Anna tagasiside: \u201CTOP klient tuleb Google Ads'ist!\u201D \u2014 andmed toetavad otsuseid"
-      ]
-    },
-    {
-      id: 4,
-      name: "SQL Agregatsioon",
-      sprint: 2,
-      shuHaRi: "Ha",
-      bloomLevel: "Anal\u00FC\u00FCsimine",
-      character: "Anna + Liis",
-      characterQuote: "Miks me ei teadnud seda varem?! Need trendid on kristallselged.",
-      narrativeTitle: "GROUP BY Maailm \u2013 CEO Tahab Numbreid",
-      emotionalArc: "Entusiasm \u2192 Liisi inventuuri probleem \u2192 CEO kiidab!",
-      aiLevel: { name: "Koost\u00F6\u00F6partner", desc: "Koodigener., kriitiline hindamine", pct: 45 },
-      sessions: {
-        s1: { topic: "GROUP BY, HAVING, agregaatfunktsioonid, CTE", outcomes: ["GROUP BY loogika", "COUNT, SUM, AVG, CTE"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "\u00C4riKPI\u2019de arvutamine + varude audit (andmedomeeni dekomposits.)", outcomes: ["KPI'd arvutatud", "Laoaudit tehtud"], duration: "90 min" },
         s3: { topic: "Demo: CEO aruanded + Window Functions", outcomes: ["Kristi: kristallselged trendid", "Window functions tutvustus"], duration: "90 min" }
       },
@@ -340,41 +244,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "\u00C4ri-KPI aruanded", base: "Kuude kaupa m\u00FC\u00FCk, TOP kliendid, laoaudit", advanced: "CTE'd, LAG/LEAD, ROW_NUMBER, jooksev summa" },
       tools: ["SQL (GROUP BY, HAVING, CTE, Window Functions)", "Supabase", "GitHub (branch + PR)", "NotebookLM"],
       textbooks: { mckinney: "Ch 6: Data Loading", knaflic: "Ch 4: Focus Attention" },
-      datasets: ["sales_orders", "customers", "products", "inventory", "inventory_movements"],
+      
       fourC: "Concrete Practice r\u00F5hk (45%)",
-      groupWork: {
-        challenge: "Liis: \u201CLaos on ~40 toodet, kus arvestus ei klapi!\u201D + Kristi: \u201CTahame kuude kaupa trende.\u201D",
-        decomposition: "Andmedomeeni dekomposits. (KPI/m\u00F5\u00F5dik)",
-        subtasks: "A=Kuude m\u00FC\u00FCk, B=TOP kategooriad, C=Laoaudit CTE, D=HAVING anomaaliad",
-        demo: "M\u00FC\u00FCgitrend 26 kuud, TOP 5 kategooriat, ~40 laolahknevust"
-      },
+      
       components: {
         mentorlus: "Agregatsioon + CTE muster",
         portfoolio: "week4_aggregation_queries.sql",
         eopik: "McKinney Ch6 + Knaflic Ch4",
         ekataloog: "2 weekly RAG (SQL aggregation)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Ha-tase algab: osalejad hakkavad m\u00F5istma MIKS, mitte ainult KUIDAS",
-        "GROUP BY on andmeanal\u00FC\u00FCtiku enim kasutatav t\u00F6\u00F6riist \u00E4rimaailmas",
-        "CTE = \u201Cp\u00E4ringute ehitusklotsid\u201D \u2014 keerulised p\u00E4ringud osadeks",
-        "Liisi laoaudit: ~40 lahknevust \u2014 reaalne \u00E4riv\u00E4\u00E4rtus!"
-      ]
-    },
-    {
-      id: 5,
-      name: "Visualiseerimise Disain",
-      sprint: 3,
-      shuHaRi: "Ha",
-      bloomLevel: "Hindamine",
-      character: "Kristi + Anna",
-      characterQuote: "Investorid tulevad 5 n\u00E4dala p\u00E4rast. Nad tahavad INTERAKTIIVSET dashboardi.",
-      narrativeTitle: "Kriisihetk \u2013 Investor Pitch 5 N\u00E4dala P\u00E4rast",
-      emotionalArc: "Elevus + pressure \u2192 Chart types matter! \u2192 Protot\u00FC\u00FCbid VALMIS!",
-      aiLevel: { name: "Koost\u00F6\u00F6partner", desc: "Koodigener., kriitiline hindamine", pct: 50 },
-      sessions: {
-        s1: { topic: "Viz p\u00F5him\u00F5tted, dashboard anatomy, data-ink ratio", outcomes: ["Chart type selection", "Dashboard layout"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "Investor dashboard ehitamine (diagrammi dekomposits.)", outcomes: ["3\u20134 chart'i loodud", "KPI kaardid, filtrid"], duration: "90 min" },
         s3: { topic: "Retrospektiiv + peer feedback", outcomes: ["Peer feedback 3x3", "Dashboard screenshot GitHub'is"], duration: "90 min" }
       },
@@ -382,41 +262,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "Investor Dashboard v1.0", base: "3 chart'i + 1\u20132 KPI + 1 filter", advanced: "4+ chart'i, cross-filtering, drill-down" },
       tools: ["Power BI Desktop (Track A)", "Plotly + Streamlit (Track B)", "Supabase (PostgreSQL)", "GitHub"],
       textbooks: { mckinney: "Ch 9: Plotting & Visualization", knaflic: "Ch 5: Think Like a Designer" },
-      datasets: ["sales", "customers", "products", "web_logs"],
+      
       fourC: "Concepts r\u00F5hk (chart types, data-ink ratio)",
-      groupWork: {
-        challenge: "Kristi: \u201CInvestorid tulevad! Dashboard peab olema professionaalne!\u201D",
-        decomposition: "Diagrammi/visualiseeringu dekomposits.",
-        subtasks: "A=Revenue trend (line), B=TOP kategooriad (bar), C=Kanalid (pie), D=KPI kaardid",
-        demo: "T\u00F6\u00F6tav dashboard 3+ graafikuga, filter, KPI v\u00E4\u00E4rtused"
-      },
+      
       components: {
         mentorlus: "Viz p\u00F5him\u00F5tted + Knaflic",
         portfoolio: ".pbix / streamlit_app.py",
         eopik: "McKinney Ch9 + Knaflic Ch5",
         ekataloog: "2 weekly RAG (viz design)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Dual-track algab: Track A = Power BI, Track B = Plotly+Streamlit",
-        "Jagatud teemad: visualiseerimise disain, data-ink ratio, Knaflic",
-        "Kristi investor pitch annab survet \u2014 deadline on reaalne motivaator",
-        "Grupit\u00F6\u00F6: meeskond ehitab koos dashboardi, iga liige vastutab \u00FChe graafiku eest"
-      ]
-    },
-    {
-      id: 6,
-      name: "Andmelood \u2013 Dashboard",
-      sprint: 3,
-      shuHaRi: "Ha",
-      bloomLevel: "Loomine",
-      character: "Anna + Liis",
-      characterQuote: "Investors buy stories, not spreadsheets. Iga number r\u00E4\u00E4gib lugu.",
-      narrativeTitle: "Dashboard Polish + Data Storytelling",
-      emotionalArc: "Dashboard VALMIS! \u2192 Kristi: tahab STORYT \u2192 Published!",
-      aiLevel: { name: "Suunaja", desc: "Delegeerimine, prompt engineering", pct: 60 },
-      sessions: {
-        s1: { topic: "Data storytelling framework + executive summary", outcomes: ["Story arc (Setup\u2192Conflict\u2192Resolution)", "Executive summary"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "Dashboard polish + publishing (jutuvestmise dekomposits.)", outcomes: ["Annotations lisatud", "Published (PBI Service / Streamlit Cloud)"], duration: "90 min" },
         s3: { topic: "Investor pitch role-play + gallery walk", outcomes: ["Gallery walk + h\u00E4\u00E4letamine", "Liisi Operations view"], duration: "90 min" }
       },
@@ -424,41 +280,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "Investor Dashboard v2.0 (published!)", base: "Published URL + executive summary + annotations", advanced: "Multi-audience views, interactive storytelling" },
       tools: ["Power BI Service (Track A)", "Streamlit Cloud (Track B)", "Plotly annotations", "Git branching"],
       textbooks: { mckinney: "Ch 9 j\u00E4tk", knaflic: "Ch 6: Tell a Story" },
-      datasets: ["sales", "customers", "products", "web_logs"],
+      
       fourC: "Concrete Practice r\u00F5hk (storytelling + publish)",
-      groupWork: {
-        challenge: "Kristi: \u201CInvestorid ei taha numbreid \u2014 nad tahavad LUGU.\u201D",
-        decomposition: "Jutuvestmise dekomposits. (publiku/vaatenurga p\u00F5hine)",
-        subtasks: "A=Executive summary, B=Annotations, C=Viitejooned, D=Multi-audience toggle",
-        demo: "Live URL + 2-min data story + k\u00FCsimustele vastamine"
-      },
+      
       components: {
         mentorlus: "Data storytelling + Knaflic Ch6",
         portfoolio: "live URL + data_story.md",
         eopik: "McKinney Ch9 + Knaflic Ch6",
         ekataloog: "2 weekly RAG (viz data)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Data storytelling on karj\u00E4\u00E4ri eristavAIM oskus \u2014 Knaflic Ch 6",
-        "Setup \u2192 Conflict \u2192 Resolution struktuur igale dashboardile",
-        "Gallery walk: meeskonnad hindavad teineteise t\u00F6\u00F6d 3x3 tagasisidega",
-        "Liisi Operations view: sama andmed, erinev publik = erinev dashboard"
-      ]
-    },
-    {
-      id: 7,
-      name: "Python ja Pandas",
-      sprint: 4,
-      shuHaRi: "Ha\u2192Ri",
-      bloomLevel: "Anal\u00FC\u00FCsimine",
-      character: "Marko",
-      characterQuote: "SQL on foundation. Python on superpower. Ma vajan RFM anal\u00FC\u00FCsi!",
-      narrativeTitle: "Marko Saar \u2013 Customer Segmentation",
-      emotionalArc: "Python time! \u2192 DataFrames selged! \u2192 245 VIP klienti!",
-      aiLevel: { name: "Suunaja", desc: "Delegeerimine, prompt engineering", pct: 70 },
-      sessions: {
-        s1: { topic: "Python + Pandas basics, Supabase SDK", outcomes: ["DataFrame operations", "Supabase \u2192 pandas"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "RFM Customer Segmentation (anal\u00FC\u00FCsietapi dekomposits.)", outcomes: ["R, F, M arvutatud", "Segmendid loodud"], duration: "90 min" },
         s3: { topic: "Demo: Marko tagasiside + RFM visualiseerimine", outcomes: ["Marko: GAME CHANGER!", "RFM scatter plot"], duration: "90 min" }
       },
@@ -466,41 +298,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "RFM Customer Segmentation", base: "rfm_analysis.py + CSV + summary", advanced: "Jupyter, weighted scoring, 8 segmenti, Plotly" },
       tools: ["Python 3.11+", "pandas", "Supabase Python SDK", "Jupyter", "Plotly Express", "GitHub"],
       textbooks: { mckinney: "Ch 7: Data Cleaning", knaflic: "Ch 7: Lessons in Storytelling" },
-      datasets: ["sales (via Supabase API)", "customers"],
+      
       fourC: "Connection (SQL limitations \u2192 Python solves)",
-      groupWork: {
-        challenge: "Marko: \u201CKES on meie VIP kliendid? KES on churn risk?\u201D",
-        decomposition: "Anal\u00FC\u00FCsietapi dekomposits. (R/F/M eraldi)",
-        subtasks: "A=Recency, B=Frequency, C=Monetary, D=Segmenteerimine",
-        demo: "6 segmenti + klientide arv, VIP osakaal, At Risk nimekiri"
-      },
+      
       components: {
         mentorlus: "Python + pandas + RFM loogika",
         portfoolio: "rfm_analysis.py + rfm_scores.csv",
         eopik: "McKinney Ch7 + Knaflic Ch7",
         ekataloog: "2 weekly RAG (Python pandas)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Marko Saar (tootejuht) ilmub \u2014 teine pool \u00E4rivalemit",
-        "SQL \u2192 Python \u00FCleminek: \u201CSQL on p\u00F5hi, Python on superv\u00F5ime\u201D",
-        "RFM on t\u00F6\u00F6stuse standard: Recency + Frequency + Monetary",
-        "Ha\u2192Ri \u00FCleminek: osalejad hakkavad ise otsustama, kuidas anal\u00FC\u00FCsida"
-      ]
-    },
-    {
-      id: 8,
-      name: "Python ja API'd",
-      sprint: 4,
-      shuHaRi: "Ri",
-      bloomLevel: "Loomine",
-      character: "Marko + Toomas",
-      characterQuote: "Production-grade analytics = automated, tested, documented. Saavutatud!",
-      narrativeTitle: "Automatiseerimine \u2013 Toomas Usaldab T\u00E4ielikult",
-      emotionalArc: "API time! \u2192 Supabase client t\u00F6\u00F6tab! \u2192 Pipeline valmis! Toomas: USALDUS!",
-      aiLevel: { name: "Meeskonna tugevdaja", desc: "AI grupit\u00F6\u00F6s", pct: 80 },
-      sessions: {
-        s1: { topic: "Supabase Python client, REST API, .env", outcomes: ["REST API basics", "Environment variables"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "Automated data pipeline (andmeallika dekomposits.)", outcomes: ["ETL pipeline valmis", "Scheduling (cron/GitHub Actions)"], duration: "90 min" },
         s3: { topic: "Demo: Toomas palub IT koolitust", outcomes: ["Pipeline demo", "Toomas: koolitame meeskonda!"], duration: "90 min" }
       },
@@ -508,41 +316,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "Automated Data Pipeline", base: "Python: fetch \u2192 process \u2192 export + .env + logging", advanced: "GitHub Actions, Slack notifications, retry logic" },
       tools: ["Python", "Supabase REST API", "python-dotenv", "GitHub Actions", "Vercel"],
       textbooks: { mckinney: "Ch 8: Data Wrangling", knaflic: "Ch 8: Storytelling (j\u00E4tk)" },
-      datasets: ["sales (via API)", "customers (via API)", "inventory"],
+      
       fourC: "Concrete Practice r\u00F5hk (pipeline building)",
-      groupWork: {
-        challenge: "Marko: \u201CMa ei taha iga n\u00E4dal k\u00E4sitsi andmeid t\u00F5mmata. Automatiseeri!\u201D",
-        decomposition: "Andmeallika/endpoindi dekomposits.",
-        subtasks: "A=API fetch, B=Transform, C=Export+logging, D=GitHub Actions",
-        demo: "Pipeline \u00FChest k\u00E4sust, .env turvalisus, GitHub Actions YAML"
-      },
+      
       components: {
         mentorlus: "API + automatiseerimine + CI/CD",
         portfoolio: "pipeline.py + .github/workflows/",
         eopik: "McKinney Ch8 + Knaflic Ch8",
         ekataloog: "2 weekly RAG (Python APIs)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Ri-tase: osalejad loovad oma l\u00E4henemisi, mentor on coach mitte \u00F5petaja",
-        "API + automatiseerimine = production-grade andmeanal\u00FC\u00FCtiku oskus",
-        "Toomas usaldab t\u00E4ielikult \u2014 ringiga tagasi W0 juurde, kus alustasime",
-        "GitHub Actions = CI/CD tutvustus, mis valmistab ette portfoolioks"
-      ]
-    },
-    {
-      id: 9,
-      name: "Karj\u00E4\u00E4ri Ettevalmistus",
-      sprint: 5,
-      shuHaRi: "Ri",
-      bloomLevel: "Hindamine",
-      character: "K\u00D5IK + Liis",
-      characterQuote: "Aidake mul luua v\u00E4rbamisjuhend. Te TEATE, mida hea anal\u00FC\u00FCtik peab oskama.",
-      narrativeTitle: "Liis Koppeli V\u00E4ljakutse \u2013 V\u00E4rbamisjuhend",
-      emotionalArc: "Liisi \u00FCllesanne \u2192 T\u00F6\u00F6andja perspektiiv \u2192 Aha: v\u00E4rbamisjuhendis kirjeldasid iseennast!",
-      aiLevel: { name: "Meeskonna tugevdaja", desc: "AI grupit\u00F6\u00F6s", pct: 85 },
-      sessions: {
-        s1: { topic: "CV, LinkedIn optimeerimine, DA turu \u00FClevaade, t\u00F6\u00F6andja perspektiiv", outcomes: ["CV kirjutatud", "LinkedIn uuendatud", "Turu statistika m\u00F5istetud"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "V\u00E4rbamisjuhend (JAGA-TEE-KOGU-ESITLE, osakonna dekomposits.)", outcomes: ["6 meeskonda: t\u00F6\u00F6andja-poolne v\u00E4rbamisjuhend", "Liis + k\u00F5ik tegelased osalevad"], duration: "90 min" },
         s3: { topic: "Aha-moment + privaatne CV/LinkedIn aken", outcomes: ["V\u00E4rbamisjuhend = iseenda kirjeldus!", "20 min isiklik CV/LinkedIn t\u00F6\u00F6"], duration: "90 min" }
       },
@@ -550,41 +334,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "Karj\u00E4\u00E4ripakett (CV + LinkedIn + Portfolio)", base: "CV, LinkedIn, GitHub \u2013 uuendatud ja korrektsed", advanced: "Medium artikkel, personal website" },
       tools: ["LinkedIn", "CV builder", "GitHub (final polish)", "Presentation tools"],
       textbooks: { mckinney: "Ch 10: Aggregation & Groups", knaflic: "Ch 9: Case Studies" },
-      datasets: ["K\u00F5ik varasemad (kokkuv\u00F5te)"],
+      
       fourC: "Conclusions r\u00F5hk (reflekteerimine, s\u00FCntees)",
-      groupWork: {
-        challenge: "Liis: \u201CMe palkame 5 uut anal\u00FC\u00FCtikut. Aidake luua v\u00E4rbamisjuhend!\u201D",
-        decomposition: "Osakonna dekomposits. (6 meeskonda = 6 osakonda)",
-        subtasks: "A=Tehniline hindamine (Toomas), B=Portfoolio krit. (Kristi), C=CV lugemine (Anna), D=Onboarding (Marko)",
-        demo: "Iga meeskond esitleb oma v\u00E4rbamisjuhendi peat\u00FCkki"
-      },
+      
       components: {
         mentorlus: "Karj\u00E4\u00E4ri coaching + t\u00F6\u00F6turu statistika",
         portfoolio: "CV.pdf + LinkedIn screenshot",
         eopik: "McKinney Ch10 + Knaflic Ch9",
         ekataloog: "2 weekly RAG (career HR)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "W9 aha-moment: v\u00E4rbamisjuhendis kirjeldavad iseennast!",
-        "T\u00F6\u00F6andja perspektiiv: \u201CMida MA otsin anal\u00FC\u00FCtiku CV-s?\u201D",
-        "Liis juhib: kõik 5 tegelast osalevad, iga meeskond = \u00FCks osakond",
-        "Privaatne CV/LinkedIn aken (20 min) \u2014 isiklik, mitte avalik"
-      ]
-    },
-    {
-      id: 10,
-      name: "Portfoolio Kaitsmine",
-      sprint: 5,
-      shuHaRi: "Ri",
-      bloomLevel: "Loomine",
-      character: "K\u00D5IK (Kristi juhib)",
-      characterQuote: "Te olete DATA-DRIVEN muutuse n\u00E4gu. R\u00E4\u00E4kige oma lugu juhatusele!",
-      narrativeTitle: "UrbanStyle Board Meeting + L\u00F5petamine",
-      emotionalArc: "SHOCK (meie juhatusele?!) \u2192 Relay esitlus \u2192 Portfolio Fair \u2192 Auhinnad!",
-      aiLevel: { name: "Demonstreerija", desc: "Portfoolios: \u201CKuidas AI meid aitas\u201D", pct: 100 },
-      sessions: {
-        s1: { topic: "GitHub portfoolio optimeerimine, 5-min pitch struktuur", outcomes: ["Profile README poleeritud", "Pitch struktuur valmis"], duration: "90 min" },
+      
+       duration: "90 min" },
         s2: { topic: "Board Meeting ettevalmistus (JAGA-TEE-KOGU-ESITLE, relay esitlus)", outcomes: ["6 meeskonda harjutavad relay esitlust", "Slide deck + visuaalne abi"], duration: "90 min" },
         s3: { topic: "UrbanStyle Board Meeting + Portfolio Fair + Auhinnad", outcomes: ["6 x 7 min esitlused", "Portfolio Fair (13 min)", "6 auhinnakategooriat"], duration: "90 min" }
       },
@@ -592,29 +352,17 @@ const PROGRAM_DATA = {
       portfolio: { artifact: "L\u00F5ppkaitsmine + poleeritud portfoolio", base: "Profile README, 6+ pinned repos, screenshots", advanced: "Comprehensive final analysis, live demos, custom domain" },
       tools: ["GitHub (portfolio polish)", "LinkedIn", "Presentation tools", "Vercel (portfolio site)"],
       textbooks: { mckinney: "Ch 11: Time Series", knaflic: "Ch 10: Final Thoughts" },
-      datasets: ["K\u00F5ik varasemad (t\u00E4is)"],
+      
       fourC: "Conclusions r\u00F5hk (l\u00F5purefleksioon)",
-      groupWork: {
-        challenge: "Kristi: \u201CInvestor pitch on REEDEL. TEIE esitate meie data capabilities!\u201D",
-        decomposition: "Relay esitlus (iga liige 1 teema)",
-        subtasks: "A=SQL journey, B=Viz story, C=Python impact, D=Business results",
-        demo: "6 x 7 min (5 min relay + 2 min reaktsioon) + Portfolio Fair + Auhinnad"
-      },
+      
       components: {
         mentorlus: "Pitch coaching + l\u00F5putagasiside",
         portfoolio: "L\u00F5ppkaitsmine + GitHub Profile",
         eopik: "McKinney Ch11 + Knaflic Ch10",
         ekataloog: "2 weekly RAG (portfolio defense)"
       },
-      productionStatus: { master: true, rag: true, mentorGuide: true, reflectionForm: true, workbook: true, groupWorkHandout: true, answerKey: true, bridgePre: true, bridgePost: true, docx: true },
-      mentorTalkingPoints: [
-        "Board Meeting: 6 meeskonda x 7 min = relay esitlus (iga liige 1 teema)",
-        "Portfolio Fair (13 min): galeriik\u00E4ik, individuaalne portfoolio esitlus",
-        "6 auhinnakategooriat: iga meeskond v\u00F5idab t\u00E4pselt 1 kategooria",
-        "L\u00F5pus\u00F5na: \u201CTe olete DATA-DRIVEN muutuse n\u00E4gu\u201D"
-      ]
-    }
-  ],
+      
+      
   totals: {
     contactPerWeek: 6,
     contactTotal: 66,
@@ -745,47 +493,17 @@ const PROGRAM_DATA = {
 };
 
 const VIEW_MODES = {
-  full: {
-    label: "Tervikvaade",
-    desc: "K\u00F5ik read",
-    icon: "\u2630",
-    visible: ['core', 'pedagogy', 'groupwork', 'portfolio', 'tools', 'materials', 'narrative', 'selfstudy', 'components', 'production', 'data', 'ai', 'google']
-  },
-  meeting: {
-    label: "Mentori kohtumine",
-    desc: "Sessioonid, JAGA-TEE-KOGU-ESITLE, 4 komponenti, tootmise seis",
-    icon: "\uD83E\uDD1D",
-    visible: ['core', 'groupwork', 'components', 'production', 'narrative', 'pedagogy', 'google']
-  },
-  mentor: {
-    label: "Mentori vaade",
-    desc: "Sessioonid, 4C, grupit\u00F6\u00F6, portfoolio, t\u00F6\u00F6riistad, narratiiv",
-    icon: "\uD83C\uDFEB",
-    visible: ['core', 'pedagogy', 'groupwork', 'portfolio', 'tools', 'narrative', 'data', 'ai', 'google']
-  },
-  participant: {
-    label: "Osaleja vaade",
-    desc: "Teemad, ajakava, grupit\u00F6\u00F6, portfoolio, t\u00F6\u00F6riistad, \u00F5ppematerjalid",
-    icon: "\uD83D\uDC64",
-    visible: ['core', 'groupwork', 'portfolio', 'tools', 'materials', 'google']
+  executive: {
+    label: "Executive Summary",
+    desc: "Programmi ülevaade, ajakava, portfoolio ja teemad",
+    icon: "💼",
+    visible: ['core', 'portfolio', 'tools', 'narrative', 'google']
   },
   curriculum: {
-    label: "Curriculum",
-    desc: "Pedagoogiline struktuur: 4C, Bloom, Shu-Ha-Ri, AI-progressioon",
-    icon: "\uD83D\uDCDA",
+    label: "Akadeemiline",
+    desc: "Õpiväljundid, pedagoogika, materjalid",
+    icon: "📚",
     visible: ['core', 'pedagogy', 'ai', 'materials', 'google']
-  },
-  production: {
-    label: "Tootmise seis",
-    desc: "Materjalide valmidus iga n\u00E4dala kaupa",
-    icon: "\uD83D\uDCE6",
-    visible: ['core', 'production']
-  },
-  hours: {
-    label: "Tunnid",
-    desc: "Ainult ak.t \u2013 vastavus T\u00F6\u00F6tukassa/HAKA",
-    icon: "\u23F1",
-    visible: ['core']
   }
 };
 </script>
@@ -809,26 +527,9 @@ const VIEW_MODES = {
         <!-- View mode buttons -->
         <div class="flex gap-1 flex-wrap" id="viewButtons"></div>
         <div class="w-px h-6 bg-white/20"></div>
-        <!-- Walkthrough toggle -->
-        <button onclick="toggleWalkthrough()" class="px-3 py-1.5 rounded text-xs font-medium transition-colors bg-white/10 text-gray-200 hover:bg-white/20" id="walkthroughBtn" title="Mentori l\u00E4bik\u00E4ik: samm-sammult navigeerimine">L\u00E4bik\u00E4ik</button>
-      </div>
+        </div>
     </div>
   </header>
-
-  <!-- WALKTHROUGH BAR (hidden by default) -->
-  <div class="bg-teal text-white px-6 py-2 no-print hidden" id="walkthroughBar">
-    <div class="flex items-center justify-between gap-4">
-      <button onclick="walkthroughPrev()" class="px-3 py-1 bg-white/20 rounded hover:bg-white/30 text-sm font-medium">&larr; Eelmine</button>
-      <div class="flex-1 text-center">
-        <span class="font-bold" id="wtTitle"></span>
-        <span class="mx-2 text-white/60">|</span>
-        <span class="text-sm" id="wtSubtitle"></span>
-      </div>
-      <button onclick="walkthroughNext()" class="px-3 py-1 bg-white/20 rounded hover:bg-white/30 text-sm font-medium">J\u00E4rgmine &rarr;</button>
-    </div>
-    <!-- Talking points -->
-    <div class="mt-2 text-sm bg-white/10 rounded p-3 hidden" id="wtTalkingPoints"></div>
-  </div>
 
   <!-- FILTER BAR -->
   <div class="bg-white border-b border-gray-200 px-6 py-2 no-print" id="filterBar">
@@ -842,9 +543,6 @@ const VIEW_MODES = {
       <button onclick="clearFilters()" class="ml-2 text-[10px] text-gray-400 hover:text-red-500 underline">T\u00FChjenda</button>
     </div>
   </div>
-
-  <!-- PRODUCTION SUMMARY BAR -->
-  <div class="bg-white border-b border-gray-200 px-6 py-2 no-print" id="productionBar"></div>
 
   <!-- SPRINT OVERVIEW (shown when zoom=sprint) -->
   <div class="hidden p-6" id="sprintOverview"></div>
@@ -886,9 +584,9 @@ const VIEW_MODES = {
 </div>
 
 <script>
-let currentView = 'meeting';
+let currentView = 'executive';
 let currentZoom = 'week';
-let expandedCategories = new Set(['core', 'production', 'components', 'google']);
+let expandedCategories = new Set(['core', 'google', 'narrative']);
 let highlightedWeek = null;
 let walkthroughActive = false;
 let walkthroughWeek = 0;
@@ -945,8 +643,7 @@ function init() {
   document.getElementById('programTitle').textContent = d.program.name;
   document.getElementById('programSub').textContent = `${d.program.provider} | ${d.program.company} | ${d.program.duration}`;
   document.getElementById('footerDate').textContent = `Uuendatud: ${d.program.updated}`;
-  renderProductionBar();
-  renderViewButtons();
+    renderViewButtons();
   renderFilters();
   renderZoomButtons();
   render();
@@ -1093,36 +790,6 @@ function clearFilters() {
   render();
 }
 
-// ============ PRODUCTION BAR ============
-
-function renderProductionBar() {
-  const ps = PROGRAM_DATA.productionSummary;
-  const items = [
-    { label: 'Masterid', ...ps.masters },
-    { label: 'RAG', ...ps.rags },
-    { label: 'Mentorijuhendid', ...ps.mentorGuides },
-    { label: 'Refleksioonivormid', ...ps.reflectionForms },
-    { label: 'T\u00F6\u00F6vihikud', ...ps.workbooks },
-    { label: 'Grupit\u00F6\u00F6 handout', ...ps.groupWorkHandouts },
-    { label: 'Vastused', ...ps.answerKeys },
-    { label: 'Bridge e-kirjad', ...ps.bridgeNarratives },
-    { label: 'DOCX', ...ps.docx },
-  ];
-  const totalDone = items.reduce((s, i) => s + i.done, 0);
-  const totalAll = items.reduce((s, i) => s + i.total, 0);
-  const pct = Math.round((totalDone / totalAll) * 100);
-
-  let html = `<div class="flex flex-wrap items-center gap-3 text-xs">`;
-  html += `<div class="font-bold text-navy">Tootmise seis: <span class="text-teal">${totalDone}/${totalAll} (${pct}%)</span></div>`;
-  items.forEach(item => {
-    const color = item.done === item.total ? 'text-green-600' : item.done > 0 ? 'text-yellow-600' : 'text-red-500';
-    const tip = item.detail ? ` title="${item.detail}"` : '';
-    html += `<div class="${color} font-medium cursor-default"${tip}>${item.label}: ${item.done}/${item.total}</div>`;
-  });
-  html += `</div>`;
-  document.getElementById('productionBar').innerHTML = html;
-}
-
 // ============ VIEW BUTTONS ============
 
 function renderViewButtons() {
@@ -1138,60 +805,6 @@ function renderViewButtons() {
     btn.onclick = () => { currentView = key; renderViewButtons(); render(); };
     container.appendChild(btn);
   }
-}
-
-// ============ WALKTHROUGH ============
-
-function toggleWalkthrough() {
-  walkthroughActive = !walkthroughActive;
-  const bar = document.getElementById('walkthroughBar');
-  const btn = document.getElementById('walkthroughBtn');
-  if (walkthroughActive) {
-    bar.classList.remove('hidden');
-    btn.classList.add('bg-teal', 'text-white');
-    btn.classList.remove('bg-white/10', 'text-gray-200');
-    document.getElementById('app').classList.add('walkthrough-active');
-    walkthroughWeek = 0;
-    updateWalkthrough();
-  } else {
-    bar.classList.add('hidden');
-    btn.classList.remove('bg-teal', 'text-white');
-    btn.classList.add('bg-white/10', 'text-gray-200');
-    document.getElementById('app').classList.remove('walkthrough-active');
-    highlightedWeek = null;
-    render();
-  }
-}
-
-function walkthroughPrev() {
-  const weeks = getFilteredWeeks();
-  const idx = weeks.findIndex(w => w.id === walkthroughWeek);
-  if (idx > 0) { walkthroughWeek = weeks[idx - 1].id; updateWalkthrough(); }
-}
-
-function walkthroughNext() {
-  const weeks = getFilteredWeeks();
-  const idx = weeks.findIndex(w => w.id === walkthroughWeek);
-  if (idx < weeks.length - 1) { walkthroughWeek = weeks[idx + 1].id; updateWalkthrough(); }
-}
-
-function updateWalkthrough() {
-  const week = PROGRAM_DATA.weeks[walkthroughWeek];
-  const sprint = getSprintForWeek(week.id);
-  document.getElementById('wtTitle').textContent = `N\u00E4dal ${week.id}: ${week.name}`;
-  document.getElementById('wtSubtitle').textContent = `Sprint ${sprint.id}: ${sprint.name} | ${week.shuHaRi} | ${week.character}`;
-
-  const tp = document.getElementById('wtTalkingPoints');
-  if (week.mentorTalkingPoints && week.mentorTalkingPoints.length > 0) {
-    tp.classList.remove('hidden');
-    tp.innerHTML = `<div class="font-semibold text-white/80 mb-1 text-xs">Mentori vestluspunktid:</div>
-      <ul class="space-y-1">${week.mentorTalkingPoints.map(p => `<li class="text-white/90">\u2022 ${p}</li>`).join('')}</ul>`;
-  } else {
-    tp.classList.add('hidden');
-  }
-
-  highlightedWeek = week.id;
-  render();
 }
 
 // ============ WEEK DETAIL PANEL ============
@@ -1232,19 +845,6 @@ function openDetailPanel(weekId) {
       </div>`;
     }).join('')}
   </div>`;
-
-  // Group work
-  if (week.groupWork) {
-    html += `<div class="mb-4">
-      <h3 class="font-bold text-sm mb-2 text-teal">Grupit\u00F6\u00F6 \u2014 JAGA-TEE-KOGU-ESITLE</h3>
-      <div class="bg-red-50 rounded p-2 mb-2 text-xs font-medium text-red-700">${week.groupWork.challenge}</div>
-      <div class="grid grid-cols-2 gap-2 text-[11px]">
-        <div><span class="text-gray-500">Dekompositsioon:</span><br><span class="font-medium text-teal">${week.groupWork.decomposition}</span></div>
-        <div><span class="text-gray-500">Demo:</span><br><span class="font-medium text-swim-blue">${week.groupWork.demo}</span></div>
-      </div>
-      <div class="mt-2 text-[10px] text-gray-600">${week.groupWork.subtasks}</div>
-    </div>`;
-  }
 
   // Portfolio
   html += `<div class="mb-4">
@@ -1288,33 +888,13 @@ function openDetailPanel(weekId) {
     <div class="flex flex-wrap gap-1 mb-2">${week.tools.map(t => `<span class="text-[9px] bg-gray-100 px-2 py-0.5 rounded">${t}</span>`).join('')}</div>
     <div class="text-[10px] text-gray-600"><strong>McKinney:</strong> ${week.textbooks.mckinney}</div>
     <div class="text-[10px] text-gray-600"><strong>Knaflic:</strong> ${week.textbooks.knaflic}</div>
-    <div class="text-[10px] text-gray-600 mt-1"><strong>Andmestik:</strong> ${week.datasets.join(', ')}</div>
+    
   </div>`;
 
   // Self-study
   html += `<div class="mb-4">
     <h3 class="font-bold text-sm mb-2 text-teal">Iseseisev t\u00F6\u00F6 (${week.selfStudy.akt} ak.t)</h3>
     <div class="text-[10px]">${week.selfStudy.activities.map(a => '\u2022 ' + a).join('<br>')}</div>
-  </div>`;
-
-  // Production status
-  const statusItems = [
-    { key: 'master', label: 'Master' },
-    { key: 'rag', label: 'RAG failid' },
-    { key: 'mentorGuide', label: 'Mentorijuhend' },
-    { key: 'reflectionForm', label: 'Refleksioonivorm' },
-    { key: 'workbook', label: 'T\u00F6\u00F6vihik' },
-    { key: 'groupWorkHandout', label: 'Grupit\u00F6\u00F6 handout' },
-    { key: 'answerKey', label: 'Vastuste v\u00F5ti' },
-    { key: 'bridgePre', label: 'Bridge Pre' },
-    { key: 'bridgePost', label: 'Bridge Post' },
-    { key: 'docx', label: 'DOCX' },
-  ];
-  html += `<div class="mb-4">
-    <h3 class="font-bold text-sm mb-2 text-teal">Materjalide valmidus</h3>
-    <div class="grid grid-cols-2 gap-1">${statusItems.map(item =>
-      `<div class="flex items-center gap-1 text-[10px]">${statusBadge(week.productionStatus[item.key])} ${item.label}</div>`
-    ).join('')}</div>
   </div>`;
 
   // Google e-Study
@@ -1326,14 +906,6 @@ function openDetailPanel(weekId) {
       <div class="text-[10px] text-gray-600 mt-1"><strong>Moodulid:</strong> ${ge.modules} (${ge.hours})</div>
       <div class="text-[10px] text-gray-600"><strong>Fookus:</strong> ${ge.focus}</div>
       <div class="text-[10px] mt-1" style="color:#009B8D"><strong>Seostub:</strong> ${ge.alignment}</div>
-    </div>`;
-  }
-
-  // Mentor talking points
-  if (week.mentorTalkingPoints) {
-    html += `<div class="mb-4 bg-teal-light rounded-lg p-3">
-      <h3 class="font-bold text-sm mb-2 text-teal-dark">Mentori vestluspunktid</h3>
-      <ul class="space-y-1 text-[11px]">${week.mentorTalkingPoints.map(p => `<li>\u2022 ${p}</li>`).join('')}</ul>
     </div>`;
   }
 
@@ -1359,7 +931,7 @@ function renderHead() {
   weeks.forEach(w => {
     const sprintBorder = isSprintBoundary(w.id) ? 'sprint-border-right' : '';
     const highlight = highlightedWeek === w.id ? 'col-highlight' : '';
-    const wtClass = walkthroughActive ? (highlightedWeek === w.id ? 'wt-highlight' : 'wt-dimmed') : '';
+    const wtClass = '';
     html += `<th class="p-2 text-center min-w-[120px] cursor-pointer ${sprintBorder} ${highlight} ${wtClass} bg-navy hover:bg-navy-light"
                  onclick="openDetailPanel(${w.id})" title="Kliki, et n\u00E4ha N\u00E4dal ${w.id} detaile">
       <div class="font-bold">N\u00E4d ${w.id}</div>
@@ -1379,7 +951,7 @@ function renderBody() {
   const cellClass = (w) => {
     const sb = isSprintBoundary(w.id) ? 'sprint-border-right' : '';
     const hl = highlightedWeek === w.id ? 'col-highlight' : '';
-    const wt = walkthroughActive ? (highlightedWeek === w.id ? 'wt-highlight' : 'wt-dimmed') : '';
+    const wt = '';
     return `${sb} ${hl} ${wt}`;
   };
 
@@ -1452,47 +1024,6 @@ function renderBody() {
     ), weeks);
   }
 
-  // Tootmise seis
-  if (vis.includes('production')) {
-    html += renderCategoryHeader('production', 'Materjalide Valmidus', weeks);
-    const statusItems = [
-      { key: 'master', label: 'Master' },
-      { key: 'rag', label: 'RAG (2 faili)' },
-      { key: 'mentorGuide', label: 'Mentorijuhend' },
-      { key: 'reflectionForm', label: 'Refleksioonivorm' },
-      { key: 'workbook', label: 'T\u00F6\u00F6vihik (A_G_7)' },
-      { key: 'groupWorkHandout', label: 'Grupit\u00F6\u00F6 handout' },
-      { key: 'answerKey', label: 'Vastuste v\u00F5ti' },
-      { key: 'bridgePre', label: 'Bridge Pre e-kiri' },
-      { key: 'bridgePost', label: 'Bridge Post e-kiri' },
-      { key: 'docx', label: 'DOCX v\u00E4ljund' },
-    ];
-    statusItems.forEach(item => {
-      html += renderCategoryRow('production', item.label, weeks.map(w => {
-        const done = w.productionStatus[item.key];
-        if (done) return `<div class="text-center">${statusBadge(true)}</div>`;
-        return `<div class="text-center">${statusBadge(false)}</div>`;
-      }), weeks);
-    });
-  }
-
-  // Grupitoo
-  if (vis.includes('groupwork')) {
-    html += renderCategoryHeader('groupwork', 'Grupit\u00F6\u00F6 \u2013 JAGA-TEE-KOGU-ESITLE (90 min)', weeks);
-    html += renderCategoryRow('groupwork', '\u00C4ri-challenge', weeks.map(w =>
-      w.groupWork ? `<div class="text-[9px] font-medium text-red-700">${w.groupWork.challenge}</div>` : ''
-    ), weeks);
-    html += renderCategoryRow('groupwork', 'Dekompositsioon', weeks.map(w =>
-      w.groupWork ? `<div class="text-[9px] font-semibold text-teal">${w.groupWork.decomposition}</div>` : ''
-    ), weeks);
-    html += renderCategoryRow('groupwork', 'Ala\u00FClesanded', weeks.map(w =>
-      w.groupWork ? `<div class="text-[8px] text-gray-600">${w.groupWork.subtasks}</div>` : ''
-    ), weeks);
-    html += renderCategoryRow('groupwork', 'Oodatav demo', weeks.map(w =>
-      w.groupWork ? `<div class="text-[9px] font-medium text-swim-blue">${w.groupWork.demo}</div>` : ''
-    ), weeks);
-  }
-
   // Portfoolio
   if (vis.includes('portfolio')) {
     html += renderCategoryHeader('portfolio', 'Portfoolio', weeks);
@@ -1548,14 +1079,6 @@ function renderBody() {
     ), weeks);
   }
 
-  // Data
-  if (vis.includes('data')) {
-    html += renderCategoryHeader('data', 'Andmestik', weeks);
-    html += renderCategoryRow('data', 'Andmekomplektid', weeks.map(w =>
-      `<div class="text-[9px]">${w.datasets.join(', ')}</div>`
-    ), weeks);
-  }
-
   // Google e-Study (vabatahtlik)
   if (vis.includes('google')) {
     html += renderCategoryHeader('google', '\uD83C\uDF93 Vabatahtlik Google e-\u00F5pe (Coursera)', weeks);
@@ -1587,7 +1110,7 @@ function renderRow(label, cells, bgClass, weeks) {
     const w = weeks[i];
     const sb = isSprintBoundary(w.id) ? 'sprint-border-right' : '';
     const hl = highlightedWeek === w.id ? 'col-highlight' : '';
-    const wt = walkthroughActive ? (highlightedWeek === w.id ? 'wt-highlight' : 'wt-dimmed') : '';
+    const wt = '';
     html += `<td class="p-2 border-b border-gray-100 text-center align-top ${sb} ${hl} ${wt}">${cell}</td>`;
   });
   html += '</tr>';
@@ -1612,7 +1135,7 @@ function renderCategoryRow(catId, label, cells, weeks) {
     const w = weeks[i];
     const sb = isSprintBoundary(w.id) ? 'sprint-border-right' : '';
     const hl = highlightedWeek === w.id ? 'col-highlight' : '';
-    const wt = walkthroughActive ? (highlightedWeek === w.id ? 'wt-highlight' : 'wt-dimmed') : '';
+    const wt = '';
     html += `<td class="p-2 border-b border-gray-50 align-top ${sb} ${hl} ${wt}">${cell}</td>`;
   });
   html += '</tr>';
