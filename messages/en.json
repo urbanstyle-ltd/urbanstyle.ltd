@@ -118,8 +118,9 @@
       "s3": "Session 3 (Demo+Retro)",
       "tools": "Tools",
       "portfolio": "Weekly Artifact",
-      "google": "Other learning (Coursera)",
-      "narrative": "Narrative"
+      "google": "Optional e-learning add-on",
+      "narrative": "Narrative",
+      "googleTooltip": "Accelerates learning and enables getting a Google Professional Certificate upon successful completion."
     },
     "back": "Back to program page"
   }

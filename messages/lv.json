@@ -118,8 +118,9 @@
       "s3": "3. sesija (Demo+Retro)",
       "tools": "Rīki",
       "portfolio": "Nedēļas artefakts",
-      "google": "Cita mācīšanās (Coursera)",
-      "narrative": "Pārdzīvojums"
+      "google": "Papildu e-mācības",
+      "narrative": "Pārdzīvojums",
+      "googleTooltip": "Paātrina mācīšanos un ļauj iegūt Google Professional Certificate pēc veiksmīgas pabeigšanas."
     },
     "back": "Atpakaļ uz programmas lapu"
   }

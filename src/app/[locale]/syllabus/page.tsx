@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { PROGRAM_DATA } from "@/data/syllabus";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Info } from "lucide-react";
 
 type ViewMode = "executive" | "curriculum";
 
@@ -252,7 +252,13 @@ export default function SyllabusPage() {
                       colSpan={PROGRAM_DATA.weeks.length + 1}
                       className="p-2 px-4 font-bold text-xs sticky left-0 z-10 text-blue-800"
                     >
-                      {t("table.google").toUpperCase()}
+                      <div className="flex items-center gap-1.5 group relative w-fit">
+                        <span>{t("table.google").toUpperCase()}</span>
+                        <Info className="w-3.5 h-3.5 text-blue-600/70 hover:text-blue-800 cursor-help" />
+                        <div className="absolute left-0 bottom-full mb-2 hidden group-hover:block w-[280px] p-3 leading-relaxed bg-black/90 text-white text-[10px] rounded shadow-lg z-20 font-normal">
+                          {t("table.googleTooltip")}
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr className="border-b border-gray-100">

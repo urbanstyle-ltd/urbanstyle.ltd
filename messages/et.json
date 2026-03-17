@@ -118,8 +118,9 @@
       "s3": "Sessioon 3 (Demo+Retro)",
       "tools": "Tööriistad",
       "portfolio": "Nädala artefakt",
-      "google": "Muu õpe (Coursera)",
-      "narrative": "Narratiiv"
+      "google": "Vabatahtlik lisa e-õpe",
+      "narrative": "Narratiiv",
+      "googleTooltip": "Kiirendab õppimist ja võimaldab eduka sooritamise korral saada Google Professional Certificate'i."
     },
     "back": "Tagasi programmi lehele"
   }
