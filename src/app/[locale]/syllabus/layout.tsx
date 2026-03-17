@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { Locale } from "@/i18n";
+
 import { Suspense } from "react";
 
 export async function generateMetadata({
@@ -8,7 +8,7 @@ export async function generateMetadata({
   params: { locale: string };
 }) {
   const t = await getTranslations({
-    locale: locale as Locale,
+    locale: locale,
     namespace: "approach.meta",
   });
 
