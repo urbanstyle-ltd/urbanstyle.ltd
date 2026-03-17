@@ -101,5 +101,26 @@
     "description": "Atvainojiet, lapa, kuru meklējat, nepastāv. Šis datu punkts ir noņemts no mūsu sistēmām. Izmantojiet šo iespēju, lai atklātu jaunus produktus.",
     "homeCta": "Atpakaļ uz sākumu",
     "productsCta": "Skatīt produktus"
+  },
+  "syllabus": {
+    "title": "Executive Syllabus",
+    "subtitle": "Oficiālā Datu analītikas mācību programma (13 ECTS / 312 akad. st.)",
+    "views": {
+      "executive": "Vadītāju kopsavilkums",
+      "curriculum": "Akadēmiskā"
+    },
+    "table": {
+      "category": "Kategorija",
+      "sprint": "Sprints",
+      "hours": "Stundas (akad.)",
+      "s1": "1. sesija (Mentors)",
+      "s2": "2. sesija (Grupu darbs)",
+      "s3": "3. sesija (Demo+Retro)",
+      "tools": "Rīki",
+      "portfolio": "Nedēļas artefakts",
+      "google": "Cita mācīšanās (Coursera)",
+      "narrative": "Pārdzīvojums"
+    },
+    "back": "Atpakaļ uz programmas lapu"
   }
 }

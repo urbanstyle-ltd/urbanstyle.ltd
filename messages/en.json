@@ -101,5 +101,26 @@
     "description": "Sorry, the page you are looking for does not exist. This data point has been removed from our systems. Use this opportunity to discover new products.",
     "homeCta": "Back to Home",
     "productsCta": "Explore Products"
+  },
+  "syllabus": {
+    "title": "Executive Syllabus",
+    "subtitle": "Official Data Analytics Curriculum (13 ECTS / 312 acad. hours)",
+    "views": {
+      "executive": "Executive Summary",
+      "curriculum": "Academic"
+    },
+    "table": {
+      "category": "Category",
+      "sprint": "Sprint",
+      "hours": "Hours (acad.)",
+      "s1": "Session 1 (Mentor)",
+      "s2": "Session 2 (Group work)",
+      "s3": "Session 3 (Demo+Retro)",
+      "tools": "Tools",
+      "portfolio": "Weekly Artifact",
+      "google": "Other learning (Coursera)",
+      "narrative": "Narrative"
+    },
+    "back": "Back to program page"
   }
 }

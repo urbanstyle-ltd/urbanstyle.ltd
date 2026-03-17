@@ -340,7 +340,7 @@ const CONTENT: Record<string, PageContent> = {
       ctaDesc: "Contact us to discuss cohort enrollment, funding options, and custom scheduling.",
       ctaButton: "Get in Touch",
       execCtaPrimary: "Book 15-min Fit Call",
-      execCtaSecondary: "Download Syllabus (PDF)",
+      execCtaSecondary: "Download Syllabus",
 
       accordions: {
         roi: "Return on Investment",
@@ -707,7 +707,7 @@ const CONTENT: Record<string, PageContent> = {
       ctaDesc: "V\u00f5tke meiega \u00fchendust, et arutada grupiliitumist, rahastamisv\u00f5imalusi ja kohandatud ajakava.",
       ctaButton: "V\u00f5ta \u00fchendust",
       execCtaPrimary: "Broneeri 15-min Partnerlusk\u00f5ne",
-      execCtaSecondary: "Executive Syllabus (PDF)",
+      execCtaSecondary: "Executive Syllabus",
 
       accordions: {
         roi: "Investeeringu tasuvus",
@@ -1606,7 +1606,7 @@ const CONTENT: Record<string, PageContent> = {
       ctaDesc: "Зв\u2019яжіться з нами для обговорення групової участі, можливостей фінансування та індивідуального розкладу.",
       ctaButton: "Зв\u2019язатися",
       execCtaPrimary: "Забронювати 15-хв. дзвінок",
-      execCtaSecondary: "Завантажити Syllabus (PDF)",
+      execCtaSecondary: "Завантажити Syllabus",
 
       accordions: {
         roi: "Повернення інвестицій",
@@ -2518,7 +2518,7 @@ function LearnersView() {
               
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center">
                 <a
-                  href="/daca-syllabus.html"
+                  href="/syllabus"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
@@ -2718,7 +2718,7 @@ function EmployersView() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="/daca-syllabus.html"
+                  href="/syllabus"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"
@@ -2951,7 +2951,7 @@ function MethodologyView() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
-                  href="/daca-syllabus.html"
+                  href="/syllabus"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-offwhite/20 text-offwhite font-bold rounded-lg text-base tracking-wide hover:bg-offwhite/10 hover:border-offwhite transition-all duration-300 w-full sm:w-auto"

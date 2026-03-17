@@ -101,5 +101,26 @@
     "description": "Vabandust, otsitud lehekülge pole olemas. See andmepunkt on meie süsteemidest eemaldatud. Kasuta võimalust uute toodete avastamiseks.",
     "homeCta": "Tagasi avalehele",
     "productsCta": "Avasta tooteid"
+  },
+  "syllabus": {
+    "title": "Executive Syllabus",
+    "subtitle": "Andmeanalüütika kursuse ametlik õppekava (13 EAP / 312 ak.t)",
+    "views": {
+      "executive": "Executive Summary",
+      "curriculum": "Akadeemiline"
+    },
+    "table": {
+      "category": "Kategooria",
+      "sprint": "Sprint",
+      "hours": "Tunnid (ak.t)",
+      "s1": "Sessioon 1 (Mentor)",
+      "s2": "Sessioon 2 (Grupitöö)",
+      "s3": "Sessioon 3 (Demo+Retro)",
+      "tools": "Tööriistad",
+      "portfolio": "Nädala artefakt",
+      "google": "Muu õpe (Coursera)",
+      "narrative": "Narratiiv"
+    },
+    "back": "Tagasi programmi lehele"
   }
 }
