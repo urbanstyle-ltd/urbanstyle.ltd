@@ -75,6 +75,16 @@ export function Header() {
           >
             {t('approach')}
           </Link>
+          <Link
+            href={'/automatiseerimine' as const}
+            className={`px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
+              pathname === '/automatiseerimine'
+                ? 'bg-[#009B8D] text-offwhite'
+                : 'bg-[#009B8D]/90 text-offwhite hover:bg-[#009B8D]'
+            }`}
+          >
+            {t('automation')}
+          </Link>
           <LanguageSwitcher />
         </div>
 
@@ -128,6 +138,17 @@ export function Header() {
                 }`}
               >
                 {t('approach')}
+              </Link>
+              <Link
+                href={'/automatiseerimine' as const}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`px-8 py-3 rounded-full text-lg font-bold uppercase tracking-widest transition-all duration-300 ${
+                  pathname === '/automatiseerimine'
+                    ? 'bg-[#009B8D] text-offwhite'
+                    : 'bg-[#009B8D]/90 text-offwhite hover:bg-[#009B8D]'
+                }`}
+              >
+                {t('automation')}
               </Link>
 
               <div className="w-16 h-[1px] bg-offwhite/20" />

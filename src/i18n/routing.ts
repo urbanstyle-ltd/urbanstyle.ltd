@@ -50,6 +50,13 @@ export const routing = defineRouting({
       lv: '/pieeja',
       uk: '/pidkhid',
     },
+    '/automatiseerimine': {
+      et: '/automatiseerimine',
+      en: '/automation',
+      ru: '/avtomatizaciya',
+      lv: '/automatizacija',
+      uk: '/avtomatyzaciya',
+    },
   },
 });
 

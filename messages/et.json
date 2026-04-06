@@ -8,7 +8,8 @@
     "about": "Meist",
     "strategy": "Strateegia",
     "contact": "Kontakt",
-    "approach": "DACA Programm"
+    "approach": "DACA Programm",
+    "automation": "02Signal"
   },
   "hero": {
     "headline": "UUS KOLLEKTSIOON",
@@ -25,7 +26,7 @@
     "emailPlaceholder": "sinu@email.ee",
     "subscribe": "Liitu",
     "simulation": "Tegemist on koolitusprogrammi simulatsiooniga.",
-    "moreInfo": "Loe DACA programmi kohta",
+    "moreInfo": "Loe programmide kohta",
     "copyright": "© {year} UrbanStyle. Tallinn, Eesti.",
     "products": "Tooted",
     "company": "Ettevõte",
@@ -35,7 +36,8 @@
     "legal": "Õiguslik info",
     "privacy": "Privaatsus",
     "terms": "Tingimused",
-    "program": "Programm"
+    "program": "DACA Programm",
+    "automationProgram": "02Signal Programm"
   },
   "products": {
     "title": "Meie Tooted",
@@ -69,7 +71,14 @@
     "aiRole": "AI roll meie protsessides",
     "results": "Tulemused",
     "joinCta": "Vaata Kapoti Alla",
-    "programLink": "Tutvu programmiga"
+    "programLink": "Tutvu programmiga",
+    "twoDirections": "Kaks strateegilist suunda",
+    "directionAnalytics": "Andmeanalüütika",
+    "directionAnalyticsDesc": "Andmepõhised otsused, KPI-d, dashboard'id ja prognoosid. Muudame andmed strateeglisteks otsusteks.",
+    "directionAnalyticsCta": "DACA Programm",
+    "directionAutomation": "AI Automatiseerimine",
+    "directionAutomationDesc": "Chatbot'id, n8n töövood, AI teadmusbaas ja automatiseeritud protsessid. Muudame manuaalsed sammud automaatseks.",
+    "directionAutomationCta": "02Signal Programm"
   },
   "contact": {
     "title": "Kontakt",
@@ -94,6 +103,12 @@
     "zoom": {
       "overview": "Ülevaade",
       "details": "Täisdetailid"
+    }
+  },
+  "automation": {
+    "meta": {
+      "title": "02Signal — Äri automatiseerimine tehisaru (AI) abil",
+      "description": "7-nädalane praktikum algajast n8n ja agentide automatiseerijani. Claude, n8n, Telegram bot'id, GitHub portfoolio."
     }
   },
   "notFound": {

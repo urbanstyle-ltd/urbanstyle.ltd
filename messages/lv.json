@@ -8,7 +8,8 @@
     "about": "Par mums",
     "strategy": "Stratēģija",
     "contact": "Kontakti",
-    "approach": "DACA Programma"
+    "approach": "DACA Programma",
+    "automation": "02Signal"
   },
   "hero": {
     "headline": "JAUNA KOLEKCIJA",
@@ -35,7 +36,8 @@
     "legal": "Juridiskā informācija",
     "privacy": "Privātums",
     "terms": "Noteikumi",
-    "program": "Programma"
+    "program": "DACA Programma",
+    "automationProgram": "02Signal Programma"
   },
   "products": {
     "title": "Mūsu produkti",
@@ -69,7 +71,14 @@
     "aiRole": "AI mūsu procesos",
     "results": "Rezultāti",
     "joinCta": "Ieskatieties zem pārsega",
-    "programLink": "Iepazīstiet programmu"
+    "programLink": "Iepazīstiet programmu",
+    "twoDirections": "Divi stratēģiski virzieni",
+    "directionAnalytics": "Datu analītika",
+    "directionAnalyticsDesc": "Uz datiem balstīti lēmumi, KPI, informācijas paneļi un prognozēšana. Pārvēršam datus stratēģiskos lēmumos.",
+    "directionAnalyticsCta": "DACA Programma",
+    "directionAutomation": "AI Automatizācija",
+    "directionAutomationDesc": "Tērzēšanas roboti, n8n darba plūsmas, AI zināšanu bāze un automatizēti procesi. Pārvēršam manuālus soļus automātiskos.",
+    "directionAutomationCta": "02Signal Programma"
   },
   "contact": {
     "title": "Kontakti",
@@ -94,6 +103,12 @@
     "zoom": {
       "overview": "Pārskats",
       "details": "Pilna informācija"
+    }
+  },
+  "automation": {
+    "meta": {
+      "title": "02Signal — Biznesa automatizācija ar AI",
+      "description": "7 nedēļu praktikums no nulles līdz AI aģentam. Claude, n8n, Telegram boti, GitHub portfelis."
     }
   },
   "notFound": {

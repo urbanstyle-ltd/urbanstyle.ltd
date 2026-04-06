@@ -8,7 +8,8 @@
     "about": "About",
     "strategy": "Strategy",
     "contact": "Contact",
-    "approach": "DACA Program"
+    "approach": "DACA Program",
+    "automation": "02Signal"
   },
   "hero": {
     "headline": "NEW COLLECTION",
@@ -25,7 +26,7 @@
     "emailPlaceholder": "your@email.com",
     "subscribe": "Subscribe",
     "simulation": "This is a training program simulation.",
-    "moreInfo": "Read about DACA program",
+    "moreInfo": "Read about our programs",
     "copyright": "© {year} UrbanStyle. Tallinn, Estonia.",
     "products": "Products",
     "company": "Company",
@@ -35,7 +36,8 @@
     "legal": "Legal",
     "privacy": "Privacy",
     "terms": "Terms",
-    "program": "Program"
+    "program": "DACA Program",
+    "automationProgram": "02Signal Program"
   },
   "products": {
     "title": "Our Products",
@@ -69,7 +71,14 @@
     "aiRole": "AI in Our Processes",
     "results": "Results",
     "joinCta": "Look Under the Hood",
-    "programLink": "Explore the Program"
+    "programLink": "Explore the Program",
+    "twoDirections": "Two Strategic Directions",
+    "directionAnalytics": "Data Analytics",
+    "directionAnalyticsDesc": "Data-driven decisions, KPIs, dashboards, and forecasting. Turning data into strategic decisions.",
+    "directionAnalyticsCta": "DACA Program",
+    "directionAutomation": "AI Automation",
+    "directionAutomationDesc": "Chatbots, n8n workflows, AI knowledge base, and automated processes. Turning manual steps into automated flows.",
+    "directionAutomationCta": "02Signal Program"
   },
   "contact": {
     "title": "Contact",
@@ -94,6 +103,12 @@
     "zoom": {
       "overview": "Overview",
       "details": "Full Details"
+    }
+  },
+  "automation": {
+    "meta": {
+      "title": "02Signal — Business Automation with AI",
+      "description": "7-week practicum from zero to AI agent. Claude, n8n, Telegram bots, GitHub portfolio. From noise to signal."
     }
   },
   "notFound": {

@@ -8,7 +8,8 @@
     "about": "О нас",
     "strategy": "Стратегия",
     "contact": "Контакт",
-    "approach": "Программа DACA"
+    "approach": "Программа DACA",
+    "automation": "02Signal"
   },
   "hero": {
     "headline": "НОВАЯ КОЛЛЕКЦИЯ",
@@ -35,7 +36,8 @@
     "legal": "Юридическая информация",
     "privacy": "Конфиденциальность",
     "terms": "Условия",
-    "program": "Программа"
+    "program": "Программа DACA",
+    "automationProgram": "Программа 02Signal"
   },
   "products": {
     "title": "Наша Продукция",
@@ -69,7 +71,14 @@
     "aiRole": "Роль AI в наших процессах",
     "results": "Результаты",
     "joinCta": "Заглянуть под капот",
-    "programLink": "Ознакомьтесь с программой"
+    "programLink": "Ознакомьтесь с программой",
+    "twoDirections": "Два стратегических направления",
+    "directionAnalytics": "Аналитика данных",
+    "directionAnalyticsDesc": "Решения на основе данных, KPI, дашборды и прогнозирование. Превращаем данные в стратегические решения.",
+    "directionAnalyticsCta": "Программа DACA",
+    "directionAutomation": "AI Автоматизация",
+    "directionAutomationDesc": "Чат-боты, n8n воркфлоу, AI база знаний и автоматизированные процессы. Превращаем ручные шаги в автоматические.",
+    "directionAutomationCta": "Программа 02Signal"
   },
   "contact": {
     "title": "Контакт",
@@ -94,6 +103,12 @@
     "zoom": {
       "overview": "Обзор",
       "details": "Полные детали"
+    }
+  },
+  "automation": {
+    "meta": {
+      "title": "02Signal — Автоматизация бизнеса с помощью AI",
+      "description": "7-недельный практикум от нуля до AI-агента. Claude, n8n, Telegram боты, портфолио на GitHub."
     }
   },
   "notFound": {

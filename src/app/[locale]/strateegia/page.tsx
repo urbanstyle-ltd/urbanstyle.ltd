@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import type { Locale } from '@/i18n/config';
 import { motion } from 'framer-motion';
 import { Logo } from '@/components/ui/Logo';
+import { Link } from '@/i18n/routing';
 import { getImageUrl } from '@/data/images';
 
 export default function StrategyPage() {
@@ -159,7 +160,75 @@ export default function StrategyPage() {
         </div>
       </section>
 
-      {/* CTA - conversion funnel to DACA program */}
+      {/* Two Strategic Directions */}
+      <section className="px-6 md:px-16 py-32">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold uppercase tracking-tighter mb-16 text-center"
+          >
+            {t('twoDirections')}
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            {/* Direction 1: Analytics (DACA) */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-offwhite rounded-xl p-10 shadow-sm border-2 border-burnt-orange/20 hover:border-burnt-orange/60 transition-all duration-500 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-1 h-full bg-burnt-orange scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider mb-6 bg-burnt-orange/10 text-burnt-orange">
+                DACA
+              </span>
+              <h3 className="font-bold text-2xl mb-4 text-charcoal tracking-tight">
+                {t('directionAnalytics')}
+              </h3>
+              <p className="text-charcoal/70 text-lg leading-relaxed mb-8">
+                {t('directionAnalyticsDesc')}
+              </p>
+              <Link
+                href="/approach"
+                className="inline-flex items-center justify-center px-8 py-3 bg-burnt-orange text-offwhite font-bold rounded-lg text-sm tracking-wide hover:bg-charcoal transition-colors duration-300"
+              >
+                {t('directionAnalyticsCta')} &rarr;
+              </Link>
+            </motion.div>
+
+            {/* Direction 2: Automation (02Signal) */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-offwhite rounded-xl p-10 shadow-sm border-2 border-[#009B8D]/20 hover:border-[#009B8D]/60 transition-all duration-500 group relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-1 h-full bg-[#009B8D] scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-bottom" />
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider mb-6 bg-[#009B8D]/10 text-[#009B8D]">
+                02Signal
+              </span>
+              <h3 className="font-bold text-2xl mb-4 text-charcoal tracking-tight">
+                {t('directionAutomation')}
+              </h3>
+              <p className="text-charcoal/70 text-lg leading-relaxed mb-8">
+                {t('directionAutomationDesc')}
+              </p>
+              <Link
+                href="/automatiseerimine"
+                className="inline-flex items-center justify-center px-8 py-3 bg-[#009B8D] text-offwhite font-bold rounded-lg text-sm tracking-wide hover:bg-charcoal transition-colors duration-300"
+              >
+                {t('directionAutomationCta')} &rarr;
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA - general */}
       <section className="px-6 md:px-16 py-32 bg-charcoal text-offwhite text-center relative overflow-hidden">
         {/* Background decorative Monogram */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
@@ -167,7 +236,7 @@ export default function StrategyPage() {
         </div>
 
         <div className="max-w-3xl mx-auto relative z-10">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -175,7 +244,7 @@ export default function StrategyPage() {
           >
             {t('joinCta')}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -184,20 +253,35 @@ export default function StrategyPage() {
           >
             {ctaText[locale as Locale]}
           </motion.p>
-          <motion.a
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            href={locale === 'et'
-              ? 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi'
-              : 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator'}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-12 py-5 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-500 shadow-xl hover:shadow-2xl"
-          >
-            {t('programLink')}
-          </motion.a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <motion.a
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              href={locale === 'et'
+                ? 'https://www.ettevotluskeskus.ee/daca25-andmeanaluutiku-karjaarikiirendi'
+                : 'https://www.ettevotluskeskus.ee/daca25en-data-analyst-career-accelerator'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-10 py-4 bg-burnt-orange text-offwhite font-bold rounded-lg text-lg tracking-wide hover:bg-offwhite hover:text-burnt-orange transition-all duration-500 shadow-xl hover:shadow-2xl"
+            >
+              DACA {t('programLink')}
+            </motion.a>
+            <motion.span
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+            >
+              <Link
+                href="/automatiseerimine"
+                className="inline-flex items-center justify-center px-10 py-4 bg-[#009B8D] text-offwhite font-bold rounded-lg text-lg tracking-wide hover:bg-offwhite hover:text-[#009B8D] transition-all duration-500 shadow-xl hover:shadow-2xl"
+              >
+                02Signal {t('programLink')}
+              </Link>
+            </motion.span>
+          </div>
         </div>
       </section>
     </div>
