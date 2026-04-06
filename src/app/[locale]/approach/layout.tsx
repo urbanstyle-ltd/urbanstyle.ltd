@@ -19,8 +19,13 @@ export async function generateMetadata({
       description: t('description'),
       type: 'website',
     },
-    // We can also override canonical routing logic if strictly needed,
-    // but the global layout provides the alternates already.
+    robots: {
+      index: true,
+      follow: true,
+    },
+    keywords: locale === 'et'
+      ? ['andmeanalüütika', 'DACA', 'SQL', 'Python', 'Power BI', 'karjäärikiirendi', 'andmeteadus']
+      : ['data analytics', 'DACA', 'SQL', 'Python', 'Power BI', 'career accelerator', 'data science'],
   };
 }
 

@@ -49,6 +49,13 @@ export async function generateMetadata({
       siteName: 'UrbanStyle',
       locale: locale === 'et' ? 'et_EE' : locale === 'ru' ? 'ru_RU' : locale === 'lv' ? 'lv_LV' : locale === 'uk' ? 'uk_UA' : 'en_US',
     },
+    robots: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   };
 }
 

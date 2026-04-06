@@ -205,7 +205,7 @@ const CONTENT: Record<string, PageContent> = {
       whatYouGetTitle: "What You Get",
       whatYouGetDesc:
         "A professional GitHub portfolio with 10 data analytics projects that employers can review. Not certificates on a wall \u2014 working artifacts that prove your skills.",
-      teamTitle: "You\u2019re Not a Student \u2014 You\u2019re a Team Member",
+      teamTitle: "You\u2019re Not Just a Learner \u2014 You\u2019re a Team Member",
       teamDesc:
         "From day one, you work as a data analyst at UrbanStyle \u2014 a simulated Estonian fashion startup. Real datasets, real business problems, real characters who give you tasks and feedback.",
       values: [
@@ -572,7 +572,7 @@ const CONTENT: Record<string, PageContent> = {
       whatYouGetTitle: "Mida sa saad",
       whatYouGetDesc:
         "Professionaalne GitHub portfoolio 10 andmeanal\u00fc\u00fctika projektiga, mida t\u00f6\u00f6andjad saavad \u00fcle vaadata. Mitte sertifikaadid seinal \u2014 t\u00f6\u00f6tavad artefaktid, mis t\u00f5estavad sinu oskusi.",
-      teamTitle: "Sa ei ole \u00fcli\u00f5pilane \u2014 sa oled meeskonnaliige",
+      teamTitle: "Sa ei ole lihtsalt \u00f5ppija \u2014 sa oled meeskonnaliige",
       teamDesc:
         "Esimesest p\u00e4evast t\u00f6\u00f6tad sa andmeanal\u00fc\u00fctikuna UrbanStyle\u2019is \u2014 simuleeritud Eesti moefirmas. P\u00e4ris andmestikud, p\u00e4ris \u00e4riprobleemid, p\u00e4ris karakterid, kes annavad sulle \u00fclesandeid ja tagasisidet.",
       values: [
@@ -1221,7 +1221,7 @@ const CONTENT: Record<string, PageContent> = {
       whatYouGetTitle: "Ko j\u016bs ieg\u016bstat",
       whatYouGetDesc:
         "Profesion\u0101lu GitHub portfeli ar 10 datu anal\u012btikas projektiem, ko darba dev\u0113ji var nov\u0113rt\u0113t. Ne sertifik\u0101ti uz sienas \u2014 str\u0101d\u0101jo\u0161i artefakti, kas pier\u0101da j\u016bsu prasmes.",
-      teamTitle: "J\u016bs neesat students \u2014 j\u016bs esat komandas biedrs",
+      teamTitle: "J\u016bs neesat tikai audz\u0113knis \u2014 j\u016bs esat komandas biedrs",
       teamDesc:
         "No pirm\u0101s dienas j\u016bs str\u0101d\u0101jat k\u0101 datu anal\u012bti\u0137is UrbanStyle \u2014 simul\u0113t\u0101 Igaunijas modes jaun\u0101uz\u0146\u0113mum\u0101. Re\u0101li dati, re\u0101las biznesa probl\u0113mas, re\u0101li varo\u0146i, kas dod uzdevumus un atgriezenisko saiti.",
       values: [

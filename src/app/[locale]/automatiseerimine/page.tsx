@@ -69,6 +69,11 @@ interface PageContent {
     title: string;
     groups: { label: string; desc: string }[];
   };
+  rhythm: {
+    title: string;
+    desc: string;
+    steps: Array<{ step: string; title: string; subtitle: string; desc: string }>;
+  };
   faq: {
     title: string;
     items: FaqItem[];
@@ -114,7 +119,7 @@ const CONTENT: Record<string, PageContent> = {
       desc: "02Signal programm õpetab sind ehitama AI-põhiseid automatiseerimisi, mis muudavad manuaalsed sammud automaatseks töövoooks. Praktikumi lõpuks on sul toimiv prototüüp oma ärile.",
       highlights: [
         { value: "7", label: "nädalat" },
-        { value: "3", label: "sessiooni nädalas" },
+        { value: "~14.5", label: "tundi nädalas" },
         { value: "6", label: "portfoolioartefakti" },
         { value: "1", label: "toimiv prototüüp" },
       ],
@@ -129,6 +134,16 @@ const CONTENT: Record<string, PageContent> = {
       pathNarrative: "02Signal Advisory (narratiiv)",
       pathNarrativeDesc:
         "Tegutsed 02Signal Advisory nooremkonsultandina. Sinu klient: UrbanStyle.ltd. Lahendad päris äriprobleeme simuleeritud keskkonnas.",
+    },
+    rhythm: {
+      title: "Nädalarütm: spiraalne õpe",
+      desc: "Iga tegevus lisab samale teemale uue vaatenurga. Nädala lõpuks on teema läbi töötatud iseseisvalt, mentoriga, meeskonnas ja demonstratsioonis.",
+      steps: [
+        { step: "01", title: "Iseseisev töö", subtitle: "~10h / perspektiiv A", desc: "Iseseisev uurimine 4C tsüklitega, rakendamine OMA ärile" },
+        { step: "02", title: "Sessioon 1: Mentor", subtitle: "1.5h / perspektiiv B", desc: "Ekspert lisab uue vaatenurga, live demo" },
+        { step: "03", title: "Sessioon 2: Grupitöö", subtitle: "1.5h / A+B süntees", desc: "Meeskond rakendab mõlemad perspektiivid UrbanStyle simulatsioonis" },
+        { step: "04", title: "Sessioon 3: Demo + Retro", subtitle: "1.5h / reflektsioon", desc: "Esitle tulemusi, saa tagasisidet, parandused" },
+      ],
     },
     weekMap: {
       title: "Nädalakaart",
@@ -229,7 +244,7 @@ const CONTENT: Record<string, PageContent> = {
         },
         {
           q: "Kui palju aega nõuab?",
-          a: "3 sessiooni nädalas (igaüks ~1.5h) + iseseisev töö (~2-3h). Kokku ~7-8h nädalas.",
+          a: "~10h iseseisvat tööd + 3 sessiooni nädalas (igaüks 1.5h). Kokku ~14.5h nädalas. Intensiivne, aga praktiline programm.",
         },
         {
           q: "Mis on lõpptulemus?",
@@ -277,7 +292,7 @@ const CONTENT: Record<string, PageContent> = {
       desc: "The 02Signal program teaches you to build AI-powered automations that turn manual steps into automated workflows. By the end, you'll have a working prototype for your own business.",
       highlights: [
         { value: "7", label: "weeks" },
-        { value: "3", label: "sessions/week" },
+        { value: "~14.5", label: "hours/week" },
         { value: "6", label: "portfolio artifacts" },
         { value: "1", label: "working prototype" },
       ],
@@ -292,6 +307,16 @@ const CONTENT: Record<string, PageContent> = {
       pathNarrative: "02Signal Advisory (narrative)",
       pathNarrativeDesc:
         "Work as an 02Signal Advisory junior consultant. Your client: UrbanStyle.ltd. Solve real business problems in a simulated environment.",
+    },
+    rhythm: {
+      title: "Weekly Rhythm: Spiral Learning",
+      desc: "Each activity adds a new perspective on the same topic. By the end of each week, the concept has been explored from self-study, mentoring, teamwork, and demonstration angles.",
+      steps: [
+        { step: "01", title: "Self-Study", subtitle: "~10h / Perspective A", desc: "Independent exploration with 4C cycles, applied to OWN business" },
+        { step: "02", title: "Session 1: Mentor", subtitle: "1.5h / Perspective B", desc: "Expert adds new angle, live demo" },
+        { step: "03", title: "Session 2: Group Work", subtitle: "1.5h / A+B Synthesis", desc: "Team applies both perspectives in UrbanStyle simulation" },
+        { step: "04", title: "Session 3: Demo + Retro", subtitle: "1.5h / Reflection", desc: "Present results, get feedback, improve" },
+      ],
     },
     weekMap: {
       title: "Week Map",
@@ -392,7 +417,7 @@ const CONTENT: Record<string, PageContent> = {
         },
         {
           q: "How much time does it require?",
-          a: "3 sessions per week (~1.5h each) + self-study (~2-3h). About 7-8h total per week.",
+          a: "~10h of self-study + 3 sessions per week (1.5h each). About 14.5h total per week. Intensive but hands-on.",
         },
         {
           q: "What's the end result?",
@@ -676,6 +701,43 @@ export default function AutomationPage() {
                 {c.program.pathNarrativeDesc}
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* WEEKLY RHYTHM                                                      */}
+      {/* ================================================================= */}
+      <section className="px-6 md:px-16 py-32 bg-limestone/20">
+        <div className="max-w-5xl mx-auto">
+          <motion.div {...fadeIn}>
+            <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-tight mb-6">
+              {c.rhythm.title}
+            </h2>
+            <p className="text-charcoal/70 text-lg mb-12 max-w-3xl">
+              {c.rhythm.desc}
+            </p>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {c.rhythm.steps.map((item, idx) => (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-offwhite rounded-xl p-6 border border-charcoal/5 text-center"
+              >
+                <span className="font-mono text-2xl font-bold block mb-2" style={{ color: "#009B8D" }}>
+                  {item.step}
+                </span>
+                <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                <p className="text-xs font-mono text-charcoal/40 uppercase tracking-widest mb-3">
+                  {item.subtitle}
+                </p>
+                <p className="text-sm text-charcoal/70">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

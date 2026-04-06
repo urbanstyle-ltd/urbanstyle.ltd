@@ -17,6 +17,13 @@ export async function generateMetadata({
       description: t('description'),
       type: 'website',
     },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    keywords: locale === 'et'
+      ? ['AI automatiseerimine', 'n8n', 'Telegram bot', 'äri automatiseerimine', '02Signal', 'Claude', 'tehisintellekt']
+      : ['AI automation', 'n8n', 'Telegram bot', 'business automation', '02Signal', 'Claude', 'artificial intelligence'],
   };
 }
 
